@@ -38,7 +38,8 @@ let projectDisplayerContainer;
 		"Carnet de bord : c'est un mini cours rédigé dans le cadre d'un TP dans le but d'apprendre la programmation orientée objet.<br /><br />" +
         "Carnet de bord v2 : c'est un mini cours rédigé dans le cadre d'un TP dans le but d'apprendre la programmation orientée objet d'une manière plus évoluée.";
     languages = ["HTML", "CSS", "JavaScript"];
-    links = [["Taquin", "/projects/taquin/index.html"],
+    links = [["Dames", "/projects/dames/index.html"],
+		["Taquin", "/projects/taquin/index.html"],
         ["2048", "/projects/2048/index.html"],
         ["Sudoku", "/projects/sudoku/index.html"],
         ["Carnet de bord", "/projects/carnetdebord/index.html"],

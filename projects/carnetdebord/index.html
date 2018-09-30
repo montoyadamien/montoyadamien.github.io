@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+		<meta name="viewport" content="width=device-width" />
+		<link rel="stylesheet" href="style.css" type="text/css" />
+		<link rel="stylesheet" href="navStyle.css" type="text/css" /> <!-- css du menu -->
+		<link rel="stylesheet" media="all and (max-width:600px)" href="NavSmall.css" type="text/css" /> <!-- Quand il y a un petit ecran, le menu -->
+		<link rel="stylesheet" media="all and (max-width:600px)" href="styleSmall.css" type="text/css" /> <!-- Quand il y a un petit ecran, le contenu -->
+        <meta charset="utf-8" />
+        <title>Carnet de bord - 2017</title>
+    </head>
+    <body>
+		<input type="checkbox" id="hamburger"/> <!-- Faire le menu au clic -->
+		<label id="gridNav" for="hamburger"></label> <!-- utilisé pour cocher la checkbox -->
+		<nav>
+			<div id="dansNav">
+				<a href="index.html">Accueil</a>
+				<a href="cas_d_utilisation.php">Cas d'utilisation</a>
+				<a href="modelisation_du_domaine.php">Modélisation du domaine</a>
+				<a href="diagramme_de_sequence.php">Diagramme de séquence</a>
+				<a href="modelisation_et_codage.php">Modélisation et codage</a>
+				<a href="code_avance.php">Code avancé</a>
+				<a href="vocabulaire.html">Vocabulaire</a>
+			</div>
+		</nav>
+		
+		<div id="page">
+			<section class="fondWhite" id="infos">
+				<h1>Carnet de bord</h1>
+				<p class="texte">
+					Ce site a été développé dans le cadre du DUT Informatique ayant pour but d'être rendu en tant que carnet de bord de la matière M2104, Conception Orientée Objet durant l'année 2017 lors du Semestre 2.<br />
+					Le site web contient les notions fondamentales en UML permettant de déterminer chaque fonctionnalités d'un Cahier des Charges Fonctionnel lors de la création d'un projet. Le site web est composé de cours, de remarques et d'informations permettant d'obtenir les notions fondamentales en Conception Orientée Objet.
+				</p>
+			</section>
+					
+			
+			<section id="tds">
+				<h1 class="h1White">Travaux Encadrés</h1>
+	
+				<div id="containerTds">
+					<a href="cas_d_utilisation.php">
+						<div class="contientInfosTds"> 	
+							<div class="img_arti">
+								<img class="img_arti1" src="img/tds/userLittle.png" alt="Image Article" />
+									<div class="infos_arti_hov">
+										<p>
+										- Diagramme de cas d'utilisation<br />
+										- Scénarios
+										</p>
+									</div>
+									<p class="hours">6 Heures</p>
+							</div>
+						</div>
+					</a>
+					
+					<a href="modelisation_du_domaine.php">
+						<div class="contientInfosTds"> 	
+							<div class="img_arti">
+								<img class="img_arti1" src="img/tds/classeLittle.jpg" alt="Image Article" />
+									<div class="infos_arti_hov">
+										<p>
+										- Modélisation du domaine<br />
+										- Diagramme de classe<br />
+										- Association
+										</p>
+									</div>
+									<p class="hours">3 Heures</p>
+							</div>
+						</div>
+					</a>
+					
+					<a href="diagramme_de_sequence.php">
+						<div class="contientInfosTds"> 	
+							<div class="img_arti">
+								<img class="img_arti1" src="img/tds/seqLittle.jpg" alt="Image Article" />
+									<div class="infos_arti_hov">
+										<p>
+										- Diagrammes de séquence
+										</p>
+									</div>
+									<p class="hours">1 Heure 15 Minutes</p>
+							</div>
+						</div>
+					</a>
+					
+					<a href="modelisation_et_codage.php">
+						<div class="contientInfosTds"> 	
+							<div class="img_arti">
+								<img class="img_arti1" src="img/tds/codLittle.jpg" alt="Image Article" />
+									<div class="infos_arti_hov">
+										<p>
+										- Modélisation et codage<br />
+										- Héritage<br />
+										- Association
+										</p>
+									</div>
+									<p class="hours">1 Heure</p>
+							</div>
+						</div>
+					</a>
+					
+					<a href="code_avance.php">
+						<div class="contientInfosTds"> 	
+							<div class="img_arti">
+								<img class="img_arti1" src="img/tds/spyLittle.jpg" alt="Image Article" />
+									<div class="infos_arti_hov">
+										<p>
+										- Programmmation<br />
+										- SpyMe<br />
+										</p>
+									</div>
+									<p class="hours">1 Heure 20 Minutes</p>
+							</div>
+						</div>
+					</a>
+				</div>
+			</section>
+			
+			
+			
+	
+			
+		
+			<section id="contact">
+				<h1>Contact</h1>
+				<p class="texteNoPadding">André Da Silva : </p>
+				<div id="contactbloc">
+					<a onclick="appuimail3()" href="#">
+						<div class="contactFond1">
+							<img src="img/mail.png" />
+							<div class="contactFond2"></div>
+						</div>
+					</a>
+				</div>
+				
+				<p class="texteNoPadding">Monnier Stanislas : </p>
+				<div id="contactbloc">
+					<a onclick="appuimail()" href="#">
+						<div class="contactFond1">
+							<img src="img/mail.png" />
+							<div class="contactFond2"></div>
+						</div>
+					</a>
+				</div>
+				
+				<p class="texteNoPadding">Montoya Damien : </p>
+				<div id="contactbloc">
+					<a onclick="appuimail2()" href="#">
+						<div class="contactFond1">
+							<img src="img/mail.png" />
+							<div class="contactFond2"></div>
+						</div>
+					</a>
+					<a target="_blank" href="https://twitter.com/daminor26">
+						<div class="contactFond1">
+							<img src="img/twitter.png" />
+							<div class="contactFond2"></div>
+						</div>	
+					</a>
+				</div>
+				
+			
+			</section>  
+			
+			
+			<footer>
+				<div>
+					Le site web sert de compte rendu pour la matière Conception Orientée Objet du DUT Informatique sur Nice.
+				</div>
+				<div>
+					2016 - 2017<br />
+					Da Silva André, Monnier Stanislas & Montoya Damien
+				</div>
+			</footer>
+			
+		
+		</div>
+    
+	
+	
+			<script> //ne pas mettre un email directement sur le site pour eviter spams
+				function appuimail()
+				{
+					alert('Monnier Stanislas : stanislasmonnier at hotmail.fr');
+				 }
+
+				function appuimail2()
+				{
+					alert('Montoya Damien : daminor26 at gmail.com');
+				 }
+				 
+				 function appuimail3()
+				{
+					alert('André Da Silva : andre062402 at gmail.com');
+				 }
+			   </script>
+			   
+			
+	
+    </body>
+</html>

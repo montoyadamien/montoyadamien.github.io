@@ -1,0 +1,35 @@
+nav{
+	background-color : rgba(0,0,0,0.8);
+	border-right : none;/* Enlever la bordure en petit écran */
+	width : 0; /* de base le menu est caché */
+	align-items : flex-start; /* mettre en haut les éléments du menu */
+	overflow : hidden;
+}
+#gridNav{ /* le menu en grille */
+	left : 5px;
+	top : 5px;
+	position : fixed;
+	cursor : pointer; /* curseur de lien quand la souris est dessu */
+	display : block;
+	width : 32px;
+	height : 25px;
+	background-image : url(img/menu.png);
+	background-position : center center;
+	background-repeat : no-repeat; /* pour que le fond ne se repete pas */
+	z-index : 15; /* systeme de calque pour le placer sur le menu */
+}
+#hamburger:checked ~ nav { /* quand la checkbox est cochée */
+	width : 100%;
+}
+#hamburger:checked ~ #page{
+	 filter: blur(5px);
+}
+nav a:hover{
+	padding : 15px 0 15px 0;
+}
+nav a::after{
+    bottom: 5px;
+}
+#page{ /* le menu disparait on enleve la marge */
+	margin : 0;
+}

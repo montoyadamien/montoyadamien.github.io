@@ -19,7 +19,9 @@ let projectDisplayerContainer;
     events.push(["<a target='_blank' href=\"https://play.google.com/store/apps/details?id=gorillabox.mygamedb\">MygameDB - Android</a>", 2018]);
     events.push(["<a target='_blank' href=\"https://play.google.com/store/apps/details?id=gorillabox.myworkouts\">My Workouts - Android</a>", 2018]);
     events.push(["DUT Informatique Nice Côte d'Azur", "2016 - 2018"]);
+    events.push(["Stage DUT Informatique - Da Nang University of Technology - Vietnam", "2018"]);
     events.push(["<a target='_blank' href=\"http://businessmodele.fr\">Business Modèle</a>", 2018]);
+    events.push(["<a target='_blank' href=\"http://www.garagejms.com/\">Garage JMS & Co</a>", 2018]);
 
 	projectDisplayOffset = projectsAnchor.offsetTop;
 
@@ -30,6 +32,14 @@ let projectDisplayerContainer;
 	let links;
 	let backgroundColor;
 
+    name = "Garage JMS & Co";
+    logo = "/public/images/projects/jms.JPG";
+    description = "Le site web est une vitrine pour un garage automobile.<br /><br />Il permet de faire la demande de devis en ligne ainsi que récupérer les avis des utilisateurs.";
+    languages = ["HTML", "CSS", "PHP", "SQL", "JavaScript"];
+    links = [["Site web", "http://www.garagejms.com/"]];
+    backgroundColor = "ff0000";
+    projects.push(new Project(name, logo, description, languages, links, backgroundColor));
+
     name = "Projets Divers";
     logo = "/public/images/projects/divers.png";
     description = "Taquin : le but de ce jeu est le déplacement d'élements pour reconstituer une suite. Le jeu se jou au click via la souris.<br /><br />" +
@@ -39,7 +49,7 @@ let projectDisplayerContainer;
         "Carnet de bord v2 : c'est un mini cours rédigé dans le cadre d'un TP dans le but d'apprendre la programmation orientée objet d'une manière plus évoluée.";
     languages = ["HTML", "CSS", "JavaScript"];
     links = [["Dames", "/projects/dames/index.html"],
-		["Taquin", "/projects/taquin/index.html"],
+        ["Taquin", "/projects/taquin/index.html"],
         ["2048", "/projects/2048/index.html"],
         ["Sudoku", "/projects/sudoku/index.html"],
         ["Carnet de bord", "/projects/carnetdebord/index.html"],

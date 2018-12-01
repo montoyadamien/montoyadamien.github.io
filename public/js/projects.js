@@ -35,7 +35,7 @@ let projectDisplayerContainer;
 	name = "Projets Divers";
     logo = "/public/images/projects/divers.png";
     description = 
-    	"Pong : ce jeu est à faire à deux. Chaque joueur contrôlant une raquette doit faire rebondir la balle sinon il perd. Se joue avec Z et A ainsi que Haut et Bas.<br /><br />"
+    	"Pong : ce jeu est à faire à deux. Chaque joueur contrôlant une raquette doit faire rebondir la balle sinon il perd. Se joue avec Z et A ainsi que Haut et Bas.<br /><br />"+
     	"Taquin : le but de ce jeu est le déplacement d'élements pour reconstituer une suite. Le jeu se jou au click via la souris.<br /><br />" +
         "2048 : le but du jeu est de coupler des tuiles de même valeur pour en obtenir de plus grandes. Se joue avec les touches Haut, Bas, Gauche et Droite.<br /><br />" +
         "Sudoku : le but est de compléter la grille avec des nombres ne se trouvant que sur une ligne, sur une colonne et dans un groupe de 9 cases.<br /><br />" +

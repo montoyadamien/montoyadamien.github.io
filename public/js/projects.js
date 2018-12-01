@@ -32,29 +32,33 @@ let projectDisplayerContainer;
 	let links;
 	let backgroundColor;
 
-    name = "Garage JMS & Co";
-    logo = "/public/images/projects/jms.JPG";
-    description = "Le site web est une vitrine pour un garage automobile.<br /><br />Il permet de faire la demande de devis en ligne ainsi que récupérer les avis des utilisateurs.";
-    languages = ["HTML", "CSS", "PHP", "SQL", "JavaScript"];
-    links = [["Site web", "http://www.garagejms.com/"]];
-    backgroundColor = "ff0000";
-    projects.push(new Project(name, logo, description, languages, links, backgroundColor));
-
-    name = "Projets Divers";
+	name = "Projets Divers";
     logo = "/public/images/projects/divers.png";
-    description = "Taquin : le but de ce jeu est le déplacement d'élements pour reconstituer une suite. Le jeu se jou au click via la souris.<br /><br />" +
+    description = 
+    	"Pong : ce jeu est à faire à deux. Chaque joueur contrôlant une raquette doit faire rebondir la balle sinon il perd. Se joue avec Z et A ainsi que Haut et Bas.<br /><br />"
+    	"Taquin : le but de ce jeu est le déplacement d'élements pour reconstituer une suite. Le jeu se jou au click via la souris.<br /><br />" +
         "2048 : le but du jeu est de coupler des tuiles de même valeur pour en obtenir de plus grandes. Se joue avec les touches Haut, Bas, Gauche et Droite.<br /><br />" +
         "Sudoku : le but est de compléter la grille avec des nombres ne se trouvant que sur une ligne, sur une colonne et dans un groupe de 9 cases.<br /><br />" +
 		"Carnet de bord : c'est un mini cours rédigé dans le cadre d'un TP dans le but d'apprendre la programmation orientée objet.<br /><br />" +
         "Carnet de bord v2 : c'est un mini cours rédigé dans le cadre d'un TP dans le but d'apprendre la programmation orientée objet d'une manière plus évoluée.";
     languages = ["HTML", "CSS", "JavaScript"];
-    links = [["Dames", "/projects/dames/index.html"],
+    links = [
+		["Pong", "/projects/pong/index.html"],
+    	["Dames", "/projects/dames/index.html"],
         ["Taquin", "/projects/taquin/index.html"],
         ["2048", "/projects/2048/index.html"],
         ["Sudoku", "/projects/sudoku/index.html"],
         ["Carnet de bord", "/projects/carnetdebord/index.html"],
         ["Carnet de bord v2", "/projects/carnetdebordCPOO/index.html"]];
     backgroundColor = "2c3e50";
+    projects.push(new Project(name, logo, description, languages, links, backgroundColor));
+
+    name = "Garage JMS & Co";
+    logo = "/public/images/projects/jms.JPG";
+    description = "Le site web est une vitrine pour un garage automobile.<br /><br />Il permet de faire la demande de devis en ligne ainsi que récupérer les avis des utilisateurs.";
+    languages = ["HTML", "CSS", "PHP", "SQL", "JavaScript"];
+    links = [["Site web", "http://www.garagejms.com/"]];
+    backgroundColor = "ff0000";
     projects.push(new Project(name, logo, description, languages, links, backgroundColor));
 
     name = "Business Modèle";

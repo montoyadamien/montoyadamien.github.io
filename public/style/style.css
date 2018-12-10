@@ -218,10 +218,13 @@ a{
 	flex-wrap: wrap;
 	padding: 100px 50px;
 	box-sizing: border-box;
-	background-color: white;
 	position: relative;
+    min-height: 100vh;
+    background-color: #16a085;
+    align-items: center;
 }
 .projectDisplay{
+    height: 350px;
 	width: 350px;
 	max-width: 100%;
 	margin : 40px;
@@ -507,6 +510,7 @@ img{
 	padding: 50px;
 	flex-wrap: wrap;
 	background-color: #fff;
+	min-height: 100vh;
 }
 .historyElement{
 	width: 100%;
@@ -515,7 +519,6 @@ img{
 	align-items: center;
 	flex-wrap: wrap;
 	position: relative;
-	height : 70px;
 }
 .historyElement:first-child .historyBar{
 	border-radius: 8px 8px 0 0;
@@ -539,7 +542,7 @@ img{
 	border-radius: 50%;
 }
 .historyElement:last-child{
-	height: auto;
+    height: 70px;
 }
 .absolute{
 	position: absolute;

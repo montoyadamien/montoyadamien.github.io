@@ -8,20 +8,22 @@ let projectDisplayerContainer;
 (function(){
     projectDisplayerContainer = document.getElementById("projectDisplayerContainer");
 
-    events.push(["Scolaire - Centrale domotique - Arduino", 2016]);
+    //events.push(["Scolaire - Centrale domotique - Arduino", 2016]);
+    events.push(["Baccalauréat STI2D SIN - Lycée Camus Fréjus", "2014 - 2016"]);
     events.push(["Emploi Saisonnier - Société Générale Fréjus", 2016]);
-    events.push(["<a target='_blank' href=\"http://www.enjoytips.altervista.org/\">EnjoyTips</a>", 2016]);
+    //events.push(["<a target='_blank' href=\"http://www.enjoytips.altervista.org/\">EnjoyTips</a>", 2016]);
     events.push(["<a target='_blank' href=\"/public/media/digital_active.pdf\">Certificat Google Digital Active</a>", 2016]);
-    events.push(["<a target='_blank' href=\"https://mygamedb.com\">MygameDB</a>", 2017]);
-    events.push(["Emploi Saisonnier - Société Générale Fréjus", 2017]);
-    events.push(["<a target='_blank' href=\"http://escapejufac.fr/\">Universitaire - Escape Jufac</a>", 2017]);
-    events.push(["Universitaire - Follow Your Genes", 2017]);
-    events.push(["<a target='_blank' href=\"https://play.google.com/store/apps/details?id=gorillabox.mygamedb\">MygameDB - Android</a>", 2018]);
-    events.push(["<a target='_blank' href=\"https://play.google.com/store/apps/details?id=gorillabox.myworkouts\">My Workouts - Android</a>", 2018]);
+    //events.push(["<a target='_blank' href=\"https://mygamedb.com\">MygameDB</a>", 2017]);
     events.push(["DUT Informatique Nice Côte d'Azur", "2016 - 2018"]);
+    events.push(["Emploi Saisonnier - Société Générale Fréjus", 2017]);
+    //events.push(["<a target='_blank' href=\"http://escapejufac.fr/\">Universitaire - Escape Jufac</a>", 2017]);
+    //events.push(["Universitaire - Follow Your Genes", 2017]);
+    //events.push(["<a target='_blank' href=\"https://play.google.com/store/apps/details?id=gorillabox.mygamedb\">MygameDB - Android</a>", 2018]);
+    //events.push(["<a target='_blank' href=\"https://play.google.com/store/apps/details?id=gorillabox.myworkouts\">My Workouts - Android</a>", 2018]);
     events.push(["Stage DUT Informatique - Da Nang University of Technology - Vietnam", "2018"]);
-    events.push(["<a target='_blank' href=\"http://businessmodele.fr\">Business Modèle</a>", 2018]);
-    events.push(["<a target='_blank' href=\"http://www.garagejms.com/\">Garage JMS & Co</a>", 2018]);
+    events.push(["Diplôme Ingénieur en Informatique - Polytech Nice Sophia", "2018 - En cours"]);
+    //events.push(["<a target='_blank' href=\"http://businessmodele.fr\">Business Modèle</a>", 2018]);
+    //events.push(["<a target='_blank' href=\"http://www.garagejms.com/\">Garage JMS & Co</a>", 2018]);
 
 	projectDisplayOffset = projectsAnchor.offsetTop;
 

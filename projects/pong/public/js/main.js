@@ -127,13 +127,13 @@ function Ball(x, y, radius){
             //1.1 pour la marge quand la balle va vite
             if(this.direction[0] === -1){
                 if(this.x - 1.1*this.radius <= player1.width){
-                    if(this.y+this.radius >= player1.y && this.y-this.radius <= player1.y+player1.height){
+                    if(this.y+this.radius/1.5 >= player1.y && this.y-this.radius/1.5 <= player1.y+player1.height){
                         this.touchPlayer(player1);
                     }
                 }
             }else{
                 if(this.x + 1.1*this.radius >= canvasWidth - player2.width){
-                    if(this.y+this.radius >= player2.y && this.y-this.radius <= player2.y+player2.height){
+                    if(this.y+this.radius/1.5 >= player2.y && this.y-this.radius/1.5 <= player2.y+player2.height){
                         this.touchPlayer(player2);
                     }
                 }
@@ -209,11 +209,11 @@ function moveIaDifficult(){
             }
         }
 
-        if(player1.y > 0 && ballTest[1]-ball.radius < player1.y+player1.height/2){
+        if(player1.y > 0 && ballTest[1]-ball.radius < player1.y+(player1.height)){
             player1.move(-1);
         }
 
-        if(player1.y + player1.height < canvasHeight && ballTest[1]+ball.radius > player1.y+player1.height/2){
+        if(player1.y + player1.height < canvasHeight && ballTest[1]+ball.radius > player1.y+(player1.height)){
             player1.move(1);
         }
 

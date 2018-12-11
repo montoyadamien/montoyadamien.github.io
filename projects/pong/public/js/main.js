@@ -8,10 +8,12 @@ let canvasHeight;
 let canvas;
 //quel est le prochain joueur qui doit jouer
 let playerToRecupBall;
-let playIa = true;
+let gameType;
+let ONEPLAYERE = "ONEPLAYER_EASY";
+let ONEPLAYERD = "ONEPLAYER_DIFFICULT";
+let TWOPLAYER = "TWOPLAYER";
+
 let iaOrTwoPlayers;
-let onePlayer;
-let twoPlayers;
 let replay;
 
 let start;
@@ -122,14 +124,15 @@ function Ball(x, y, radius){
         }else{
             //check if touch players
             //player left = player 1
+            //1.1 pour la marge quand la balle va vite
             if(this.direction[0] === -1){
-                if(this.x - this.radius <= player1.width){
+                if(this.x - 1.1*this.radius <= player1.width){
                     if(this.y+this.radius >= player1.y && this.y-this.radius <= player1.y+player1.height){
                         this.touchPlayer(player1);
                     }
                 }
             }else{
-                if(this.x + this.radius >= canvasWidth - player2.width){
+                if(this.x + 1.1*this.radius >= canvasWidth - player2.width){
                     if(this.y+this.radius >= player2.y && this.y-this.radius <= player2.y+player2.height){
                         this.touchPlayer(player2);
                     }
@@ -177,40 +180,21 @@ function updateGame() {
     if (game.keys && game.keys["ArrowUp"]) {player2.move(-1); }
     else if (game.keys && game.keys["ArrowDown"]) {player2.move(1); }
     else player2.acceleration = 0;
-    if(!playIa){
+    if(gameType === TWOPLAYER){
         if (game.keys && game.keys["z"]) {player1.move(-1); }
         else if (game.keys && game.keys["s"]) {player1.move(1); }
         else player1.acceleration = 0;
-    }else{
-        moveIa();
+    }else if(gameType === ONEPLAYERD){
+        moveIaDifficult();
+    }else if(gameType === ONEPLAYERE){
+        moveIaEasy();
     }
     player1.update();
     player2.update();
     ball.update();
 }
 
-function moveIa(){
-    //player1.y = top of paddle
-    //ball.y + (ball.radius/2) = middle of ball
-    //top of screen = 0
-
-
-/*
-version facile
-    if(ball.direction[0] === -1 && player1.y >= 0 && player1.y + player1.height <= canvasHeight){
-        let middleBall = ball.y + (ball.radius/2);
-        let middlePaddle = player1.y + (player1.height/2);
-
-        if(middleBall < middlePaddle){
-            player1.move(-1);
-        }
-
-        if(middleBall > middlePaddle){
-            player1.move(1);
-        }
-    }
-    */
-
+function moveIaDifficult(){
     if(ball.direction[0] === -1){
         let ballTest = [];
         ballTest[0] = ball.x;
@@ -233,6 +217,21 @@ version facile
             player1.move(1);
         }
 
+    }
+}
+
+function moveIaEasy(){
+    if(ball.direction[0] === -1 && player1.y >= 0 && player1.y + player1.height <= canvasHeight){
+        let middleBall = ball.y + (ball.radius/2);
+        let middlePaddle = player1.y + (player1.height/2);
+
+        if(middleBall < middlePaddle){
+            player1.move(-1);
+        }
+
+        if(middleBall > middlePaddle){
+            player1.move(1);
+        }
     }
 }
 
@@ -281,14 +280,16 @@ function initGame(){
        reloadGame();
     });
 
-    onePlayer = document.getElementById("onePlayer");
-    onePlayer.addEventListener("click", function(){
-        playIa = true;
+    document.getElementById("onePlayerE").addEventListener("click", function(){
+        gameType = ONEPLAYERE;
         hide(iaOrTwoPlayers);
     });
-    twoPlayers = document.getElementById("twoPlayers");
-    twoPlayers.addEventListener("click", function(){
-        playIa = false;
+    document.getElementById("onePlayerD").addEventListener("click", function(){
+        gameType = ONEPLAYERD;
+        hide(iaOrTwoPlayers);
+    });
+    document.getElementById("twoPlayers").addEventListener("click", function(){
+        gameType = TWOPLAYER;
         hide(iaOrTwoPlayers);
     });
 

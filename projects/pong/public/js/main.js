@@ -88,6 +88,7 @@ function Player(x, y, width, height, name){
             else
                 this.y += playerSpeed;
         }
+        this.acceleration -= 0.01;
     };
 }
 

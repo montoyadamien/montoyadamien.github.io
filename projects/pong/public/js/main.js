@@ -105,10 +105,10 @@ function Player(x, y, width, height, name){
 }
 
 function Ball(x, y, radius){
-    this.x = x;
-    this.y = y;
+    this.x = x; //le milieu de la balle
+    this.y = y; //le millieu de la balle
     this.radius = radius;
-    this.ballSpeed = canvasWidth/200;
+    this.ballSpeed = canvasWidth/150;
     //horizontal,vertical
     //-1 = left, top
     //1 = right, bottom
@@ -124,13 +124,13 @@ function Ball(x, y, radius){
             //player left = player 1
             if(this.direction[0] === -1){
                 if(this.x - this.radius <= player1.width){
-                    if(this.y+this.radius/2 >= player1.y && this.y-this.radius/2 <= player1.y+player1.height){
+                    if(this.y+this.radius >= player1.y && this.y-this.radius <= player1.y+player1.height){
                         this.touchPlayer(player1);
                     }
                 }
             }else{
                 if(this.x + this.radius >= canvasWidth - player2.width){
-                    if(this.y+this.radius/2 >= player2.y && this.y-this.radius/2 <= player2.y+player2.height){
+                    if(this.y+this.radius >= player2.y && this.y-this.radius <= player2.y+player2.height){
                         this.touchPlayer(player2);
                     }
                 }
@@ -154,7 +154,7 @@ function Ball(x, y, radius){
         invertPlayerToRecupBall();
     };
     this.increaseSpeed = function(){
-        this.ballSpeed += canvasWidth/2000;
+        this.ballSpeed *= 1.05;
     };
 }
 
@@ -194,18 +194,46 @@ function moveIa(){
     //ball.y + (ball.radius/2) = middle of ball
     //top of screen = 0
 
-    let middleBall = ball.y + (ball.radius/2);
-    let topPlayer = player1.y + (player1.height/3);
-    let bottomPlayer = player1.y + (player1.height/2) - (player1.height/3);
 
-    if(middleBall < topPlayer){
-        player1.move(-1);
+/*
+version facile
+    if(ball.direction[0] === -1 && player1.y >= 0 && player1.y + player1.height <= canvasHeight){
+        let middleBall = ball.y + (ball.radius/2);
+        let middlePaddle = player1.y + (player1.height/2);
+
+        if(middleBall < middlePaddle){
+            player1.move(-1);
+        }
+
+        if(middleBall > middlePaddle){
+            player1.move(1);
+        }
     }
+    */
 
-    if(middleBall > bottomPlayer){
-        player1.move(1);
+    if(ball.direction[0] === -1){
+        let ballTest = [];
+        ballTest[0] = ball.x;
+        ballTest[1] = ball.y;
+        let directionTop = ball.direction[1];
+
+        while(ballTest[0] > 0){
+            ballTest[0] = ballTest[0]+(-1*ball.ballSpeed);
+            ballTest[1] = ballTest[1]+(directionTop*ball.ballSpeed);
+            if(ballTest[1]-ball.radius <= 0 || ballTest[1]+ball.radius >= canvasHeight){
+                directionTop *= -1;
+            }
+        }
+
+        if(player1.y > 0 && ballTest[1]-ball.radius < player1.y+player1.height/2){
+            player1.move(-1);
+        }
+
+        if(player1.y + player1.height < canvasHeight && ballTest[1]+ball.radius > player1.y+player1.height/2){
+            player1.move(1);
+        }
+
     }
-
 }
 
 function initGame(){
@@ -226,7 +254,6 @@ function initGame(){
     let playerWidth = 15;
     let playerHeight = canvasHeight/10;
     let ballRadius = playerHeight/5;
-
 
     canvas.width = canvasWidth;
     canvas.height = canvasHeight;
@@ -275,7 +302,6 @@ function initGame(){
     });
     span1.addEventListener("animationend", function(){
         span1.style.animation = "";
-        console.log("animationEnd");
         game.launchGame();
     });
 
@@ -284,12 +310,6 @@ function initGame(){
         game.start();
         span3.style.animation = "animationBegin 1s";
     });
-
-    hide(iaOrTwoPlayers);
-    document.body.removeChild(start);
-    game.start();
-    game.launchGame();
-
 })();
 
 function reloadGame(){

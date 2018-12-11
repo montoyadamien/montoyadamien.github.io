@@ -8,31 +8,40 @@ let canvasHeight;
 let canvas;
 //quel est le prochain joueur qui doit jouer
 let playerToRecupBall;
+let playIa = true;
+let iaOrTwoPlayers;
+let onePlayer;
+let twoPlayers;
+let replay;
 
+let start;
+let span3;
+let span2;
+let span1;
+let winner;
 
 let game = {
-    start : function() {
-        //50 fps
-        window.addEventListener('keydown', function (e) {
-            e.preventDefault();
-            game.keys = (game.keys || []);
-            game.keys[e.key] = (e.type === "keydown");
-        });
-        window.addEventListener('keyup', function (e) {
-            game.keys[e.key] = (e.type === "keydown");
-        });
-        canvasContext.clearRect(0, 0, canvasWidth, canvasHeight);
-        playerSpeed = canvasHeight/100;
-        updateGame();
-        launchBall();
-    },
-    clear : function() {
-        canvasContext.clearRect(0, 0, canvasWidth, canvasHeight);
-    },
-    launchGame : function(){
-        this.interval = setInterval(updateGame, 20);
-    }
-};
+        start : function() {
+            window.addEventListener('keydown', function (e) {
+                e.preventDefault();
+                game.keys = (game.keys || []);
+                game.keys[e.key] = (e.type === "keydown");
+            });
+            window.addEventListener('keyup', function (e) {
+                game.keys[e.key] = (e.type === "keydown");
+            });
+            canvasContext.clearRect(0, 0, canvasWidth, canvasHeight);
+            playerSpeed = canvasHeight/100;
+            updateGame();
+            launchBall();
+        },
+        clear : function() {
+            canvasContext.clearRect(0, 0, canvasWidth, canvasHeight);
+        },
+        launchGame : function(){
+            this.interval = setInterval(updateGame, 20);
+        }
+    };
 
 function launchBall(){
     let angle = (getRandomInt(90)+1)/36/2;
@@ -76,19 +85,22 @@ function Player(x, y, width, height, name){
     };
     this.move = function(top){
         if(top === -1){
-            this.acceleration -= 0.01;
+            if(this.acceleration > 0)
+                this.acceleration = 0;
+            this.acceleration -= 0.005;
             if(this.y - playerSpeed < 0)
                 this.y = 0;
             else
                 this.y -= playerSpeed;
         }else{
-            this.acceleration += 0.01;
+            if(this.acceleration < 0)
+                this.acceleration = 0;
+            this.acceleration += 0.005;
             if(this.y + playerSpeed > canvasHeight-this.height)
                 this.y = canvasHeight-this.height;
             else
                 this.y += playerSpeed;
         }
-        this.acceleration -= 0.01;
     };
 }
 
@@ -149,8 +161,8 @@ function Ball(x, y, radius){
 function endGame(){
     clearInterval(game.interval);
     invertPlayerToRecupBall();
-    let winner = document.getElementById("winner");
-    winner.appendChild(document.createTextNode("Gagnant : "+playerToRecupBall.name));
+    winner.innerText = "Gagnant : "+playerToRecupBall.name;
+    show(replay);
 }
 
 function invertPlayerToRecupBall(){
@@ -165,15 +177,38 @@ function updateGame() {
     if (game.keys && game.keys["ArrowUp"]) {player2.move(-1); }
     else if (game.keys && game.keys["ArrowDown"]) {player2.move(1); }
     else player2.acceleration = 0;
-    if (game.keys && game.keys["z"]) {player1.move(-1); }
-    else if (game.keys && game.keys["s"]) {player1.move(1); }
-    else player1.acceleration = 0;
+    if(!playIa){
+        if (game.keys && game.keys["z"]) {player1.move(-1); }
+        else if (game.keys && game.keys["s"]) {player1.move(1); }
+        else player1.acceleration = 0;
+    }else{
+        moveIa();
+    }
     player1.update();
     player2.update();
     ball.update();
 }
 
-(function(){
+function moveIa(){
+    //player1.y = top of paddle
+    //ball.y + (ball.radius/2) = middle of ball
+    //top of screen = 0
+
+    let middleBall = ball.y + (ball.radius/2);
+    let topPlayer = player1.y + (player1.height/3);
+    let bottomPlayer = player1.y + (player1.height/2) - (player1.height/3);
+
+    if(middleBall < topPlayer){
+        player1.move(-1);
+    }
+
+    if(middleBall > bottomPlayer){
+        player1.move(1);
+    }
+
+}
+
+function initGame(){
     let clientWidth = window.innerWidth;
     let clientHeight = window.innerHeight;
 
@@ -192,34 +227,84 @@ function updateGame() {
     let playerHeight = canvasHeight/10;
     let ballRadius = playerHeight/5;
 
-    canvas = document.getElementById("canvasGame");
+
     canvas.width = canvasWidth;
     canvas.height = canvasHeight;
-    canvasContext = canvas.getContext("2d");
     player1 = new Player(0, (canvasHeight/2)-(playerHeight/2), playerWidth, playerHeight, "Joueur Gauche");
     player2 = new Player((canvasWidth-playerWidth), (canvasHeight/2-playerHeight/2), playerWidth, playerHeight, "Joueur Droite");
     ball = new Ball((canvasWidth/2), (canvasHeight/2), ballRadius);
+}
 
-    let start = document.getElementById("start");
-    let span3 = document.getElementById("3");
-    let span2 = document.getElementById("2");
-    let span1 = document.getElementById("1");
-    start.addEventListener("click", function(e){
-        e.target.parentNode.removeChild(e.target);
-        game.start();
-        span3.style.animation = "animationBegin 1s";
-        span3.addEventListener("animationend", function(){
-            span3.parentNode.removeChild(span3);
-            span2.style.animation = "animationBegin 1s";
-        });
-        span2.addEventListener("animationend", function(){
-            span2.parentNode.removeChild(span2);
-            span1.style.animation = "animationBegin 1s";
-        });
-        span1.addEventListener("animationend", function(){
-            span1.parentNode.removeChild(span1);
-            game.launchGame();
-        });
+(function(){
+    canvas = document.getElementById("canvasGame");
+    canvasContext = canvas.getContext("2d");
+
+    initGame();
+
+    start = document.getElementById("start");
+    span3 = document.getElementById("3");
+    span2 = document.getElementById("2");
+    span1 = document.getElementById("1");
+    winner = document.getElementById("winner");
+
+    iaOrTwoPlayers = document.getElementById("iaOrTwoPlayers");
+    replay = document.getElementById("replay");
+
+    replay.addEventListener("click", function(){
+       reloadGame();
     });
 
+    onePlayer = document.getElementById("onePlayer");
+    onePlayer.addEventListener("click", function(){
+        playIa = true;
+        hide(iaOrTwoPlayers);
+    });
+    twoPlayers = document.getElementById("twoPlayers");
+    twoPlayers.addEventListener("click", function(){
+        playIa = false;
+        hide(iaOrTwoPlayers);
+    });
+
+    span3.addEventListener("animationend", function(){
+        span3.style.animation = "";
+        span2.style.animation = "animationBegin 1s";
+    });
+    span2.addEventListener("animationend", function(){
+        span2.style.animation = "";
+        span1.style.animation = "animationBegin 1s";
+    });
+    span1.addEventListener("animationend", function(){
+        span1.style.animation = "";
+        console.log("animationEnd");
+        game.launchGame();
+    });
+
+    start.addEventListener("click", function(){
+        hide(start);
+        game.start();
+        span3.style.animation = "animationBegin 1s";
+    });
+
+    hide(iaOrTwoPlayers);
+    document.body.removeChild(start);
+    game.start();
+    game.launchGame();
+
 })();
+
+function reloadGame(){
+    game.clear();
+    initGame();
+    show(iaOrTwoPlayers);
+    show(start);
+    hide(replay);
+    winner.innerText = "";
+}
+
+function hide(element){
+    element.classList.add("displayNone");
+}
+
+function show(element){
+    element.classList.remove("displayNone");
+}

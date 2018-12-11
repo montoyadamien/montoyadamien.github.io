@@ -12,14 +12,27 @@
     <body>
         <button id="start">Start</button>
         <div id="launcher">
-            <span id="3">3</span>
-            <span id="2">2</span>
-            <span id="1">1</span>
+            <span id="3" class="spanAnimation">3</span>
+            <span id="2" class="spanAnimation">2</span>
+            <span id="1" class="spanAnimation">1</span>
         </div>
+        <button id="replay" class="show2 displayNone">
+            Rejouer
+        </button>
         <div id="winner"></div>
 
         <canvas id="canvasGame">
         </canvas>
+
+        <div id="iaOrTwoPlayers" class="show">
+            <button id="onePlayer">
+                Un joueur
+            </button>
+            <button id="twoPlayers">
+                Deux joueurs
+            </button>
+        </div>
+
         <script src="/projects/pong/public/js/main.js"></script>
     </body>
 </html>

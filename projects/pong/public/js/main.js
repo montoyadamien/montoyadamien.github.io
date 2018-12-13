@@ -81,6 +81,7 @@ function Player(x, y, width, height, name){
     this.width = width;
     this.height = height;
     this.acceleration = 0;
+    this.calculatedPath = null;
     this.update = function(){
         canvasContext.fillStyle = "#2c3e50";
         canvasContext.fillRect(this.x, this.y, this.width, this.height);
@@ -151,6 +152,7 @@ function Ball(x, y, radius){
         canvasContext.fill();
     };
     this.touchPlayer = function (playerTouched) {
+        playerTouched.calculatedPath = null;
         this.direction[0] *= -1;
         this.direction[1] += playerTouched.acceleration;
         this.increaseSpeed();
@@ -196,24 +198,32 @@ function updateGame() {
 
 function moveIaDifficult(){
     if(ball.direction[0] === -1){
-        let ballTest = [];
-        ballTest[0] = ball.x;
-        ballTest[1] = ball.y;
-        let directionTop = ball.direction[1];
+        if(player1.calculatedPath == null){
+            let ballTest = [];
+            ballTest[0] = ball.x;
+            ballTest[1] = ball.y;
+            let directionTop = ball.direction[1];
 
-        while(ballTest[0] > 0){
-            ballTest[0] = ballTest[0]+(-1*ball.ballSpeed);
-            ballTest[1] = ballTest[1]+(directionTop*ball.ballSpeed);
-            if(ballTest[1]-ball.radius <= 0 || ballTest[1]+ball.radius >= canvasHeight){
-                directionTop *= -1;
+            while(ballTest[0] > 0){
+                ballTest[0] = ballTest[0]+(-1*ball.ballSpeed);
+                ballTest[1] = ballTest[1]+(directionTop*ball.ballSpeed);
+                if(ballTest[1]-ball.radius <= 0 || ballTest[1]+ball.radius >= canvasHeight){
+                    directionTop *= -1;
+                }
             }
+
+            player1.calculatedPath = ballTest[1];
         }
 
-        if(player1.y > 0 && ballTest[1]-ball.radius < player1.y+(player1.height)){
+
+        if(player1.y > 0 && player1.calculatedPath-ball.radius < player1.y+(player1.height/2)){
             player1.move(-1);
         }
 
-        if(player1.y + player1.height < canvasHeight && ballTest[1]+ball.radius > player1.y+(player1.height)){
+        console.log("bas balle : "+player1.calculatedPath+ball.radius);
+        console.log("Y player : "+player1.y);
+
+        if(player1.y + player1.height < canvasHeight && player1.calculatedPath+ball.radius > player1.y+(player1.height/2)){
             player1.move(1);
         }
 
@@ -311,6 +321,13 @@ function initGame(){
         game.start();
         span3.style.animation = "animationBegin 1s";
     });
+/*
+    gameType = ONEPLAYERD;
+    hide(start);
+    hide(iaOrTwoPlayers);
+    game.start();
+    game.launchGame();
+*/
 })();
 
 function reloadGame(){

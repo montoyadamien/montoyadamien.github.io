@@ -83,7 +83,7 @@ let projectDisplayerContainer;
     logo = "/public/images/projects/escapejufac.png";
     description = "Escape JUFAC est un projet universitaire dont le but était de développer un jeu vidéo dit \"Escape Game\". <br /><br />J'ai donc fait parti de l'équipe de développement du jeu vidéo 2D en tant que développeur Java ainsi que graphiste pour certaines parties du jeu.<br /><br />Le jeu vidéo a été développé sous éclipse en Java Swing reposant sur une forge utilisée via Git.";
     languages = ["Java"];
-    links = [["Site web", "http://escapejufac.fr/"]];
+    links = [["Site web", "https://escape-jufac.000webhostapp.com/"]];
     backgroundColor = "dbdbdb";
     projects.push(new Project(name, logo, description, languages, links, backgroundColor));
 

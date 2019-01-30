@@ -48,7 +48,7 @@ let projectDisplayerContainer;
 
     name = "Garage JMS & Co";
     logo = "/public/images/projects/jms.JPG";
-    description = "Le site web est une vitrine pour un garage automobile contenant diverses informations sur celui-ci.<br /><br />Il permet de faire la demande de devis en ligne ainsi que récupérer les avis des utilisateurs. La protection Google reCAPTCHA a été mise en place pour éviter tout abus sur lors de l'envoi de commentaire.";
+    description = "Le site web est une vitrine pour un garage automobile contenant diverses informations sur celui-ci.<br /><br />Il permet de faire la demande de devis en ligne ainsi que récupérer les avis des utilisateurs. La protection Google reCAPTCHA a été mise en place pour éviter tout abus lors de l'envoi de commentaire.";
     languages = ["HTML", "CSS", "PHP", "SQL", "JavaScript"];
     links = [["Site web", "http://www.garagejms.com/"]];
     backgroundColor = "ff0000";

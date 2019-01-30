@@ -81,7 +81,7 @@ let projectDisplayerContainer;
 	name = "MyGameDB";
 	logo = "/public/images/projects/mygamedb.png";
 	description = "MyGameDB est un site web de gestion de collection de jeux vidéo et de consoles administré par moi-même. <br /><br />MyGameDB vous permet d'ajouter les consoles et jeux vidéos que vous possédez, d'indiquer leur statut et bien d'autres options.<br /><br />Vous pourrez également ajouter des jeux à votre wishlist dans le but d'être notifié si un membre possède le jeu en plusieurs exemplaires. Idéal pour faire des échanges.";
-	languages = ["HTML", "CSS", "PHP", "SQL", "JavaScript", "Java (Android)"];
+	languages = ["HTML", "CSS", "PHP", "SQL", "JavaScript", "jQuery", "Java (Android)"];
 	links = [["Site web", "https://mygamedb.com"], ["Google Play", "https://play.google.com/store/apps/details?id=gorillabox.mygamedb"]];
 	backgroundColor = "1d3e5c";
 	projects.push(new Project(name, logo, description, languages, links, backgroundColor));

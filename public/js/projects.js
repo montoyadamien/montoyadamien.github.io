@@ -49,7 +49,7 @@ let projectDisplayerContainer;
     name = "Garage JMS & Co";
     logo = "/public/images/projects/jms.JPG";
     description = "Le site web est une vitrine pour un garage automobile contenant diverses informations sur celui-ci.<br /><br />Il permet de faire la demande de devis en ligne ainsi que récupérer les avis des utilisateurs. La protection Google reCAPTCHA a été mise en place pour éviter tout abus lors de l'envoi de commentaire.";
-    languages = ["HTML", "CSS", "PHP", "SQL", "JavaScript"];
+    languages = ["HTML", "CSS", "PHP", "SQL"];
     links = [["Site web", "http://www.garagejms.com/"]];
     backgroundColor = "ff0000";
     projects.push(new Project(name, logo, description, languages, links, backgroundColor));

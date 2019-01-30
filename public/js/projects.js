@@ -8,22 +8,13 @@ let projectDisplayerContainer;
 (function(){
     projectDisplayerContainer = document.getElementById("projectDisplayerContainer");
 
-    //events.push(["Scolaire - Centrale domotique - Arduino", 2016]);
     events.push(["Baccalauréat STI2D SIN - Lycée Camus Fréjus", "2014 - 2016"]);
     events.push(["Emploi Saisonnier - Société Générale Fréjus", 2016]);
-    //events.push(["<a target='_blank' href=\"http://www.enjoytips.altervista.org/\">EnjoyTips</a>", 2016]);
     events.push(["<a target='_blank' href=\"/public/media/digital_active.pdf\">Certificat Google Digital Active</a>", 2016]);
-    //events.push(["<a target='_blank' href=\"https://mygamedb.com\">MygameDB</a>", 2017]);
     events.push(["DUT Informatique Nice Côte d'Azur", "2016 - 2018"]);
     events.push(["Emploi Saisonnier - Société Générale Carpentras", 2017]);
-    //events.push(["<a target='_blank' href=\"http://escapejufac.fr/\">Universitaire - Escape Jufac</a>", 2017]);
-    //events.push(["Universitaire - Follow Your Genes", 2017]);
-    //events.push(["<a target='_blank' href=\"https://play.google.com/store/apps/details?id=gorillabox.mygamedb\">MygameDB - Android</a>", 2018]);
-    //events.push(["<a target='_blank' href=\"https://play.google.com/store/apps/details?id=gorillabox.myworkouts\">My Workouts - Android</a>", 2018]);
     events.push(["Stage DUT Informatique - Da Nang University of Technology - Vietnam", 2018]);
     events.push(["Diplôme Ingénieur en Informatique - Polytech Nice Sophia", "2018 - En cours"]);
-    //events.push(["<a target='_blank' href=\"http://businessmodele.fr\">Business Modèle</a>", 2018]);
-    //events.push(["<a target='_blank' href=\"http://www.garagejms.com/\">Garage JMS & Co</a>", 2018]);
 
 	projectDisplayOffset = projectsAnchor.offsetTop;
 
@@ -57,7 +48,7 @@ let projectDisplayerContainer;
 
     name = "Garage JMS & Co";
     logo = "/public/images/projects/jms.JPG";
-    description = "Le site web est une vitrine pour un garage automobile.<br /><br />Il permet de faire la demande de devis en ligne ainsi que récupérer les avis des utilisateurs.";
+    description = "Le site web est une vitrine pour un garage automobile contenant diverses informations sur celui-ci.<br /><br />Il permet de faire la demande de devis en ligne ainsi que récupérer les avis des utilisateurs. La protection Google reCAPTCHA a été mise en place pour éviter tout abus sur lors de l'envoi de commentaire.";
     languages = ["HTML", "CSS", "PHP", "SQL", "JavaScript"];
     links = [["Site web", "http://www.garagejms.com/"]];
     backgroundColor = "ff0000";
@@ -85,14 +76,6 @@ let projectDisplayerContainer;
     languages = ["Java"];
     links = [["Site web", "https://escape-jufac.000webhostapp.com/"]];
     backgroundColor = "dbdbdb";
-    projects.push(new Project(name, logo, description, languages, links, backgroundColor));
-
-    name = "Follow Your Genes";
-    logo = "/public/images/projects/fyg.png";
-    description = "Follow Your Genes est un projet universitaire de logiciel de généalogie. <br /><br />Le logiciel permet de créer un arbre généalogique et d'y ajouter des membres ainsi que plusieurs informations sur ceux-ci.<br /><br />Personnellement j'ai été en charge d'une partie du développement back end en Java.";
-    languages = ["Java"];
-    links = [];
-    backgroundColor = "40ad54";
     projects.push(new Project(name, logo, description, languages, links, backgroundColor));
 
 	name = "MyGameDB";

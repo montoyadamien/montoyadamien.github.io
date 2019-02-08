@@ -199,6 +199,7 @@ a{
     height: 200%;
 }
 .skillText{
+	text-align: center;
     position: relative;
     color : #54acd2;
     display: flex;

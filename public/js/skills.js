@@ -6,7 +6,7 @@ let skillsDisplayed = false;
 (function(){
     skillsDisplayOffset = skillsAnchor.offsetTop;
 
-    skills = ["Java - Java Android", "PHP", "JavaScript - jQuery", "HTML - CSS - Bootstrap", "SQL - PL/SQL", "C", "Python", "Bash", "IntelliJ", "Unity", "Git", "Photoshop", "Suite office", "Windows - Linux - Mac OS X"];
+    skills = ["Java - Java Android", "PHP", "JavaScript - jQuery", "HTML - CSS - Bootstrap", "MySQL - PostgreSQL - PL/SQL", "C", "Python", "Bash", "IntelliJ", "Unity", "Git", "Photoshop", "Suite office", "Windows - Linux - Mac OS X"];
     buildSkill();
 
     window.addEventListener("scroll", function(){

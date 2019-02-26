@@ -66,7 +66,7 @@ let projectDisplayerContainer;
     logo = "/public/images/projects/myworkouts.png";
     description = "My Workouts est une application android de gestion d'entrainement de musculation, de crossfit ainsi que de street workout.<br /><br />Grâce au minuteur intégré qui se lance à la fin d'une série vous ne louperez plus jamais vos pauses ! Chaque entrainement effectué sera ajouté à l'historique pour visualiser vos améliorations depuis le début.";
     languages = ["Java"];
-    links = [["Google Play", "https://play.google.com/store/apps/details?id=gorillabox.myworkouts"]];
+    links = [["Site Web", "https://gorillabox.github.io/projects/myworkouts/"], ["Google Play", "https://play.google.com/store/apps/details?id=gorillabox.myworkouts"]];
     backgroundColor = "0bcd62";
     projects.push(new Project(name, logo, description, languages, links, backgroundColor));
 

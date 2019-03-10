@@ -25,6 +25,21 @@ let projectDisplayerContainer;
 	let links;
 	let backgroundColor;
 
+	name = "Événements";
+	logo = "/public/images/projects/event.png";
+	description =
+			"Cette page recense les différents événements de programmation auxquels j'ai participé :<br /><br />"+
+			"Nuit de l'info - 2016 - 2017 - 2018<br />"+
+			"UCAnCODE - 2018<br />"+
+			"Le Shaker Coding Battle - 2017 - 2018<br />"+
+			"Google Hash Code - 2019"
+	languages = ["JAVA", "VueJS", "JavaScript", "C"];
+	links = [
+		["Certificat GHC 2019 (7500 teams)", "/projects/events/ghc_2019.pdf"],
+		];
+	backgroundColor = "2c3e50";
+	projects.push(new Project(name, logo, description, languages, links, backgroundColor));
+
 	name = "Projets Divers";
     logo = "/public/images/projects/divers.png";
     description = 

@@ -1,0 +1,21 @@
+.history-item-container-text{
+    width: 250px;
+}
+.project-item-language-container{
+    width: 24px;
+    height: 24px;
+}
+.project-item-text-container{
+    padding: 5px;
+}
+#information p{
+    font-size: 12pt;
+}
+#information h1{
+    font-size: 15pt;
+}
+#profilePicture{
+    width: 150px;
+    height: 150px;
+    margin: 10px auto;
+}

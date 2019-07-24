@@ -1,0 +1,129 @@
+:root{
+	--blue-light-default: #2d4483;
+	--grey-dark-default: #899798;
+	--grey-light-default: #748081;
+}
+nav{
+	background-color : var(--blue-light-default);
+}
+.bar{
+	background-color: var(--blue-light-default);
+}
+#subContainer{
+	background-color: #242424;
+}
+.navItem{
+	color : white;
+}
+.navItem::after{
+	background-color: white;
+}
+#scrollProgress{
+	background-color: var(--blue-light-default);
+}
+#information h1{
+	color : var(--grey-dark-default);
+}
+#information p{
+	color : var(--grey-light-default);
+}
+#profilePicture{
+	border : 2px solid var(--blue-light-default);
+}
+#skills{
+	background-image: url(/public/assets/images/icon/batman_logo_dark.svg);
+}
+.skill-item{
+	background-color: rgba(0,0,0,0.8);
+	border: 2px solid rgba(0,0,0,0.8);
+	box-shadow: 0 0 0 1px var(--blue-light-default) inset;
+	color : var(--blue-light-default);
+}
+.skill-item:hover{
+	background-color: black;
+	border: 2px solid black;
+	box-shadow: 0 0 0 0 var(--blue-light-default) inset;
+}
+.skill-item::after{
+	background-image: url(/public/assets/images/icon/batman-wing-right-dark.svg);
+}
+.skill-item::before{
+	background-image: url(/public/assets/images/icon/batman-wing-left-dark.svg);
+}
+.skill-item:hover::after, .skill-item:hover::before{
+	opacity: 1;
+}
+#skills-title{
+	color: rgba(255,255,255,0.2);
+}
+#projects{
+	background-color: #2c3e50;
+}
+.project-item:hover{
+	box-shadow: 0 6px 10px 2px rgba(0,0,0,0.3);
+}
+.project-item-text-container{
+	background-color: white;
+}
+.project-item-text{
+	color : #333;
+}
+.project-item-date{
+	color : #474747;
+}
+.project-item-language-infobulle, .contact-item-infobulle{
+	background-color: rgba(0,0,0,0.7);
+	box-shadow: 0 6px 10px 2px rgba(0,0,0,0.3);
+	color : white;
+}
+.project-item-language-infobulle::before, .contact-item-infobulle::before{
+	border-color: transparent transparent rgba(0,0,0,0.7) transparent;
+}
+#project-popup{
+	background-color: #333;
+}
+#cross-container::before, #cross-container::after{
+	background-color: var(--grey-light-default);
+}
+.popup-link, .contact-item{
+	background-color: white;
+}
+.popup-link:hover, .popup-language-container:hover, .contact-item:hover{
+	box-shadow: 0 6px 10px 2px rgba(0,0,0,0.3);
+}
+#popup-right-container, #popup-links-container, .popup-language-container{
+	background-color: white;
+}
+#popup-title, .popup-language-name{
+	color : #333333;
+}
+#popup-text{
+	color: #575757;
+}
+.more-button, .less-button{
+	background-color: white;
+}
+.more-button::before, .more-button::after, .less-button::before{
+	background-color: var(--grey-light-default);
+}
+.history-item-round{
+	border: 3px solid var(--blue-light-default);
+	box-shadow: 0 0 0 3px #333333 inset;
+	background-color: var(--blue-light-default);
+	color : white;
+}
+.history-item-round:hover{
+	box-shadow: 0 0 0 0 #333333 inset;
+}
+.history-item-title{
+	color: var(--grey-dark-default);
+}
+.history-bar{
+	background-color: var(--blue-light-default);
+}
+.history-item-text{
+	color: var(--grey-light-default);
+}
+#contact{
+	background-color: #2c3e50;
+}

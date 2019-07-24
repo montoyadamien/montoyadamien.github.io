@@ -3,7 +3,6 @@ let score;
 
 (function () {
     score = document.getElementById("scoreNumber");
-    let game = document.getElementById("game");
 
     window.addEventListener("resize", function(){
         setSize();
@@ -253,13 +252,18 @@ function checkFinished(){
     //j = colonne;
     //parcours 1 ligne jusqua 3 ligne colonne 1 jusqua 3 colonne
     //parcours
-    for(let i=0;i<3;i++){
-        for(let j=0;j<=3;j++){
-            if(j === 3){
-                if(grille[i+1][j].value === grille[i][j].value || grille[i+1][j].value === "")
+    if(grille[0][0].value === "")
+        return;
+    for(let i=0;i<4;i++){
+        for(let j=0;j<4;j++){
+            if(j !== 3){
+                if(grille[i][j].value === grille[i][j+1].value || grille[i][j+1].value === "")
                     return;
-            }else if(grille[i][j+1].value === grille[i][j].value || grille[i+1][j].value === grille[i][j].value || grille[i+1][j].value === "" || grille[i][j+1].value === "" || grille[i][j].value === "")
+            }
+            if(i !== 3){
+                if(grille[i][j].value === grille[i+1][j].value || grille[i+1][j].value === "")
                     return;
+            }
         }
     }
     displayEnd();

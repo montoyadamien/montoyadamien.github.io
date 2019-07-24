@@ -1,0 +1,56 @@
+.project-item-seconds .project-item .project-item-picture-container{
+    height: 200px;
+}
+.project-item{
+    height: 250px;
+    width: 100%;
+}
+.project-item .project-item-picture-container{
+    height: 200px;
+}
+.skill-item{
+    width: 60px;
+    height: 60px;
+    font-size: 10pt;
+}
+#profilePicture{
+    width: 200px;
+    height: 200px;
+}
+#information h1{
+    font-size: 20pt;
+}
+#information p {
+    font-size: 15pt;
+}
+#history{
+    justify-content: flex-start;
+    padding: 5px 10px;
+}
+.history-item:nth-child(odd) .history-item-title{
+    text-align: left;
+}
+.history-item-container-text{
+    left : calc(50% + 50px);
+}
+.history-item:nth-child(odd) .history-item-container-text{
+    left : calc(50% + 50px);
+    text-align: left;
+    justify-content: flex-start;
+}
+.history-item:nth-child(odd) .history-item-round:hover ~ .history-item-container-text{
+    transform: scale(1.05) translate(20px, 0);
+}
+.history-item-title{
+    font-size: 16pt;
+}
+.history-item-text{
+    font-size: 12pt;
+}
+.history-item-round{
+    width: 80px;
+    height: 80px;
+}
+.history-item-sub-container{
+    width: 80px;
+}

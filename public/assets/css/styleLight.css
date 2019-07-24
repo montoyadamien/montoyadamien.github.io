@@ -1,0 +1,129 @@
+:root{
+	--blue-light-default: #2C82C9;
+	--grey-dark-default: #333333;
+	--grey-light-default: #575757;
+}
+nav{
+	background-color : var(--blue-light-default);
+}
+.bar{
+	background-color: var(--blue-light-default);
+}
+#subContainer{
+	background-color: white;
+}
+.navItem{
+	color : white;
+}
+.navItem::after{
+	background-color: white;
+}
+#scrollProgress{
+	background-color: var(--blue-light-default);
+}
+#information h1{
+	color : var(--grey-dark-default);
+}
+#information p{
+	color : var(--grey-light-default);
+}
+#profilePicture{
+	border : 2px solid var(--blue-light-default);
+}
+#skills{
+	background-image: url(/public/assets/images/icon/batman_logo_light.svg);
+}
+.skill-item{
+	background-color: rgba(255,255,255,0.75);
+	border: 2px solid rgba(255,255,255,0.75);
+	box-shadow: 0 0 0 1px var(--blue-light-default) inset;
+	color : var(--blue-light-default);
+}
+.skill-item:hover{
+	background-color: white;
+	border: 2px solid white;
+	box-shadow: 0 0 0 0 var(--blue-light-default) inset;
+}
+.skill-item::after{
+	background-image: url(/public/assets/images/icon/batman-wing-right-light.svg);
+}
+.skill-item::before{
+	background-image: url(/public/assets/images/icon/batman-wing-left-light.svg);
+}
+.skill-item:hover::after, .skill-item:hover::before{
+	opacity: 0.95;
+}
+#skills-title{
+	color: rgba(0,0,0,0.2);
+}
+#projects{
+	background-color: #616b75;
+}
+.project-item:hover{
+	box-shadow: 0 6px 10px 2px rgba(0,0,0,0.3);
+}
+.project-item-text-container{
+	background-color: white;
+}
+.project-item-text{
+	color : var(--grey-dark-default);
+}
+.project-item-date{
+	color : var(--grey-light-default);
+}
+.project-item-language-infobulle, .contact-item-infobulle{
+	background-color: rgba(0,0,0,0.7);
+	box-shadow: 0 6px 10px 2px rgba(0,0,0,0.3);
+	color : white;
+}
+.project-item-language-infobulle::before, .contact-item-infobulle::before{
+	border-color: transparent transparent rgba(0,0,0,0.7) transparent;
+}
+#project-popup{
+	background-color: var(--grey-light-default);
+}
+#cross-container::before, #cross-container::after{
+	background-color: white;
+}
+.popup-link,.contact-item{
+	background-color: white;
+}
+.popup-link:hover, .popup-language-container:hover, .contact-item:hover{
+	box-shadow: 0 6px 10px 2px rgba(0,0,0,0.3);
+}
+#popup-right-container, #popup-links-container, .popup-language-container{
+	background-color: white;
+}
+#popup-title, .popup-language-name{
+	color : var(--grey-dark-default);
+}
+#popup-text{
+	color: var(--grey-light-default);
+}
+.more-button, .less-button{
+	background-color: white;
+}
+.more-button::before, .more-button::after, .less-button::before{
+	background-color: var(--grey-dark-default);
+}
+.history-item-round{
+	border: 3px solid var(--blue-light-default);
+	box-shadow: 0 0 0 3px white inset;
+	background-color: var(--blue-light-default);
+	color : white;
+}
+.history-item-round:hover{
+	box-shadow: 0 0 0 0 white inset;
+}
+.history-item-title{
+	color: var(--blue-light-default);
+}
+.history-bar{
+	background-color: var(--blue-light-default);
+}
+.history-item-text{
+	color: var(--grey-dark-default);
+}
+#contact{
+	background-color: #616b75;
+}

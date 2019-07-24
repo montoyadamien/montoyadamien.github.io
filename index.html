@@ -21,12 +21,14 @@
     <meta name="theme-color" content="#2C82C9">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-	<link rel="stylesheet" type="text/css" href="/public/style/style.css">
-	<link rel="stylesheet" media="screen and (max-width: 800px)" href="/public/style/style800.css" />
-	<link rel="stylesheet" media="screen and (max-width: 450px)" href="/public/style/style450.css" />
+	<link rel="stylesheet" type="text/css" href="/public/assets/css/style.css">
+	<link rel="stylesheet" type="text/css" media="screen and (max-width: 1100px)" href="/public/assets/css/style1100.css">
+	<link rel="stylesheet" type="text/css" media="screen and (max-width: 750px)" href="/public/assets/css/style750.css">
+	<link rel="stylesheet" type="text/css" media="screen and (max-width: 490px)" href="/public/assets/css/style490.css">
+	<link rel="stylesheet" type="text/css" id="styleColor" href="/public/assets/css/styleLight.css">
 
-	<link rel="icon" type="image/ico" href="/public/images/logo/favicon.ico" />
-	<link rel="icon" type="image/png" sizes="192x192" href="/public/images/logo/favicon.png" />
+	<link rel="icon" type="image/ico" href="/public/assets/images/logo/favicon.ico" />
+	<link rel="icon" type="image/png" sizes="192x192" href="/public/assets/images/logo/favicon.png" />
 </head>
 <body>
 	<nav class="translateHide">
@@ -36,7 +38,7 @@
 			<div id="bar3" class="bar"></div>
 		</div>
 		<div id="navContainer">
-			<a class="navItem" href="#informations">
+			<a class="navItem" href="#information">
 				Informations
 			</a>
             <a class="navItem" href="#skills">
@@ -53,66 +55,149 @@
             </a>
 		</div>
 	</nav>
+	<div id="sun" class="hideSunMoon"><img src="public/assets/images/icon/sun.png" alt="sun" /></div>
+	<div id="moon" class="showSunMoon"><img src="public/assets/images/icon/moon.png" alt="moon" /></div>
 	<div id="container">
 		<div id="scrollProgressContainer" class="untranslateProgressBar">
 			<div id="scrollProgress"></div>
 		</div>
 		<div id="subContainer">
-            <div id="informations">
-                <h1>Damien Montoya</h1>
-                <img id="profilPicture" src="/public/images/banner/profilPicture.jpg">
-                <p>
-                    Je suis actuellement en première année de cycle ingénieur en informatique sur le campus de Polytech Nice-Sophia. J'ai rejoint ce cursus à la suite de l'obtention de mon DUT informatique sur Nice également.
-                    <br /><br />
-                    Je suis passionné par la programmation car le développement informatique est à la fois source de solutions pour les utilisateurs mais également de divertissement et d'innovation.
-                    <br /><br />
-                    J'ai pour ambition de devenir développeur logiciel et/ou jeux vidéo et/ou d'application mobile mais également avoir de solides compétences en matière de développement web.
-                    <br /><br />
-                    Concernant mes loisirs je fais de la musculation depuis plusieurs années après avoir arrêté le BMX.<br />
-                    Je suis fan de comics aux éditions Marvel ainsi que DC Comics tout en appréciant le travail de Dark Horse Comics.<br />
-                    Les jeux vidéo, principalement les triple A sont également un loisir durant mon temps libre.
-                </p>
-            </div>
-            <div id="skills"></div>
-			<div id="projects"></div>
-			<div id="history"></div>
-            <div id="contact">
-				<div id="contactContainer">
-                    <div id="contactRotating">
-                        <div class="contactLink">
-                            <div class="barLink"></div>
-                            <a target="_blank" href="https://github.com/montoyadamien" class="contactLinkInvert">GitHub</a>
-                        </div>
-                        <div class="contactLink">
-                            <div class="barLink"></div>
-                            <a target="_blank" href="https://daminor26.deviantart.com/gallery/" class="contactLinkInvert">DeviantArt</a>
-                        </div>
-                        <div class="contactLink">
-                            <div class="barLink"></div>
-                            <a target="_blank" href="mailto:damien.montoya26@gmail.com" id="mailLink" class="contactLinkInvert">damien.montoya26@gmail.com</a>
-                        </div>
-                        <div class="contactLink">
-                            <div class="barLink"></div>
-                            <a target="_blank" href="https://www.linkedin.com/in/damien-montoya/" class="contactLinkInvert">LinkedIn</a>
-                        </div>
-                    </div>
-                    <div id="contactText">Me contacter</div>
-                </div>
+			<div id="information">
+				<img alt="profile" id="profilePicture" src="/public/assets/images/banner/profilePicture.jpg">
+				<h1 id="profileTitle">Damien Montoya</h1>
+				<p id="profileText">
+					Je suis actuellement en première année de cycle ingénieur en informatique sur le campus de Polytech Nice-Sophia. J'ai rejoint ce cursus à la suite de l'obtention de mon DUT informatique sur Nice également.
+					<br /><br />
+					Je suis passionné par la programmation car le développement informatique est à la fois source de solutions pour les utilisateurs mais également de divertissement et d'innovation.
+					<br /><br />
+					J'ai pour ambition de devenir développeur logiciel et/ou jeux vidéo et/ou d'application mobile mais également avoir de solides compétences en matière de développement web.
+					<br /><br />
+					Concernant mes loisirs je fais de la musculation depuis plusieurs années après avoir arrêté le BMX.<br />
+					Je suis fan de comics aux éditions Marvel ainsi que DC Comics tout en appréciant le travail de Dark Horse Comics.<br />
+					Les jeux vidéo, principalement les triple A sont également un loisir durant mon temps libre.
+				</p>
+			</div>
+			<div id="skills">
+				<h1 id="skills-title">Mes compétences</h1>
+			</div>
+			<div id="projects">
+				<div id="projects-container"></div>
+			</div>
+			<div id="history">
+				<div id="history-container">
+					<div class="history-item">
+						<div class="history-item-sub-container">
+							<div class="history-item-round">
+								2018 à 2021
+							</div>
+							<div class="history-item-container-text">
+								<h3 class="history-item-title">Diplôme Ingénieur en Informatique</h3>
+								<div class="history-item-text">Polytech Nice Sophia</div>
+							</div>
+							<div class="history-bar"></div>
+						</div>
+					</div>
+					<div class="history-item">
+						<div class="history-item-sub-container">
+							<div class="history-item-round">
+								2018
+							</div>
+							<div class="history-item-container-text">
+								<h3 class="history-item-title">Stage DUT Informatique</h3>
+								<div class="history-item-text">Da Nang University of Technology - Vietnam</div>
+							</div>
+							<div class="history-bar"></div>
+						</div>
+					</div>
+					<div class="history-item">
+						<div class="history-item-sub-container">
+							<div class="history-item-round">
+								2017
+							</div>
+							<div class="history-item-container-text">
+								<h3 class="history-item-title">Emploi saisonnier</h3>
+								<div class="history-item-text">Société Générale Carpentras</div>
+							</div>
+							<div class="history-bar"></div>
+						</div>
+					</div>
+					<div class="history-item">
+						<div class="history-item-sub-container">
+							<div class="history-item-round">
+								2016 à 2018
+							</div>
+							<div class="history-item-container-text">
+								<h3 class="history-item-title">DUT Informatique</h3>
+								<div class="history-item-text">Nice Côte d'Azur</div>
+							</div>
+							<div class="history-bar"></div>
+						</div>
+					</div>
+					<div class="history-item">
+						<div class="history-item-sub-container">
+							<div class="history-item-round">
+								2016
+							</div>
+							<div class="history-item-container-text">
+								<h3 class="history-item-title">Certificat</h3>
+								<div class="history-item-text">Google Digital Active</div>
+							</div>
+							<div class="history-bar"></div>
+						</div>
+					</div>
+					<div class="history-item">
+						<div class="history-item-sub-container">
+							<div class="history-item-round">
+								2016
+							</div>
+							<div class="history-item-container-text">
+								<h3 class="history-item-title">Emploi saisonnier</h3>
+								<div class="history-item-text">Société Générale Fréjus</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="contact">
+				<div id="contact-container">
+					<div class="contact-sub-container">
+						<a target="_blank" href="https://daminor26.deviantart.com/gallery/" class="contact-item">
+							<img src="/public/assets/images/contact/deviantart.png" alt="contact" />
+							<div class="contact-item-infobulle">
+								DeviantArt
+							</div>
+						</a>
+						<a target="_blank" href="https://github.com/montoyadamien" class="contact-item">
+							<img src="/public/assets/images/contact/github.png" alt="contact" />
+							<div class="contact-item-infobulle">
+								GitHub
+							</div>
+						</a>
+					</div>
+					<div class="contact-sub-container">
+						<a target="_blank" href="https://www.linkedin.com/in/damien-montoya/" class="contact-item">
+							<img src="/public/assets/images/contact/linkedin.png" alt="contact" />
+							<div class="contact-item-infobulle">
+								LinkedIn
+							</div>
+						</a>
+						<a target="_blank" href="mailto:damien.montoya26@gmail.com" class="contact-item">
+							<img src="/public/assets/images/contact/mail.png" alt="contact" />
+							<div class="contact-item-infobulle">
+								Mail
+							</div>
+						</a>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
-    <div id="projectDisplayerContainer" class="height0">
-	    <div id="projectDisplayer" class="leftSlide">
-		<div id="arrowContainer">
-			<div></div>
-		</div>
-		<div id="projectDisplayerContent"></div>
-	</div>
-    </div>
-	<script type="text/javascript" src="/public/js/nav.js"></script>
-	<script type="text/javascript" src="/public/js/skills.js"></script>
-	<script type="text/javascript" src="/public/js/projects.js"></script>
-	<script type="text/javascript" src="/public/js/history.js"></script>
-	<script type="text/javascript" src="/public/js/scroll.js"></script>
+	<script type="text/javascript" src="/public/assets/js/nav.js"></script>
+	<script type="text/javascript" src="/public/assets/js/utils.js"></script>
+	<script type="text/javascript" src="/public/assets/js/information.js"></script>
+	<script type="text/javascript" src="/public/assets/js/skills.js"></script>
+	<script type="text/javascript" src="/public/assets/js/projects.js"></script>
+	<script type="text/javascript" src="/public/assets/js/history.js"></script>
+	<script type="text/javascript" src="/public/assets/js/scroll.js"></script>
 </body>
 </html>

@@ -10,15 +10,47 @@ let scrollProgressContainer;
 let clientScrollHeight = 0;
 let progressPercent;
 let container;
-let projectDisplayer;
-let arrowContainer;
-let projectDisplayerContent;
-let events = [];
 let informationAnchor;
 let skillsAnchor;
 let projectsAnchor;
 let historyAnchor;
 let contactAnchor;
+
+let sun;
+let moon;
+let styelColor;
+
+function setSun(){
+	moon.classList.remove("hideSunMoon");
+	moon.classList.add("showSunMoon");
+	sun.classList.remove("showSunMoon");
+	sun.classList.add("hideSunMoon");
+	styelColor.href="/public/assets/css/styleLight.css";
+}
+
+function setMoon(){
+	sun.classList.remove("hideSunMoon");
+	sun.classList.add("showSunMoon");
+	moon.classList.remove("showSunMoon");
+	moon.classList.add("hideSunMoon");
+	styelColor.href="/public/assets/css/styleDark.css";
+}
+
+function getCookie(cname) {
+	let name = cname + "=";
+	let decodedCookie = decodeURIComponent(document.cookie);
+	let ca = decodedCookie.split(';');
+	for(let i = 0; i <ca.length; i++) {
+		let c = ca[i];
+		while (c.charAt(0) === ' ') {
+			c = c.substring(1);
+		}
+		if (c.indexOf(name) === 0) {
+			return c.substring(name.length, c.length);
+		}
+	}
+	return "";
+}
 
 (function(){
 	nav = document.getElementsByTagName("nav")[0];
@@ -28,14 +60,36 @@ let contactAnchor;
 	bars = document.getElementsByClassName("bar");
 	scrollProgress = document.getElementById("scrollProgress");
 	scrollProgressContainer = document.getElementById("scrollProgressContainer");
+
+	sun = document.getElementById("sun");
+	moon = document.getElementById("moon");
+	styelColor = document.getElementById("styleColor");
+
+	let durationCookie = new Date();
+	durationCookie.setTime(durationCookie.getTime() + (3600*24*365*1000));
+	let expires = "expires="+ durationCookie.toUTCString();
+
+	let cookie = getCookie("theme");
+	if(cookie !== "" && cookie === "moon"){
+		setMoon();
+	}
+
+	sun.addEventListener("click", function(){
+		setSun();
+		document.cookie = "theme=sun; expires="+expires+"; path=/";
+	});
+
+	moon.addEventListener("click", function(){
+		setMoon();
+		document.cookie = "theme=moon; expires="+expires+"; path=/";
+	});
+
     contactAnchor = document.getElementById("contact");
     skillsAnchor = document.getElementById("skills");
-    informationAnchor = document.getElementById("informations");
+    informationAnchor = document.getElementById("information");
 	projectsAnchor = document.getElementById("projects");
 	historyAnchor = document.getElementById("history");
-	projectDisplayer = document.getElementById("projectDisplayer");
-	arrowContainer = document.getElementById("arrowContainer");
-	projectDisplayerContent = document.getElementById("projectDisplayerContent");
+
 	body = document.body;
     html = document.documentElement;
 
@@ -48,7 +102,6 @@ let contactAnchor;
 
 	body.addEventListener("click", function(e){
         if(!nav.classList.contains("translateHide")){
-            console.log("test");
             if(e.target !== nav && e.target.parentNode != null && e.target.parentNode !== nav && e.target.parentNode.parentNode !== nav)
                 closeMenu(true);
         }

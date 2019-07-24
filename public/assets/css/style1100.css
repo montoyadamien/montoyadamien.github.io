@@ -1,0 +1,36 @@
+.project-item-seconds{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.project-item-seconds .project-item .project-item-picture-container{
+    height: 200px;
+}
+.project-item-seconds .project-item:first-child{
+    margin : 2px 1px 0 0
+}
+.project-item-seconds .project-item:last-child{
+    margin : 2px 0 0 1px;
+}
+.project-item-first{
+    height: 400px;
+}
+.project-item-first .project-item-picture-container{
+    height: 350px;
+}
+#popup-left-container{
+    width: 800px;
+    max-width: 100%;
+}
+#popup-links-container{
+    justify-content: center;
+}
+.skill-item{
+    width: 70px;
+    height: 70px;
+    font-size: 11pt;
+}
+#information p{
+    font-size: 16pt;
+}

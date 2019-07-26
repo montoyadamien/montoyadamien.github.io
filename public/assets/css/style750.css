@@ -1,3 +1,6 @@
+#projects{
+    padding: 20px 20px 100px 20px;
+}
 .project-item-seconds .project-item .project-item-picture-container{
     height: 200px;
 }
@@ -5,13 +8,17 @@
     height: 250px;
     width: 100%;
 }
+.more-button, .less-button{
+    right : 2%;
+    bottom : 2%;
+}
 .project-item .project-item-picture-container{
     height: 200px;
 }
 .skill-item{
     width: 60px;
     height: 60px;
-    font-size: 10pt;
+    font-size: 9pt;
 }
 #profilePicture{
     width: 200px;
@@ -53,4 +60,20 @@
 }
 .history-item-sub-container{
     width: 80px;
+}
+#popup-right-container{
+    padding: 5px 10px;
+}
+#popup-title{
+    font-size: 30pt;
+}
+#popup-text{
+    font-size: 16pt;
+}
+.popup-language-container{
+    width: 150px;
+    height: 150px;
+}
+.popup-language-picture-container{
+    height: 120px;
 }

@@ -36,13 +36,14 @@ nav{
 .skill-item{
 	background-color: rgba(255,255,255,0.75);
 	border: 2px solid rgba(255,255,255,0.75);
-	box-shadow: 0 0 0 1px var(--blue-light-default) inset;
+	/*box-shadow: 0 0 0 1px var(--blue-light-default) inset;*/
 	color : var(--blue-light-default);
 }
 .skill-item:hover{
 	background-color: white;
 	border: 2px solid white;
-	box-shadow: 0 0 0 0 var(--blue-light-default) inset;
+	/*box-shadow: 0 0 0 0 var(--blue-light-default) inset;*/
+	box-shadow: 0 3px 10px 2px rgba(0,0,0,0.3);
 }
 .skill-item::after{
 	background-image: url(/public/assets/images/icon/batman-wing-right-light.svg);

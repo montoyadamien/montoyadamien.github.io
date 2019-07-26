@@ -186,11 +186,6 @@ a{
 .skill-item{
 	width: 100px;
 	height: 100px;
-	/*
-	background-color: white;
-	border: 2px solid white;
-	box-shadow: 0 0 0 1px var(--blue-light) inset;
-	*/
 	position: absolute;
 	border-radius: 50%;
 	display: flex;
@@ -198,6 +193,7 @@ a{
 	align-items: center;
 	font-size: 14pt;
 	text-align: center;
+	z-index: 2;
 }
 .skill-item:hover{
 	cursor: default;
@@ -666,12 +662,13 @@ img{
 	min-height: 100vh;
 	flex-wrap: wrap;
 }
-.contact-sub-container{
+#contact-container{
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-wrap: wrap;
-	width: 100%;
+	width: 456px;
+	max-width: 100%;
 }
 .contact-item{
 	width: 150px;
@@ -682,6 +679,7 @@ img{
 	transition: 0.2s;
 	justify-content: center;
 	align-items: center;
+	opacity: 0;
 }
 .contact-item:hover{
 	transform: scale(1.08);

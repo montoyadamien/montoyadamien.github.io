@@ -42,7 +42,8 @@ const LANGUAGES_ENUM = {
     ANDROID : new Language("Android", "android.png"),
     JQUERY : new Language("jQuery", "jquery.png"),
     VUEJS : new Language("vueJs", "vuejs.png"),
-    C : new Language("C", "c.png")
+    C : new Language("C", "c.png"),
+    SYMFONY : new Language("Symfony", "symfony.png")
 };
 
 const LINKS_LOGO_ENUM = {
@@ -50,7 +51,8 @@ const LINKS_LOGO_ENUM = {
     WEBSITE : "website.png",
     FACEBOOK : "facebook.png",
     TWITTER : "twitter.png",
-    FILE : "file.png"
+    FILE : "file.png",
+    LINKEDIN : "linkedin.png"
 };
 
 (function(){
@@ -94,7 +96,7 @@ function pushProjects(){
                     [LANGUAGES_ENUM.VUEJS, LANGUAGES_ENUM.JAVASCRIPT, LANGUAGES_ENUM.JAVA, LANGUAGES_ENUM.C],
                     [
                             new Link("Certificat GHC 2019 (1523/7500)", LINKS_LOGO_ENUM.FILE, "/projects/events/ghc_2019.pdf")
-                    ],"2980b9","2017 - ?"));
+                    ],"16a085","2017 - ?"));
 
     description =
             "Pong : chaque joueur contrôlant une raquette doit faire rebondir la balle sinon il perd. Se joue avec Z et A ainsi que Haut et Bas.<br /><br />"+
@@ -117,15 +119,28 @@ function pushProjects(){
             ], "16a085", "2017 - ?"));
 
     description =
+            "Durant mon stage de première année à Polytech Nice-Sophia j'ai travaillé pour la Junior-Entreprise Polytech Nice Conseil.<br ><br >"+
+            "J'ai eu pour mission de développer leur site web, la partie front ainsi que la partie back-end. J'ai choisi d'utiliser Symfony pour apprendre à utiliser ce framework.";
+    projects.push(
+            new Project("Polytech Nice Conseil", "pnc.png", description,
+                    [LANGUAGES_ENUM.JAVASCRIPT, LANGUAGES_ENUM.SYMFONY, LANGUAGES_ENUM.PHP, LANGUAGES_ENUM.MYSQL],
+                    [
+                        new Link("Twitter", LINKS_LOGO_ENUM.TWITTER, "https://twitter.com/PolytechConseil"),
+                        new Link("Facebook", LINKS_LOGO_ENUM.FACEBOOK, "https://www.facebook.com/PolytechNiceConseil/"),
+                        new Link("LinkedIn", LINKS_LOGO_ENUM.LINKEDIN, "https://www.linkedin.com/company/polytech-nice-conseil/"),
+                        new Link("Site web", LINKS_LOGO_ENUM.WEBSITE, "https://polytechniceconseil.com")
+                    ], "007cbc", "2019"));
+
+    description =
             "MyWorkouts est une application android de gestion d'entrainement de musculation, de crossfit ainsi que de street workout.<br /><br />" +
-            "Grâce au minuteur intégré qui se lance à la fin d'une série vous ne louperez plus jamais vos pauses ! Chaque entrainement effectué sera ajouté à l'historique pour visualiser vos améliorations depuis le début.";
+            "L'application m'a permis de développer un minuteur lié à un système de notifications ainsi qu'un historique pour les entraînements.";
     projects.push(
             new Project("MyWorkouts", "myworkouts.png", description,
             [LANGUAGES_ENUM.JAVA, LANGUAGES_ENUM.ANDROID],
             [
                 new Link("Site web", LINKS_LOGO_ENUM.WEBSITE, "https://gorillabox.github.io/projects/myworkouts/"),
                 new Link("Google Play", LINKS_LOGO_ENUM.GOOGLE_PLAY, "https://play.google.com/store/apps/details?id=gorillabox.myworkouts")
-            ], "0bcd62", "2017 - ?"));
+            ], "0bcd62", "2017 - 2018"));
 
     description =
             "Le site web est une vitrine pour un garage automobile contenant diverses informations sur celui-ci.<br /><br />" +
@@ -173,6 +188,12 @@ function buildThreeFirstProjects(){
     let first = document.createElement("div");
     first.classList.add("project-item");
     first.classList.add("project-item-first");
+
+        let date = document.createElement("div");
+        date.classList.add("project-item-date");
+        date.appendChild(document.createTextNode(projects[0].date));
+        first.appendChild(date);
+
         let subContainer = document.createElement("div");
         subContainer.classList.add("project-item-picture-container");
         subContainer.style.backgroundColor = "#"+projects[0].backgroundColor;
@@ -189,11 +210,6 @@ function buildThreeFirstProjects(){
                 text.classList.add("project-item-text");
                 text.appendChild(document.createTextNode(projects[0].name));
                 textSubContainer.appendChild(text);
-
-                let date = document.createElement("div");
-                date.classList.add("project-item-date");
-                date.appendChild(document.createTextNode(projects[0].date));
-                textSubContainer.appendChild(date);
             textContainer.appendChild(textSubContainer);
             let languages = document.createElement("div");
             languages.classList.add("project-item-languages-container");
@@ -236,6 +252,12 @@ function buildProjects(){
 function buildProject(project){
     let item = document.createElement("div");
     item.classList.add("project-item");
+
+    let date = document.createElement("div");
+    date.classList.add("project-item-date");
+    date.appendChild(document.createTextNode(project.date));
+    item.appendChild(date);
+
     let subContainer = document.createElement("div");
     subContainer.classList.add("project-item-picture-container");
     subContainer.style.backgroundColor = "#"+project.backgroundColor;
@@ -252,11 +274,6 @@ function buildProject(project){
             text.classList.add("project-item-text");
             text.appendChild(document.createTextNode(project.name));
             textSubContainer.appendChild(text);
-
-            let date = document.createElement("div");
-            date.classList.add("project-item-date");
-            date.appendChild(document.createTextNode(project.date));
-        textSubContainer.appendChild(date);
         textContainer.appendChild(textSubContainer);
         let languages = document.createElement("div");
         languages.classList.add("project-item-languages-container");
@@ -404,9 +421,6 @@ function displayMore(){
     for(let i = numberProjectsToDisplay; i<projects.length; i++){
         let project = buildProject(projects[i]);
         projectsContainer.append(project);
-        project.addEventListener("click", function(e){
-            clickOnProject(projects[i], e);
-        });
         project.style.animation = "opacity 0.4s linear forwards "+delay+"s";
         delay += 0.4;
     }

@@ -18,14 +18,16 @@ let contactAnchor;
 
 let sun;
 let moon;
-let styelColor;
+let styleColor;
+let colorThemeMeta;
 
 function setSun(){
 	moon.classList.remove("hideSunMoon");
 	moon.classList.add("showSunMoon");
 	sun.classList.remove("showSunMoon");
 	sun.classList.add("hideSunMoon");
-	styelColor.href="/public/assets/css/styleLight.css";
+	styleColor.href="/public/assets/css/styleLight.css";
+	colorThemeMeta.content = "#2C82C9";
 }
 
 function setMoon(){
@@ -33,7 +35,8 @@ function setMoon(){
 	sun.classList.add("showSunMoon");
 	moon.classList.remove("showSunMoon");
 	moon.classList.add("hideSunMoon");
-	styelColor.href="/public/assets/css/styleDark.css";
+	styleColor.href="/public/assets/css/styleDark.css";
+	colorThemeMeta.content = "#2d4483";
 }
 
 function getCookie(cname) {
@@ -63,7 +66,8 @@ function getCookie(cname) {
 
 	sun = document.getElementById("sun");
 	moon = document.getElementById("moon");
-	styelColor = document.getElementById("styleColor");
+	styleColor = document.getElementById("styleColor");
+	colorThemeMeta = document.getElementById("themeColor");
 
 	let durationCookie = new Date();
 	durationCookie.setTime(durationCookie.getTime() + (3600*24*365*1000));

@@ -70,7 +70,7 @@ nav{
 	color : var(--grey-dark-default);
 }
 .project-item-date{
-	color : var(--grey-light-default);
+	color : rgba(255,255,255,0.8);
 }
 .project-item-language-infobulle, .contact-item-infobulle{
 	background-color: rgba(0,0,0,0.7);

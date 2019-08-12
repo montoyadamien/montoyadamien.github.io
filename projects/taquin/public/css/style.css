@@ -1,18 +1,26 @@
+:root{
+    --dark-green : #16a085;
+}
+
 @font-face {
     font-family: "Trebuchet MS";
-    src: url('/public/fonts/trebuchet_ms.ttf') format('truetype');
+    src: url(../fonts/trebuchet_ms.ttf) format('truetype');
     font-weight : normal;
     font-style : normal;
 }
 body {
+    height: 100vh;
 	margin: 0;
 	padding: 0;
-    background-color: #2c3e50;
+    background-color: var(--dark-green);
     display : flex;
     justify-content: center;
+    align-items: center;
     font-family: "Trebuchet MS", serif;
+    overflow: hidden;
 }
 #game{
+    position: relative;
     box-sizing: border-box;
     border: 1px solid;
 	margin:0;
@@ -21,22 +29,31 @@ body {
     color : white;
 }
 .case {
+    position: absolute;
     cursor : pointer;
-    border: 1px solid;
-    background-color:rgba(255,255,255,0.15);
+    border: 1px solid var(--dark-green);
+    background-color: #1abc9c;
 	margin:0;
 	padding: 0;
 	width: calc(100% / 3);
-	height:100%;
-	z-index:1;
+	height: calc(100% / 3);
+	z-index:2;
+    box-sizing: border-box;
     display : flex;
     justify-content: center;
     align-items: center;
     font-size: 25px;
+    transition: 0.2s;
+    user-select: none; /* supported by Chrome and Opera */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
 }
-.vide {
-    background-color:rgba(255,255,255,0.05);
-	cursor : default;
+.vide{
+    cursor: initial;
+    z-index: 1;
+    background-color: var(--dark-green);
 }
 .line{
     display : flex;
@@ -66,7 +83,7 @@ body {
     color : white;
     font-size: 25px;
     position: absolute;
-    top : 10%;
-    left : 10%;
+    top: 2%;
+    left: 2%;
     z-index: 12;
 }

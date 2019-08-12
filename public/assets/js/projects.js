@@ -111,11 +111,12 @@ function pushProjects(){
             [
                     new Link("Pong", LINKS_LOGO_ENUM.FILE, "/projects/pong/index.html"),
                     new Link("Dames", LINKS_LOGO_ENUM.FILE, "/projects/dames/index.html"),
-                    new Link("Taquin", LINKS_LOGO_ENUM.FILE, "/projects/taquin/index.html"),
                     new Link("2048", LINKS_LOGO_ENUM.FILE, "/projects/2048/index.html"),
+                    new Link("Taquin", LINKS_LOGO_ENUM.FILE, "/projects/taquin/index.html"),
                     new Link("Sudoku", LINKS_LOGO_ENUM.FILE, "/projects/sudoku/index.html"),
-                    new Link("Carnet de bord", LINKS_LOGO_ENUM.FILE, "/projects/carnetdebord/index.html"),
-                new Link("Carnet de bord v2", LINKS_LOGO_ENUM.FILE, "/projects/carnetdebordCPOO/index.html")
+                    new Link("Carnet de bord v2", LINKS_LOGO_ENUM.FILE, "/projects/carnetdebordCPOO/index.html"),
+                    new Link("Carnet de bord", LINKS_LOGO_ENUM.FILE, "/projects/carnetdebord/index.html")
+
             ], "16a085", "2017 - ?"));
 
     description =

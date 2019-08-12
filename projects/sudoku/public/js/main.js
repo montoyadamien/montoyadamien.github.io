@@ -5,8 +5,6 @@ let minutesSpan;
 let secondsSpan;
 let timerVar;
 
-//utiliser ce site https://www.dewep.net/realisations/creer-un-generateur-de-grilles-de-sudoku-en-javascript
-
 (function(){
     refreshGrid();
     minutesSpan = document.getElementById("minutes");
@@ -93,7 +91,7 @@ function launchGame(){
             let k = 0;
             do{
                 number = getRandomInt(9)+1;
-                if(k>100){ //TODO bug conditions de placement a revoir
+                if(k>100){
                     refresh();
                     return;
                 }

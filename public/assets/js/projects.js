@@ -95,16 +95,18 @@ function pushProjects(){
             new Project("Événements", "event.png", description,
                     [LANGUAGES_ENUM.VUEJS, LANGUAGES_ENUM.JAVASCRIPT, LANGUAGES_ENUM.JAVA, LANGUAGES_ENUM.C],
                     [
-                            new Link("Certificat GHC 2019 (1523/7500)", LINKS_LOGO_ENUM.FILE, "/projects/events/ghc_2019.pdf")
+                            new Link("Certificat GHC 2019 (1523/7500)", LINKS_LOGO_ENUM.FILE, "/public/events/ghc_2019.pdf")
                     ],"16a085","2017 - ?"));
 
     description =
-            "Pong : chaque joueur contrôlant une raquette doit faire rebondir la balle sinon il perd. Se joue avec Z et A ainsi que Haut et Bas.<br /><br />"+
-            "Taquin : le but de ce jeu est le déplacement d'élements pour reconstituer une suite. Le jeu se jou au click via la souris.<br /><br />" +
-            "2048 : le but du jeu est de coupler des tuiles de même valeur pour en obtenir de plus grandes. Se joue avec les touches Haut, Bas, Gauche et Droite.<br /><br />" +
-            "Sudoku : le but est de compléter la grille avec des nombres ne se trouvant que sur une ligne, sur une colonne et dans un groupe de 9 cases.<br /><br />" +
             "Carnet de bord : c'est un mini cours rédigé dans le cadre d'un TP dans le but d'apprendre la programmation orientée objet.<br /><br />" +
-            "Carnet de bord v2 : c'est un mini cours rédigé dans le cadre d'un TP dans le but d'apprendre la programmation orientée objet d'une manière plus évoluée.";
+            "Carnet de bord v2 : même cadre qu'au dessus mais d'une manière plus évoluée.<br /><br />"+
+            "Sudoku : le but est de compléter la grille avec des nombres ne se trouvant que sur une ligne, sur une colonne et dans un groupe de 9 cases.<br /><br />"+
+            "Taquin : le but de ce jeu est le déplacement d'élements pour reconstituer une suite.<br /><br />" +
+            "2048 : le but du jeu est de coupler des tuiles de même valeur pour en obtenir de plus grandes. Se joue avec les touches Haut, Bas, Gauche et Droite.<br /><br />" +
+            "Dames : le but est de manger les pions adverses en sautant par dessus en diagonale.<br /><br />"+
+            "Pong : chaque joueur contrôlant une raquette doit faire rebondir la balle sinon il perd. Se joue avec Z et A ainsi que Haut et Bas."
+            ;
     projects.push(
             new Project("Projets Divers","divers.png", description,
             [LANGUAGES_ENUM.JAVASCRIPT, LANGUAGES_ENUM.JAVA],

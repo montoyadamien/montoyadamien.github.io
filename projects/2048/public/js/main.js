@@ -1,14 +1,27 @@
 let grille = [];
+let scoreNumber;
+
+let blackContainer;
+let buttonRefresh;
 let score;
 
 (function () {
-    score = document.getElementById("scoreNumber");
+    scoreNumber = document.getElementById("scoreNumber");
+
+    blackContainer = document.getElementById("black-container");
+    buttonRefresh = document.getElementById("refresh-game");
+    buttonRefresh.addEventListener("click", clickOnRefresh);
+    score = document.getElementById("score");
 
     window.addEventListener("resize", function(){
         setSize();
     });
     setSize();
 
+    launchGame();
+})();
+
+function launchGame(){
     for(let i=0;i<=3;i++){
         grille[i] = [];
         for(let j=0;j<=3;j++){
@@ -19,7 +32,7 @@ let score;
     InsertValue(2, getEmptyCase());
     displayGrid();
     document.addEventListener("keydown", actionClavier);
-})();
+}
 
 function setSize(){
     let x = window.innerWidth;
@@ -269,16 +282,6 @@ function checkFinished(){
     displayEnd();
 }
 
-function displayEnd(){
-    document.removeEventListener("keydown", actionClavier)
-    let body = document.body;
-    let div = document.createElement("div");
-    div.id="gameOver";
-    div.appendChild(document.createTextNode("Game Over !"));
-    body.appendChild(div);
-}
-
-
 function switchValue(case1, case2){
 	case1.value = case2.value;
 }
@@ -289,7 +292,7 @@ function emptyCase(ACase){
 
 function addValue(case1, case2){
     let value = parseInt(case1.value)+parseInt(case2.value);
-    score.innerText = parseInt(score.innerText)+value;
+    scoreNumber.innerText = parseInt(scoreNumber.innerText)+value;
 
 	case1.value = value;
 }
@@ -311,4 +314,33 @@ function InsertValue(value, coordinates){
 function Coordinates(x,y){
 	this.x = x;
 	this.y = y;
+}
+
+function displayEnd(){
+    document.removeEventListener("keydown", actionClavier)
+    score.classList.add("z-index12");
+    blackContainer.removeEventListener("animationend", blackContainerEventHide);
+    blackContainer.classList.remove("display-none");
+    blackContainer.style.animation = "opacityShow 0.1s linear forwards";
+}
+
+function blackContainerEventHide(){
+    blackContainer.classList.add("display-none");
+}
+
+function clickOnRefresh(){
+    grille = [];
+
+    scoreNumber.innerText = 0;
+
+    let cases = document.querySelectorAll(".case");
+    for(let i=0;i<16;i++){
+        cases[i].className = "";
+        cases[i].classList.add("case")
+    }
+
+    launchGame();
+    score.classList.remove("z-index12");
+    blackContainer.addEventListener("animationend", blackContainerEventHide);
+    blackContainer.style.animation = "opacityHide 0.1s linear forwards";
 }

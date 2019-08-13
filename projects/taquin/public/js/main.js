@@ -163,6 +163,7 @@ function blackContainerEventHide(){
 
 function clickOnRefresh(){
     cases = [];
+    scoreNumber.innerText = 0;
     launchGame();
     score.classList.remove("z-index12");
     blackContainer.addEventListener("animationend", blackContainerEventHide);

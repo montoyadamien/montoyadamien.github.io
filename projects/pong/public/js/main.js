@@ -13,14 +13,26 @@ let ONEPLAYERE = "ONEPLAYER_EASY";
 let ONEPLAYERD = "ONEPLAYER_DIFFICULT";
 let TWOPLAYER = "TWOPLAYER";
 
-let iaOrTwoPlayers;
-let replay;
+let blackContainer;
+let buttonRefresh;
 
 let start;
 let span3;
 let span2;
 let span1;
-let winner;
+
+let playerEasyButton;
+let playerHardButton;
+let doublePlayersButton;
+let endGameText;
+
+let arrowDown;
+let arrowUp;
+
+let arrowUpTouched = false;
+let arrowDownTouched = false;
+
+let elementsColor = "#16a085";
 
 let game = {
         start : function() {
@@ -67,7 +79,6 @@ function launchBall(){
         playerToRecupBall = player2;
 
     ball.direction = [moveHorizontal, moveVertical]
-
 }
 
 function getRandomInt(max) {
@@ -81,9 +92,8 @@ function Player(x, y, width, height, name){
     this.width = width;
     this.height = height;
     this.acceleration = 0;
-    this.calculatedPath = null;
     this.update = function(){
-        canvasContext.fillStyle = "#2c3e50";
+        canvasContext.fillStyle = elementsColor;
         canvasContext.fillRect(this.x, this.y, this.width, this.height);
     };
     this.move = function(top){
@@ -146,7 +156,7 @@ function Ball(x, y, radius){
             this.direction[1] *= -1;
         }
         //joueur a pas recup la balle
-        canvasContext.fillStyle = "#2c3e50";
+        canvasContext.fillStyle = elementsColor;
         canvasContext.beginPath();
         canvasContext.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
         canvasContext.fill();
@@ -163,13 +173,6 @@ function Ball(x, y, radius){
     };
 }
 
-function endGame(){
-    clearInterval(game.interval);
-    invertPlayerToRecupBall();
-    winner.innerText = "Gagnant : "+playerToRecupBall.name;
-    show(replay);
-}
-
 function invertPlayerToRecupBall(){
     if(playerToRecupBall === player1)
         playerToRecupBall = player2;
@@ -179,9 +182,13 @@ function invertPlayerToRecupBall(){
 
 function updateGame() {
     game.clear();
-    if (game.keys && game.keys["ArrowUp"]) {player2.move(-1); }
-    else if (game.keys && game.keys["ArrowDown"]) {player2.move(1); }
-    else player2.acceleration = 0;
+    if ((game.keys && game.keys["ArrowUp"]) || arrowUpTouched) {
+        player2.move(-1);
+    } else if ((game.keys && game.keys["ArrowDown"]) || arrowDownTouched) {
+        player2.move(1);
+    } else
+        player2.acceleration = 0;
+
     if(gameType === TWOPLAYER){
         if (game.keys && game.keys["z"]) {player1.move(-1); }
         else if (game.keys && game.keys["s"]) {player1.move(1); }
@@ -219,9 +226,6 @@ function moveIaDifficult(){
         if(player1.y > 0 && player1.calculatedPath-ball.radius < player1.y+(player1.height/2)){
             player1.move(-1);
         }
-
-        console.log("bas balle : "+player1.calculatedPath+ball.radius);
-        console.log("Y player : "+player1.y);
 
         if(player1.y + player1.height < canvasHeight && player1.calculatedPath+ball.radius > player1.y+(player1.height/2)){
             player1.move(1);
@@ -272,35 +276,59 @@ function initGame(){
 }
 
 (function(){
+    if (navigator.userAgent.match(/(android|iphone|blackberry|symbian|symbianos|symbos|netfront|model-orange|javaplatform|iemobile|windows phone|samsung|htc|opera mobile|opera mobi|opera mini|presto|huawei|blazer|bolt|doris|fennec|gobrowser|iris|maemo browser|mib|cldc|minimo|semc-browser|skyfire|teashark|teleca|uzard|uzardweb|meego|nokia|bb10|playbook)/gi)) {
+        arrowDown = document.getElementById("arrow-down");
+        arrowUp = document.getElementById("arrow-up");
+        arrowDown.classList.remove("display-none");
+        arrowUp.classList.remove("display-none");
+        arrowDown.addEventListener("touchstart", function(e){
+            e.preventDefault();
+           arrowDownTouched = true;
+        });
+        arrowDown.addEventListener("touchend", function(e){
+            e.preventDefault();
+            arrowDownTouched = false;
+        });
+        arrowUp.addEventListener("touchstart", function(e){
+            e.preventDefault();
+            arrowUpTouched = true;
+        });
+        arrowUp.addEventListener("touchend", function(e){
+            e.preventDefault();
+            arrowDownTouched = false;
+        });
+    }
+
     canvas = document.getElementById("canvasGame");
     canvasContext = canvas.getContext("2d");
 
     initGame();
 
     start = document.getElementById("start");
-    span3 = document.getElementById("3");
-    span2 = document.getElementById("2");
-    span1 = document.getElementById("1");
-    winner = document.getElementById("winner");
+    span3 = document.getElementById("span3");
+    span2 = document.getElementById("span2");
+    span1 = document.getElementById("span1");
 
-    iaOrTwoPlayers = document.getElementById("iaOrTwoPlayers");
-    replay = document.getElementById("replay");
+    blackContainer = document.getElementById("black-container");
+    buttonRefresh = document.getElementById("refresh-game");
+    playerEasyButton = document.getElementById("player-easy");
+    playerHardButton = document.getElementById("player-hard");
+    doublePlayersButton = document.getElementById("two-players");
+    endGameText = document.getElementById("end-game-text");
 
-    replay.addEventListener("click", function(){
-       reloadGame();
-    });
+    buttonRefresh.addEventListener("click", clickOnRefresh);
 
-    document.getElementById("onePlayerE").addEventListener("click", function(){
+    playerEasyButton.addEventListener("click", function(){
         gameType = ONEPLAYERE;
-        hide(iaOrTwoPlayers);
+        selectGameType();
     });
-    document.getElementById("onePlayerD").addEventListener("click", function(){
+    playerHardButton.addEventListener("click", function(){
         gameType = ONEPLAYERD;
-        hide(iaOrTwoPlayers);
+        selectGameType();
     });
-    document.getElementById("twoPlayers").addEventListener("click", function(){
+    doublePlayersButton.addEventListener("click", function(){
         gameType = TWOPLAYER;
-        hide(iaOrTwoPlayers);
+        selectGameType();
     });
 
     span3.addEventListener("animationend", function(){
@@ -317,32 +345,48 @@ function initGame(){
     });
 
     start.addEventListener("click", function(){
-        hide(start);
+        start.classList.add("display-none");
         game.start();
         span3.style.animation = "animationBegin 1s";
     });
-/*
-    gameType = ONEPLAYERD;
-    hide(start);
-    hide(iaOrTwoPlayers);
-    game.start();
-    game.launchGame();
-*/
 })();
 
-function reloadGame(){
+function endGame(){
+    clearInterval(game.interval);
+    invertPlayerToRecupBall();
+
+    blackContainer.removeEventListener("animationend", blackContainerEventHide);
+    blackContainer.classList.remove("display-none");
+    blackContainer.style.animation = "opacityShow 0.5s linear forwards";
+}
+
+function clickOnRefresh(){
     game.clear();
+
     initGame();
-    show(iaOrTwoPlayers);
-    show(start);
-    hide(replay);
-    winner.innerText = "";
+
+    playerHardButton.classList.remove("display-none");
+    playerEasyButton.classList.remove("display-none");
+    doublePlayersButton.classList.remove("display-none");
+    buttonRefresh.classList.add("display-none");
+    endGameText.classList.add("display-none");
 }
 
-function hide(element){
-    element.classList.add("displayNone");
+function selectGameType(){
+    removeBlackContainer();
+    start.classList.remove("display-none");
 }
 
-function show(element){
-    element.classList.remove("displayNone");
+function blackContainerEventHide(){
+    blackContainer.classList.add("display-none");
+    playerHardButton.classList.add("display-none");
+    playerEasyButton.classList.add("display-none");
+    doublePlayersButton.classList.add("display-none");
+    buttonRefresh.classList.remove("display-none");
+    endGameText.classList.remove("display-none");
+}
+
+function removeBlackContainer(){
+    blackContainer.addEventListener("animationend", blackContainerEventHide);
+    blackContainer.style.animation = "opacityHide 0.5s linear forwards";
 }

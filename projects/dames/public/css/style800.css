@@ -1,0 +1,13 @@
+#score, #player{
+    left : 2%;
+    font-size: 15pt;
+}
+#score{
+    top : 1%;
+}
+#player{
+    top : 5%;
+}
+#end-game-text{
+    font-size: 40pt;
+}

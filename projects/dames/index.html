@@ -5,12 +5,13 @@
     <meta charset="utf-8" />
     <meta name="theme-color" content="#2c3e50">
     <meta name="viewport" content="width=device-width" />
-    <link rel="stylesheet" type="text/css" href="/projects/dames/public/style/style.css">
+    <link rel="stylesheet" type="text/css" href="./public/css/style.css">
+    <link rel="stylesheet" type="text/css" media="screen and (max-width: 800px)" href="./public/css/style800.css">
     <link rel="icon" type="image/ico" href="/public/assets/images/logo/favicon.ico" />
     <link rel="icon" type="image/png" sizes="192x192" href="/public/assets/images/logo/favicon.png" />
 </head>
 <body>
-    <div id="score">
+    <div id="score" class="z-index10">
         Temps : <span id="minutes">00</span>:<span id="seconds">00</span>
     </div>
     <div id="player">
@@ -18,7 +19,18 @@
     </div>
     <div id="game">
         <div id="gamePawns"></div>
+        <div id="lineContainer"></div>
     </div>
+
+    <div id="black-container" class="display-flex display-none">
+        <div id="black-container-sub">
+            <div id="end-game-container">
+                <div id="end-game-text" class="">Partie terminée !</div>
+                <button id="refresh-game" class="button-blue">Rejouer</button>
+            </div>
+        </div>
+    </div>
+
     <script type="text/javascript" src="/projects/dames/public/js/main.js"></script>
 </body>
 </html>

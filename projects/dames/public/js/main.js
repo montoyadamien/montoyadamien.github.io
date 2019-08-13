@@ -13,6 +13,11 @@ let actualPlayerColor;
 let minutesSpan;
 let secondsSpan;
 let timer;
+let lineContainer;
+
+let blackContainer;
+let buttonRefresh;
+let score;
 
 function setSize(){
     let x = window.innerWidth;
@@ -23,6 +28,7 @@ function setSize(){
     game.style.width = max+"px";
     game.style.height = max+"px";
     sizeOfCase = max/10;
+
     for(let i=0;i<10;i++){
         for(let j=0;j<10;j++){
             if(pawnsHtml[i][j] !== undefined && pawnsHtml[i][j] !== ""){
@@ -34,12 +40,22 @@ function setSize(){
 }
 
 (function(){
-    let game = document.getElementById("game");
+    lineContainer = document.getElementById("lineContainer");
     gamePawns = document.getElementById("gamePawns");
     playerColorHtml = document.getElementById("playerColor");
     minutesSpan = document.getElementById("minutes");
     secondsSpan = document.getElementById("seconds");
 
+    blackContainer = document.getElementById("black-container");
+    buttonRefresh = document.getElementById("refresh-game");
+    buttonRefresh.addEventListener("click", clickOnRefresh);
+    score = document.getElementById("score");
+
+    launchGame();
+})();
+
+
+function launchGame(){
     for(let i=0;i<10;i++){
         pawnsHtml[i] = [];
         pawns[i] = [];
@@ -83,7 +99,7 @@ function setSize(){
             casesHtml[i][j] = aCase;
             line.appendChild(aCase);
         }
-        game.appendChild(line);
+        lineContainer.appendChild(line);
     }
 
     window.addEventListener("resize", function(){
@@ -98,7 +114,7 @@ function setSize(){
         actualPlayerColor = COLORWHITE;
     setActualPlayer();
     timer = setInterval(setTimer, 1000);
-})();
+}
 
 function setActualPlayer(){
     enablePlayerPlay();
@@ -582,18 +598,37 @@ function isEnd(){
         }
     }
 
-    if(numberBlack === 0)
-        displayEnd(COLORWHITE) ;
-    else
-        displayEnd(COLORBLACK);
+    displayEnd();
     return true;
 }
 
-function displayEnd(color){
+function displayEnd(){
     clearInterval(timer);
-    let body = document.body;
-    let div = document.createElement("div");
-    div.id="endGame";
-    div.appendChild(document.createTextNode("Partie terminée, gagnant : "+color));
-    body.appendChild(div);
+
+    score.classList.add("z-index12");
+    blackContainer.removeEventListener("animationend", blackContainerEventHide);
+    blackContainer.classList.remove("display-none");
+    blackContainer.style.animation = "opacityShow 0.1s linear forwards";
+}
+
+function blackContainerEventHide(){
+    blackContainer.classList.add("display-none");
+}
+
+function clickOnRefresh(){
+    minutesSpan.innerText = "00";
+    secondsSpan.innerText = "00";
+
+    pawnsHtml = [];
+    pawns = [];
+    casesHtml = [];
+    selectedXYPawn = [];
+    gamePawns.innerHTML = "";
+    lineContainer.innerHTML = "";
+
+    launchGame();
+
+    score.classList.remove("z-index12");
+    blackContainer.addEventListener("animationend", blackContainerEventHide);
+    blackContainer.style.animation = "opacityHide 0.1s linear forwards";
 }

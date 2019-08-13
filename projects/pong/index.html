@@ -5,35 +5,44 @@
         <meta charset="utf-8" />
         <meta name="theme-color" content="#2c3e50">
         <meta name="viewport" content="width=device-width" />
-        <link rel="stylesheet" type="text/css" href="/projects/pong/public/style/style.css">
+        <link rel="stylesheet" type="text/css" href="./public/css/style.css">
+        <link rel="stylesheet" type="text/css" media="screen and (max-width: 800px)" href="./public/css/style800.css">
         <link rel="icon" type="image/ico" href="/public/assets/images/logo/favicon.ico" />
         <link rel="icon" type="image/png" sizes="192x192" href="/public/assets/images/logo/favicon.png" />
     </head>
     <body>
-        <button id="start">Start</button>
+        <button id="start" class="button-green display-none">Start</button>
         <div id="launcher">
-            <span id="3" class="spanAnimation">3</span>
-            <span id="2" class="spanAnimation">2</span>
-            <span id="1" class="spanAnimation">1</span>
+            <span id="span3" class="spanAnimation">3</span>
+            <span id="span2" class="spanAnimation">2</span>
+            <span id="span1" class="spanAnimation">1</span>
         </div>
-        <button id="replay" class="show2 displayNone">
-            Rejouer
-        </button>
         <div id="winner"></div>
 
         <canvas id="canvasGame">
         </canvas>
 
-        <div id="iaOrTwoPlayers" class="show">
-            <button id="onePlayerE">
-                Un joueur (facile)
-            </button>
-            <button id="onePlayerD">
-                Un joueur (difficile)
-            </button>
-            <button id="twoPlayers">
-                Deux joueurs
-            </button>
+        <div id="black-container" class="display-flex">
+            <div id="black-container-sub">
+                <button class="button-orange" id="player-easy">
+                    Un joueur (facile)
+                </button>
+                <button class="button-red" id="player-hard">
+                    Un joueur (difficile)
+                </button>
+                <button class="button-blue" id="two-players">
+                    Deux joueurs
+                </button>
+                <div id="end-game-container">
+                    <div id="end-game-text" class="display-none">Partie terminée !</div>
+                    <button id="refresh-game" class="button-blue display-none">Rejouer</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="smartphone-controls">
+            <div id="arrow-up" class="display-none"></div>
+            <div id="arrow-down" class="display-none"></div>
         </div>
 
         <script src="/projects/pong/public/js/main.js"></script>

@@ -11,14 +11,12 @@ let scoreNumber;
 (function(){
     game = document.getElementById("game");
     casesHtml = document.querySelectorAll("div.case");
+    scoreNumber = document.getElementById("scoreNumber");
 
     blackContainer = document.getElementById("black-container");
     buttonRefresh = document.getElementById("refresh-game");
-    score = document.getElementById("score");
-
-    scoreNumber = document.getElementById("scoreNumber");
-
     buttonRefresh.addEventListener("click", clickOnRefresh);
+    score = document.getElementById("score");
 
     window.addEventListener("resize", function(){
        setSize();

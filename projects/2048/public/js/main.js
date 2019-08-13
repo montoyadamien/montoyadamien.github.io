@@ -5,6 +5,9 @@ let blackContainer;
 let buttonRefresh;
 let score;
 
+let xDown = null;
+let yDown = null;
+
 (function () {
     scoreNumber = document.getElementById("scoreNumber");
 
@@ -31,7 +34,11 @@ function launchGame(){
     InsertValue(2, getEmptyCase());
     InsertValue(2, getEmptyCase());
     displayGrid();
-    document.addEventListener("keydown", actionClavier);
+    document.addEventListener('touchstart', function(e){
+        xDown = e.touches[0].clientX;
+        yDown = e.touches[0].clientY;
+    });
+    document.addEventListener('touchmove', swipeGesture, false);
 }
 
 function setSize(){
@@ -136,6 +143,32 @@ function actionClavier(e){
 		case "ArrowRight" : moveRight(); break;
 		case "ArrowLeft" : moveLeft(); break;
 	}
+}
+
+function swipeGesture(evt) {
+    if ( ! xDown || ! yDown ) {
+        return;
+    }
+    let xUp = evt.touches[0].clientX;
+    let yUp = evt.touches[0].clientY;
+    let xDiff = xDown - xUp;
+    let yDiff = yDown - yUp;
+
+    if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {/*most significant*/
+        if ( xDiff > 0 ) {
+            moveLeft();
+        } else {
+            moveRight();
+        }
+    } else {
+        if ( yDiff > 0 ) {
+            moveUp();
+        } else {
+            moveDown()
+        }
+    }
+    xDown = null;
+    yDown = null;
 }
 
 function moveUp(){
@@ -317,7 +350,7 @@ function Coordinates(x,y){
 }
 
 function displayEnd(){
-    document.removeEventListener("keydown", actionClavier)
+    document.removeEventListener("keydown", actionClavier);
     score.classList.add("z-index12");
     blackContainer.removeEventListener("animationend", blackContainerEventHide);
     blackContainer.classList.remove("display-none");

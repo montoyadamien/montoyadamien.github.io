@@ -128,7 +128,7 @@ body {
     justify-content: center;
     align-items: center;
 }
-#black-container button, #start, #replay{
+#black-container button{
     font-size: 25pt;
     padding: 15px 25px;
     color : white;
@@ -141,6 +141,14 @@ body {
 }
 #start, #replay{
     transform-origin: 0 top;
+    font-size: 25pt;
+    padding: 15px 25px;
+    color : white;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: 0.1s;
+    outline: none;
 }
 #black-container button:hover{
     transform: scale(1.1);

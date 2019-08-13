@@ -26,11 +26,15 @@ let playerHardButton;
 let doublePlayersButton;
 let endGameText;
 
-let arrowDown;
-let arrowUp;
+let arrowDownPlayer1;
+let arrowUpPlayer1;
+let arrowUpPlayer1Touched = false;
+let arrowDownPlayer1Touched = false;
 
-let arrowUpTouched = false;
-let arrowDownTouched = false;
+let arrowDownPlayer2;
+let arrowUpPlayer2;
+let arrowUpPlayer2Touched = false;
+let arrowDownPlayer2Touched = false;
 
 let elementsColor = "#16a085";
 
@@ -182,17 +186,20 @@ function invertPlayerToRecupBall(){
 
 function updateGame() {
     game.clear();
-    if ((game.keys && game.keys["ArrowUp"]) || arrowUpTouched) {
+    if ((game.keys && game.keys["ArrowUp"]) || arrowUpPlayer2Touched) {
         player2.move(-1);
-    } else if ((game.keys && game.keys["ArrowDown"]) || arrowDownTouched) {
+    } else if ((game.keys && game.keys["ArrowDown"]) || arrowDownPlayer2Touched) {
         player2.move(1);
     } else
         player2.acceleration = 0;
 
     if(gameType === TWOPLAYER){
-        if (game.keys && game.keys["z"]) {player1.move(-1); }
-        else if (game.keys && game.keys["s"]) {player1.move(1); }
-        else player1.acceleration = 0;
+        if (game.keys && game.keys["z"] || arrowUpPlayer1Touched) {
+            player1.move(-1);
+        }else if ((game.keys && game.keys["s"]) || arrowDownPlayer1Touched) {
+            player1.move(1);
+        } else
+            player1.acceleration = 0;
     }else if(gameType === ONEPLAYERD){
         moveIaDifficult();
     }else if(gameType === ONEPLAYERE){
@@ -276,29 +283,6 @@ function initGame(){
 }
 
 (function(){
-    if (navigator.userAgent.match(/(android|iphone|blackberry|symbian|symbianos|symbos|netfront|model-orange|javaplatform|iemobile|windows phone|samsung|htc|opera mobile|opera mobi|opera mini|presto|huawei|blazer|bolt|doris|fennec|gobrowser|iris|maemo browser|mib|cldc|minimo|semc-browser|skyfire|teashark|teleca|uzard|uzardweb|meego|nokia|bb10|playbook)/gi)) {
-        arrowDown = document.getElementById("arrow-down");
-        arrowUp = document.getElementById("arrow-up");
-        arrowDown.classList.remove("display-none");
-        arrowUp.classList.remove("display-none");
-        arrowDown.addEventListener("touchstart", function(e){
-            e.preventDefault();
-           arrowDownTouched = true;
-        });
-        arrowDown.addEventListener("touchend", function(e){
-            e.preventDefault();
-            arrowDownTouched = false;
-        });
-        arrowUp.addEventListener("touchstart", function(e){
-            e.preventDefault();
-            arrowUpTouched = true;
-        });
-        arrowUp.addEventListener("touchend", function(e){
-            e.preventDefault();
-            arrowUpTouched = false;
-        });
-    }
-
     canvas = document.getElementById("canvasGame");
     canvasContext = canvas.getContext("2d");
 
@@ -354,7 +338,16 @@ function initGame(){
 function endGame(){
     clearInterval(game.interval);
     invertPlayerToRecupBall();
-
+    arrowDownPlayer1Touched = false;
+    arrowDownPlayer2Touched = false;
+    arrowUpPlayer1Touched = false;
+    arrowUpPlayer2Touched = false;
+    
+    arrowDownPlayer1.classList.add("display-none");
+    arrowDownPlayer2.classList.add("display-none");
+    arrowUpPlayer1.classList.add("display-none");
+    arrowUpPlayer2.classList.add("display-none");
+    
     blackContainer.removeEventListener("animationend", blackContainerEventHide);
     blackContainer.classList.remove("display-none");
     blackContainer.style.animation = "opacityShow 0.5s linear forwards";
@@ -375,6 +368,52 @@ function clickOnRefresh(){
 function selectGameType(){
     removeBlackContainer();
     start.classList.remove("display-none");
+
+    if (navigator.userAgent.match(/(android|iphone|blackberry|symbian|symbianos|symbos|netfront|model-orange|javaplatform|iemobile|windows phone|samsung|htc|opera mobile|opera mobi|opera mini|presto|huawei|blazer|bolt|doris|fennec|gobrowser|iris|maemo browser|mib|cldc|minimo|semc-browser|skyfire|teashark|teleca|uzard|uzardweb|meego|nokia|bb10|playbook)/gi)) {
+        arrowDownPlayer2 = document.getElementById("arrow-down-player2");
+        arrowUpPlayer2 = document.getElementById("arrow-up-player2");
+        arrowDownPlayer2.classList.remove("display-none");
+        arrowUpPlayer2.classList.remove("display-none");
+        arrowDownPlayer2.addEventListener("touchstart", function(e){
+            e.preventDefault();
+            arrowDownPlayer2Touched = true;
+        });
+        arrowDownPlayer2.addEventListener("touchend", function(e){
+            e.preventDefault();
+            arrowDownPlayer2Touched = false;
+        });
+        arrowUpPlayer2.addEventListener("touchstart", function(e){
+            e.preventDefault();
+            arrowUpPlayer2Touched = true;
+        });
+        arrowUpPlayer2.addEventListener("touchend", function(e){
+            e.preventDefault();
+            arrowUpPlayer2Touched = false;
+        });
+        
+        if(gameType === TWOPLAYER){
+            arrowDownPlayer1 = document.getElementById("arrow-down-player1");
+            arrowUpPlayer1 = document.getElementById("arrow-up-player1");
+            arrowDownPlayer1.classList.remove("display-none");
+            arrowUpPlayer1.classList.remove("display-none");
+            arrowDownPlayer1.addEventListener("touchstart", function(e){
+                e.preventDefault();
+                arrowDownPlayer1Touched = true;
+            });
+            arrowDownPlayer1.addEventListener("touchend", function(e){
+                e.preventDefault();
+                arrowDownPlayer1Touched = false;
+            });
+            arrowUpPlayer1.addEventListener("touchstart", function(e){
+                e.preventDefault();
+                arrowUpPlayer1Touched = true;
+            });
+            arrowUpPlayer1.addEventListener("touchend", function(e){
+                e.preventDefault();
+                arrowUpPlayer1Touched = false;
+            });
+        }
+    }
 }
 
 function blackContainerEventHide(){

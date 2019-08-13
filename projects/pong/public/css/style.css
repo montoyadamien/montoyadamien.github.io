@@ -19,12 +19,17 @@ body {
     height: 100%;
     overflow: hidden;
 }
-#smartphone-controls{
+#smartphone-controls-player1{
+    position: fixed;
+    bottom: 5%;
+    left: 5%;
+}
+#smartphone-controls-player2{
     position: fixed;
     bottom: 5%;
     right: 5%;
 }
-#arrow-up, #arrow-down{
+.arrow-up, .arrow-down{
     width: 80px;
     height: 80px;
     background-color: rgba(10, 51, 57, 0.5);
@@ -32,7 +37,7 @@ body {
     margin: 5px;
     position: relative;
 }
-#arrow-up::after, #arrow-up::before, #arrow-down::after, #arrow-down::before{
+.arrow-up::after, .arrow-up::before, .arrow-down::after, .arrow-down::before{
     width: 60%;
     height: 10%;
     content : "";
@@ -40,22 +45,22 @@ body {
     position: absolute;
     border-radius: 20px;
 }
-#arrow-up::after{
+.arrow-up::after{
     top: 50%;
     left: 50%;
     transform: translate(-80%, -50%) rotate(-45deg);
 }
-#arrow-up::before{
+.arrow-up::before{
     top: 50%;
     right: 50%;
     transform: translate(80%, -50%) rotate(45deg);
 }
-#arrow-down::after{
+.arrow-down::after{
     top: 50%;
     left: 50%;
     transform: translate(-80%, -50%) rotate(45deg);
 }
-#arrow-down::before{
+.arrow-down::before{
     top: 50%;
     right: 50%;
     transform: translate(80%, -50%) rotate(-45deg);

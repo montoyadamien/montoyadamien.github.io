@@ -5,8 +5,41 @@ let minutesSpan;
 let secondsSpan;
 let timerVar;
 
+let blackContainer;
+let buttonEasy;
+let buttonMedium;
+let buttonHard;
+let buttonRefresh;
+let endGameText;
+let mode = 0;
+let scroe;
+
 (function(){
-    refreshGrid();
+    buttonEasy = document.getElementById("mode-easy");
+    buttonMedium = document.getElementById("mode-medium");
+    buttonHard = document.getElementById("mode-hard");
+    blackContainer = document.getElementById("black-container");
+    buttonRefresh = document.getElementById("refresh-game");
+    endGameText = document.getElementById("end-game-text");
+    score = document.getElementById("score");
+
+    buttonEasy.addEventListener("click", function(){
+       mode = 3;
+        launchGame();
+    });
+
+    buttonMedium.addEventListener("click", function(){
+        mode = 4;
+        launchGame();
+    });
+
+    buttonHard.addEventListener("click", function(){
+        mode = 5;
+        launchGame();
+    });
+
+    buttonRefresh.addEventListener("click", clickOnRefresh);
+
     minutesSpan = document.getElementById("minutes");
     secondsSpan = document.getElementById("seconds");
     game = document.getElementById("game");
@@ -40,9 +73,6 @@ let timerVar;
         theCase.addEventListener("input", checkKey);
         cases.push(theCase);
     }
-
-    launchGame();
-    timerVar = setInterval(setTimer, 1000);
 })();
 
 function setSize(){
@@ -67,7 +97,23 @@ function setTimer(){
     }
 }
 
+function blackContainerEventHide(){
+    blackContainer.classList.add("display-none");
+    buttonEasy.classList.add("display-none");
+    buttonMedium.classList.add("display-none");
+    buttonHard.classList.add("display-none");
+    buttonRefresh.classList.remove("display-none");
+    endGameText.classList.remove("display-none");
+}
+
+function removeBlackContainer(){
+    blackContainer.addEventListener("animationend", blackContainerEventHide);
+    blackContainer.style.animation = "opacityHide 0.5s linear forwards";
+}
+
 function launchGame(){
+    refreshGrid();
+    removeBlackContainer();
     //fill random value
     for(let i=0;i<9;i++){
         let caseAlreadyFilled = [];
@@ -91,11 +137,10 @@ function launchGame(){
             let k = 0;
             do{
                 number = getRandomInt(9)+1;
-                if(k>100){
+                if(k>81){
                     refresh();
                     return;
                 }
-
                 k++;
             }while(numberAlreadyFilled.indexOf(number) !== -1 || checkMultipleNumberSameColumnLine(number, x, y));
             numberAlreadyFilled.push(number);
@@ -107,10 +152,10 @@ function launchGame(){
     for(let i=0;i<9;i++){
         removeCase(i);
     }
+    timerVar = setInterval(setTimer, 1000);
 }
 
 function refresh(){
-    refreshGrid();
     for(let i=0;i<cases.length;i++){
         cases[i].value = "";
         cases[i].disabled = false;
@@ -128,7 +173,7 @@ function refreshGrid(){
 }
 
 function removeCase(i){
-    let numToRemove = 2+getRandomInt(5);
+    let numToRemove = mode+getRandomInt(2);
     let caseX;
     let caseY;
     let x;
@@ -244,14 +289,25 @@ function checkEnd(){
             numberAlready.push(numberToSearch);
         }
     }
-    clearInterval(timerVar);
     displayEnd();
 }
 
 function displayEnd(){
-    let body = document.body;
-    let div = document.createElement("div");
-    div.id="endGame";
-    div.appendChild(document.createTextNode("Sudoku réussi !"));
-    body.appendChild(div);
+    clearInterval(timerVar);
+    score.classList.add("z-index12");
+    blackContainer.removeEventListener("animationend", blackContainerEventHide);
+    blackContainer.classList.remove("display-none");
+    blackContainer.style.animation = "opacityShow 0.5s linear forwards";
+}
+
+function clickOnRefresh(){
+    secondsSpan.innerText = "00";
+    minutesSpan.innerText = "00";
+
+    score.classList.remove("z-index12");
+    buttonEasy.classList.remove("display-none");
+    buttonMedium.classList.remove("display-none");
+    buttonHard.classList.remove("display-none");
+    buttonRefresh.classList.add("display-none");
+    endGameText.classList.add("display-none");
 }

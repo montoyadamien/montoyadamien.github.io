@@ -295,7 +295,7 @@ function initGame(){
         });
         arrowUp.addEventListener("touchend", function(e){
             e.preventDefault();
-            arrowDownTouched = false;
+            arrowUpTouched = false;
         });
     }
 

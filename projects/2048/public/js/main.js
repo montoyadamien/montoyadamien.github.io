@@ -35,6 +35,7 @@ function launchGame(){
     InsertValue(2, getEmptyCase());
     displayGrid();
     document.addEventListener('touchstart', function(e){
+        e.preventDefault();
         xDown = e.touches[0].clientX;
         yDown = e.touches[0].clientY;
     });
@@ -145,12 +146,13 @@ function actionClavier(e){
 	}
 }
 
-function swipeGesture(evt) {
+function swipeGesture(e) {
+    e.preventDefault();
     if ( ! xDown || ! yDown ) {
         return;
     }
-    let xUp = evt.touches[0].clientX;
-    let yUp = evt.touches[0].clientY;
+    let xUp = e.touches[0].clientX;
+    let yUp = e.touches[0].clientY;
     let xDiff = xDown - xUp;
     let yDiff = yDown - yUp;
 

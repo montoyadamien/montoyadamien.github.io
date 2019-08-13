@@ -1,23 +1,39 @@
 let casesHtml;
 let cases = [];
-let score;
 let caseSize;
 let game;
 
+let blackContainer;
+let buttonRefresh;
+let score;
+let scoreNumber;
+
 (function(){
     game = document.getElementById("game");
-    score = document.getElementById("scoreNumber");
     casesHtml = document.querySelectorAll("div.case");
+
+    blackContainer = document.getElementById("black-container");
+    buttonRefresh = document.getElementById("refresh-game");
+    score = document.getElementById("score");
+
+    scoreNumber = document.getElementById("scoreNumber");
+
+    buttonRefresh.addEventListener("click", clickOnRefresh);
+
     window.addEventListener("resize", function(){
        setSize();
     });
     setSize();
+
+    launchGame();
+})();
+
+function launchGame(){
     let array = [];
 
     for(let i=0;i<3;i++){
         for(let j=0;j<3;j++){
             let index = i + (2*i+j);
-
             if(index !== 8){
                 let num;
                 do{
@@ -36,7 +52,7 @@ let game;
         }
     }
     checkEnd();
-})();
+}
 
 function setSize(){
     let x = window.innerWidth;
@@ -80,17 +96,6 @@ function checkEnd(){
     displayEnd();
 }
 
-function displayEnd(){
-    for(let i=0;i<casesHtml.length;i++){
-        casesHtml[i].removeEventListener("click", selection);
-    }
-    let body = document.body;
-    let div = document.createElement("div");
-    div.id="endGame";
-    div.appendChild(document.createTextNode("Partie terminée !"));
-    body.appendChild(div);
-}
-
 function getRandomInt(max) {
     return Math.floor(Math.random() * Math.floor(max)) + 1;
 }
@@ -111,7 +116,7 @@ function selection(e){
 
         createAudio();
 
-        score.innerText = parseInt(score.innerText) + 1;
+        scoreNumber.innerText = parseInt(scoreNumber.innerText) + 1;
 
 		let temporary = cases[indiceTarget];
 		cases[indiceTarget] = -1;
@@ -142,9 +147,24 @@ function createAudio(){
     document.body.appendChild(audio);
 }
 
-function displayGrid(){
-    console.log(cases[0] + " - " + cases[1] + " - " + cases[2]);
-    console.log(cases[3] + " - " + cases[4] + " - " + cases[5]);
-    console.log(cases[6] + " - " + cases[7] + " - " + cases[8]);
-    console.log("---------");
+function displayEnd(){
+    for(let i=0;i<casesHtml.length;i++){
+        casesHtml[i].removeEventListener("click", selection);
+    }
+    score.classList.add("z-index12");
+    blackContainer.removeEventListener("animationend", blackContainerEventHide);
+    blackContainer.classList.remove("display-none");
+    blackContainer.style.animation = "opacityShow 0.1s linear forwards";
+}
+
+function blackContainerEventHide(){
+    blackContainer.classList.add("display-none");
+}
+
+function clickOnRefresh(){
+    cases = [];
+    launchGame();
+    score.classList.remove("z-index12");
+    blackContainer.addEventListener("animationend", blackContainerEventHide);
+    blackContainer.style.animation = "opacityHide 0.1s linear forwards";
 }

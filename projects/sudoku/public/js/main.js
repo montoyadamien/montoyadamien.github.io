@@ -12,7 +12,7 @@ let buttonHard;
 let buttonRefresh;
 let endGameText;
 let mode = 0;
-let scroe;
+let score;
 
 (function(){
     buttonEasy = document.getElementById("mode-easy");

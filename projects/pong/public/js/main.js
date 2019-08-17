@@ -26,13 +26,13 @@ let playerHardButton;
 let doublePlayersButton;
 let endGameText;
 
-let arrowDownPlayer1;
-let arrowUpPlayer1;
+let arrowDownPlayer1 = null;
+let arrowUpPlayer1 = null;
 let arrowUpPlayer1Touched = false;
 let arrowDownPlayer1Touched = false;
 
-let arrowDownPlayer2;
-let arrowUpPlayer2;
+let arrowDownPlayer2 = null;
+let arrowUpPlayer2 = null;
 let arrowUpPlayer2Touched = false;
 let arrowDownPlayer2Touched = false;
 
@@ -335,19 +335,22 @@ function initGame(){
     });
 })();
 
-function endGame(){
+function endGame() {
     clearInterval(game.interval);
     invertPlayerToRecupBall();
     arrowDownPlayer1Touched = false;
     arrowDownPlayer2Touched = false;
     arrowUpPlayer1Touched = false;
     arrowUpPlayer2Touched = false;
-    
-    arrowDownPlayer1.classList.add("display-none");
-    arrowDownPlayer2.classList.add("display-none");
-    arrowUpPlayer1.classList.add("display-none");
-    arrowUpPlayer2.classList.add("display-none");
-    
+
+    if (arrowDownPlayer1 !== null) {
+        arrowDownPlayer1.classList.add("display-none");
+        arrowUpPlayer1.classList.add("display-none");
+    }
+    if(arrowDownPlayer2 !== null){
+        arrowDownPlayer2.classList.add("display-none");
+        arrowUpPlayer2.classList.add("display-none");
+    }
     blackContainer.removeEventListener("animationend", blackContainerEventHide);
     blackContainer.classList.remove("display-none");
     blackContainer.style.animation = "opacityShow 0.5s linear forwards";

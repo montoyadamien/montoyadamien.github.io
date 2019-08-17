@@ -21,18 +21,18 @@ body {
 }
 #smartphone-controls-player1{
     position: fixed;
-    bottom: 5%;
-    left: 5%;
+    bottom: 1%;
+    left: 1%;
 }
 #smartphone-controls-player2{
     position: fixed;
-    bottom: 5%;
-    right: 5%;
+    bottom: 1%;
+    right: 1%;
 }
 .arrow-up, .arrow-down{
     width: 80px;
     height: 80px;
-    background-color: rgba(10, 51, 57, 0.5);
+    background-color: rgba(10, 51, 57, 0.3);
     border-radius: 10px;
     margin: 5px;
     position: relative;

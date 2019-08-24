@@ -124,6 +124,7 @@ function pushProjects(){
     description =
             "MySmsPlanner est une application permettant de planifier ses sms.<br /><br />" +
             "J'ai développé cette application pour comprendre comment fonctionnait l'envoi de sms ainsi que les tâches d'arrière plan en android<br /><br />" +
+            "Suite à l'impossibilité de mettre en ligne sur le Goole Play Store l'application dû aux restrictions de Google pour l'utilisation des sms vous pouvez télécharger l'apk ci-contre.<br /> ><br />" +
             "<div class='display-flex'><img src='/public/assets/images/projects/mysmsplanner/1.jpg' />" +
             "<img src='/public/assets/images/projects/mysmsplanner/2.jpg' />" +
             "<img src='/public/assets/images/projects/mysmsplanner/3.jpg' /></div>";

@@ -122,6 +122,19 @@ function pushProjects(){
             ], "16a085", "2017 - ?"));
 
     description =
+            "MySmsPlanner est une application permettant de planifier ses sms.<br /><br />" +
+            "J'ai développé cette application pour comprendre comment fonctionnait l'envoi de sms ainsi que les tâches d'arrière plan en android<br /><br />" +
+            "<div class='display-flex'><img src='/public/assets/images/projects/mysmsplanner/1.jpg' />" +
+            "<img src='/public/assets/images/projects/mysmsplanner/2.jpg' />" +
+            "<img src='/public/assets/images/projects/mysmsplanner/3.jpg' /></div>";
+    projects.push(
+            new Project("MySmsPlanner", "mysmsplanner.png", description,
+                    [LANGUAGES_ENUM.JAVA, LANGUAGES_ENUM.ANDROID],
+                    [
+                        new Link("Télécharger l'APK", LINKS_LOGO_ENUM.WEBSITE, "/projects/mysmsplanner/app.apk"),
+                    ], "3498db", "2019"));
+
+    description =
             "Durant mon stage de première année à Polytech Nice-Sophia j'ai travaillé pour la Junior-Entreprise Polytech Nice Conseil.<br ><br >"+
             "J'ai eu pour mission de développer leur site web, la partie front ainsi que la partie back-end. J'ai choisi d'utiliser Symfony pour apprendre à utiliser ce framework.";
     projects.push(

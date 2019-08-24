@@ -128,3 +128,6 @@ nav{
 #contact{
 	background-color: #616b75;
 }
+.display-flex img{
+	border: 1px solid var(--grey-dark-default);
+}

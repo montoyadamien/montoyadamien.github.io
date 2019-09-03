@@ -40,6 +40,7 @@ function launchGame(){
         yDown = e.touches[0].clientY;
     });
     document.addEventListener('touchmove', swipeGesture, false);
+    document.addEventListener('keydown', actionClavier, false);
 }
 
 function setSize(){

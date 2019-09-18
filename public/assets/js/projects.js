@@ -116,15 +116,15 @@ function pushProjects(){
                     new Link("2048", LINKS_LOGO_ENUM.FILE, "/projects/2048/index.html"),
                     new Link("Taquin", LINKS_LOGO_ENUM.FILE, "/projects/taquin/index.html"),
                     new Link("Sudoku", LINKS_LOGO_ENUM.FILE, "/projects/sudoku/index.html"),
-                    new Link("Carnet de bord v2", LINKS_LOGO_ENUM.FILE, "/projects/carnetdebordCPOO/index.html"),
-                    new Link("Carnet de bord", LINKS_LOGO_ENUM.FILE, "/projects/carnetdebord/index.html")
+                    //new Link("Carnet de bord v2", LINKS_LOGO_ENUM.FILE, "/projects/carnetdebordCPOO/index.html"),
+                    //new Link("Carnet de bord", LINKS_LOGO_ENUM.FILE, "/projects/carnetdebord/index.html")
 
             ], "16a085", "2017 - ?"));
 
     description =
             "MySmsPlanner est une application permettant de planifier ses sms.<br /><br />" +
             "J'ai développé cette application pour comprendre comment fonctionnait l'envoi de sms ainsi que les tâches d'arrière plan en android<br /><br />" +
-            "Suite à l'impossibilité de mettre en ligne sur le Goole Play Store l'application dû aux restrictions de Google pour l'utilisation des sms vous pouvez télécharger l'apk ci-contre.<br /> ><br />" +
+            "Suite à l'impossibilité de mettre en ligne sur le Goole Play Store l'application dû aux restrictions de Google pour l'utilisation des sms vous pouvez télécharger l'apk ci-contre.<br /><br />" +
             "<div class='display-flex'><img src='/public/assets/images/projects/mysmsplanner/1.jpg' />" +
             "<img src='/public/assets/images/projects/mysmsplanner/2.jpg' />" +
             "<img src='/public/assets/images/projects/mysmsplanner/3.jpg' /></div>";

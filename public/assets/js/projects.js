@@ -95,7 +95,7 @@ function pushProjects(){
             new Project("Événements", "event.png", description,
                     [LANGUAGES_ENUM.VUEJS, LANGUAGES_ENUM.JAVASCRIPT, LANGUAGES_ENUM.JAVA, LANGUAGES_ENUM.C],
                     [
-                            new Link("Certificat GHC 2019 (1523/7500)", LINKS_LOGO_ENUM.FILE, "/public/events/ghc_2019.pdf")
+                            new Link("Certificat GHC 2019 (1523/7500)", LINKS_LOGO_ENUM.FILE, "public/events/ghc_2019.pdf")
                     ],"16a085","2017 - ?"));
 
     description =
@@ -111,28 +111,27 @@ function pushProjects(){
             new Project("Projets Divers","divers.png", description,
             [LANGUAGES_ENUM.JAVASCRIPT, LANGUAGES_ENUM.JAVA],
             [
-                    new Link("Pong", LINKS_LOGO_ENUM.FILE, "/projects/pong/index.html"),
-                    new Link("Dames", LINKS_LOGO_ENUM.FILE, "/projects/dames/index.html"),
-                    new Link("2048", LINKS_LOGO_ENUM.FILE, "/projects/2048/index.html"),
-                    new Link("Taquin", LINKS_LOGO_ENUM.FILE, "/projects/taquin/index.html"),
-                    new Link("Sudoku", LINKS_LOGO_ENUM.FILE, "/projects/sudoku/index.html"),
-                    new Link("Carnet de bord v2", LINKS_LOGO_ENUM.FILE, "/projects/carnetdebordCPOO/index.html"),
-                    new Link("Carnet de bord", LINKS_LOGO_ENUM.FILE, "/projects/carnetdebord/index.html")
-
+                    new Link("Pong", LINKS_LOGO_ENUM.FILE, "projects/pong/index.html"),
+                    new Link("Dames", LINKS_LOGO_ENUM.FILE, "projects/dames/index.html"),
+                    new Link("2048", LINKS_LOGO_ENUM.FILE, "projects/2048/index.html"),
+                    new Link("Taquin", LINKS_LOGO_ENUM.FILE, "projects/taquin/index.html"),
+                    new Link("Sudoku", LINKS_LOGO_ENUM.FILE, "projects/sudoku/index.html"),
+                    // new Link("Carnet de bord v2", LINKS_LOGO_ENUM.FILE, "projects/carnetdebordCPOO/index.html"),
+                    // new Link("Carnet de bord", LINKS_LOGO_ENUM.FILE, "projects/carnetdebord/index.html")
             ], "16a085", "2017 - ?"));
 
     description =
             "MySmsPlanner est une application permettant de planifier ses sms.<br /><br />" +
             "J'ai développé cette application pour comprendre comment fonctionnait l'envoi de sms ainsi que les tâches d'arrière plan en android<br /><br />" +
             "Suite à l'impossibilité de mettre en ligne sur le Goole Play Store l'application dû aux restrictions de Google pour l'utilisation des sms vous pouvez télécharger l'apk ci-contre.<br /> ><br />" +
-            "<div class='display-flex'><img src='/public/assets/images/projects/mysmsplanner/1.jpg' />" +
-            "<img src='/public/assets/images/projects/mysmsplanner/2.jpg' />" +
-            "<img src='/public/assets/images/projects/mysmsplanner/3.jpg' /></div>";
+            "<div class='display-flex'><img src='public/assets/images/projects/mysmsplanner/1.jpg' />" +
+            "<img src='public/assets/images/projects/mysmsplanner/2.jpg' />" +
+            "<img src='public/assets/images/projects/mysmsplanner/3.jpg' /></div>";
     projects.push(
             new Project("MySmsPlanner", "mysmsplanner.png", description,
                     [LANGUAGES_ENUM.JAVA, LANGUAGES_ENUM.ANDROID],
                     [
-                        new Link("Télécharger l'APK", LINKS_LOGO_ENUM.WEBSITE, "/projects/mysmsplanner/app.apk"),
+                        new Link("Télécharger l'APK", LINKS_LOGO_ENUM.WEBSITE, "projects/mysmsplanner/app.apk"),
                     ], "3498db", "2019"));
 
     description =
@@ -217,7 +216,7 @@ function buildThreeFirstProjects(){
         first.appendChild(subContainer);
             let pic = document.createElement("img");
             pic.classList.add("project-item-picture");
-            pic.src = "/public/assets/images/projects/"+projects[0].logo;
+            pic.src = "public/assets/images/projects/"+projects[0].logo;
             subContainer.appendChild(pic);
         let textContainer = document.createElement("div");
         textContainer.classList.add("project-item-text-container");
@@ -235,7 +234,7 @@ function buildThreeFirstProjects(){
                 language.classList.add("project-item-language-container");
                 let logo = document.createElement("img");
                 logo.classList.add("project-item-language-logo");
-                logo.src = "/public/assets/images/icon/languages/"+projects[0].languages[i].logo;
+                logo.src = "public/assets/images/icon/languages/"+projects[0].languages[i].logo;
                 language.appendChild(logo);
                 let div = document.createElement("div");
                 div.classList.add("project-item-language-infobulle");
@@ -281,7 +280,7 @@ function buildProject(project){
     item.appendChild(subContainer);
     let pic = document.createElement("img");
     pic.classList.add("project-item-picture");
-    pic.src = "/public/assets/images/projects/"+project.logo;
+    pic.src = "public/assets/images/projects/"+project.logo;
     subContainer.appendChild(pic);
     let textContainer = document.createElement("div");
     textContainer.classList.add("project-item-text-container");
@@ -299,7 +298,7 @@ function buildProject(project){
             language.classList.add("project-item-language-container");
             let logo = document.createElement("img");
             logo.classList.add("project-item-language-logo");
-            logo.src = "/public/assets/images/icon/languages/"+project.languages[i].logo;
+            logo.src = "public/assets/images/icon/languages/"+project.languages[i].logo;
             language.appendChild(logo);
             let div = document.createElement("div");
             div.classList.add("project-item-language-infobulle");
@@ -378,7 +377,7 @@ function buildProjectInPopup(project, container){
         pictureContainer.id = "popup-picture-container";
         pictureContainer.style.backgroundColor = "#"+project.backgroundColor;
             let picture = document.createElement("img");
-            picture.src = "/public/assets/images/projects/"+project.logo;
+            picture.src = "public/assets/images/projects/"+project.logo;
         pictureContainer.appendChild(picture);
     leftContainer.appendChild(pictureContainer);
         let linksContainer = document.createElement("div");
@@ -390,7 +389,7 @@ function buildProjectInPopup(project, container){
                 link.target = "_blank";
                 let pic = document.createElement("img");
                 pic.classList.add("popup-link-picture");
-                pic.src = "/public/assets/images/icon/links/"+project.links[i].logo;
+                pic.src = "public/assets/images/icon/links/"+project.links[i].logo;
                 link.appendChild(pic);
                 let div = document.createElement("div");
                 div.classList.add("project-item-language-infobulle");
@@ -417,7 +416,7 @@ function buildProjectInPopup(project, container){
                 let pictureContainer = document.createElement("div");
                 pictureContainer.classList.add("popup-language-picture-container");
                 let picture = document.createElement("img");
-                picture.src = "/public/assets/images/icon/languages/"+project.languages[i].logo;
+                picture.src = "public/assets/images/icon/languages/"+project.languages[i].logo;
                 pictureContainer.appendChild(picture);
                 let languageName = document.createElement("div");
                 languageName.classList.add("popup-language-name");

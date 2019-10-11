@@ -31,7 +31,7 @@ nav{
 	border : 2px solid var(--blue-light-default);
 }
 #skills{
-	background-image: url(/public/assets/images/icon/batman_logo_dark.svg);
+	background-image: url(../images/icon/batman_logo_dark.svg);
 }
 .skill-item{
 	background-color: rgba(0,0,0,0.8);
@@ -44,15 +44,6 @@ nav{
 	border: 2px solid black;
 	/*box-shadow: 0 0 0 0 var(--blue-light-default) inset;*/
 	box-shadow: 0 3px 10px 2px rgba(0,0,0,0.3);
-}
-.skill-item::after{
-	background-image: url(/public/assets/images/icon/batman-wing-right-dark.svg);
-}
-.skill-item::before{
-	background-image: url(/public/assets/images/icon/batman-wing-left-dark.svg);
-}
-.skill-item:hover::after, .skill-item:hover::before{
-	opacity: 1;
 }
 #skills-title{
 	color: rgba(255,255,255,0.2);

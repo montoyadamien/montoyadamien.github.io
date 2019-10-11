@@ -1,7 +1,7 @@
 let skill = [];
 let skillsLabel = ["Java - Android",
     "PHP Symfony", "JS jQuery Angular", "HTML CSS Bootstrap",
-    "MySQL PostgreSQL PL/SQL", "C", "Python", "Bash", "IntelliJ VS Eclipse",
+    "MySQL PostgreSQL PL/SQL", "C", "Python", "Bash", "IntelliJ Eclipse",
     "Unity", "Git", "Photoshop", "Windows - Linux - Mac OS X"];
 let skillDisplayed = 0;
 let skillXBase = skillsAnchor.clientWidth/2;

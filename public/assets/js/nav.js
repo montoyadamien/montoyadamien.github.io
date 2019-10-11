@@ -26,7 +26,7 @@ function setSun(){
 	moon.classList.add("showSunMoon");
 	sun.classList.remove("showSunMoon");
 	sun.classList.add("hideSunMoon");
-	styleColor.href="/public/assets/css/styleLight.css";
+	styleColor.href="public/assets/css/styleLight.css";
 	colorThemeMeta.content = "#2C82C9";
 }
 
@@ -35,7 +35,7 @@ function setMoon(){
 	sun.classList.add("showSunMoon");
 	moon.classList.remove("showSunMoon");
 	moon.classList.add("hideSunMoon");
-	styleColor.href="/public/assets/css/styleDark.css";
+	styleColor.href="public/assets/css/styleDark.css";
 	colorThemeMeta.content = "#2d4483";
 }
 

@@ -89,7 +89,7 @@ function pushProjects(){
             "Cette page recense les différents événements de programmation auxquels j'ai participé :<br /><br />"+
             "Nuit de l'info - 2016 - 2017 - 2018<br />"+
             "UCAnCODE - 2018<br />"+
-            "Le Shaker Coding Battle - 2017 - 2018<br />"+
+            "Le Shaker Coding Battle - 2017 - 2018 - 2019<br />"+
             "Google Hash Code - 2019";
     projects.push(
             new Project("Événements", "event.png", description,
@@ -99,8 +99,6 @@ function pushProjects(){
                     ],"16a085","2017 - ?"));
 
     description =
-            "Carnet de bord : c'est un mini cours rédigé dans le cadre d'un TP dans le but d'apprendre la programmation orientée objet.<br /><br />" +
-            "Carnet de bord v2 : même cadre qu'au dessus mais d'une manière plus évoluée.<br /><br />"+
             "Sudoku : le but est de compléter la grille avec des nombres ne se trouvant que sur une ligne, sur une colonne et dans un groupe de 9 cases.<br /><br />"+
             "Taquin : le but de ce jeu est le déplacement d'élements pour reconstituer une suite.<br /><br />" +
             "2048 : le but du jeu est de coupler des tuiles de même valeur pour en obtenir de plus grandes. Se joue avec les touches Haut, Bas, Gauche et Droite.<br /><br />" +
@@ -120,10 +118,21 @@ function pushProjects(){
                     // new Link("Carnet de bord", LINKS_LOGO_ENUM.FILE, "projects/carnetdebord/index.html")
             ], "16a085", "2017 - ?"));
 
+	description =
+            "MyWorkouts est une application android de gestion d'entrainement de musculation, de crossfit ainsi que de street workout.<br /><br />" +
+            "L'application m'a permis de développer un minuteur lié à un système de notifications ainsi qu'un historique pour les entraînements.";
+    projects.push(
+            new Project("MyWorkouts", "myworkouts.png", description,
+            [LANGUAGES_ENUM.JAVA, LANGUAGES_ENUM.ANDROID],
+            [
+                new Link("Site web", LINKS_LOGO_ENUM.WEBSITE, "https://gorillabox.github.io/projects/myworkouts/"),
+                new Link("Google Play", LINKS_LOGO_ENUM.GOOGLE_PLAY, "https://play.google.com/store/apps/details?id=gorillabox.myworkouts")
+            ], "0bcd62", "2017 - ?"));
+
     description =
             "MySmsPlanner est une application permettant de planifier ses sms.<br /><br />" +
-            "J'ai développé cette application pour comprendre comment fonctionnait l'envoi de sms ainsi que les tâches d'arrière plan en android<br /><br />" +
-            "Suite à l'impossibilité de mettre en ligne sur le Goole Play Store l'application dû aux restrictions de Google pour l'utilisation des sms vous pouvez télécharger l'apk ci-contre.<br /> ><br />" +
+            "J'ai développé cette application pour comprendre comment fonctionnait l'envoi de sms ainsi que les tâches d'arrière plan en android.<br /><br />" +
+            "Suite à l'impossibilité de mettre en ligne sur le Goole Play Store l'application dû aux restrictions de Google pour l'utilisation des sms vous pouvez télécharger l'apk ci-contre.<br /><br />" +
             "<div class='display-flex'><img src='public/assets/images/projects/mysmsplanner/1.jpg' />" +
             "<img src='public/assets/images/projects/mysmsplanner/2.jpg' />" +
             "<img src='public/assets/images/projects/mysmsplanner/3.jpg' /></div>";
@@ -146,17 +155,6 @@ function pushProjects(){
                         new Link("LinkedIn", LINKS_LOGO_ENUM.LINKEDIN, "https://www.linkedin.com/company/polytech-nice-conseil/"),
                         new Link("Site web", LINKS_LOGO_ENUM.WEBSITE, "https://polytechniceconseil.com")
                     ], "007cbc", "2019"));
-
-    description =
-            "MyWorkouts est une application android de gestion d'entrainement de musculation, de crossfit ainsi que de street workout.<br /><br />" +
-            "L'application m'a permis de développer un minuteur lié à un système de notifications ainsi qu'un historique pour les entraînements.";
-    projects.push(
-            new Project("MyWorkouts", "myworkouts.png", description,
-            [LANGUAGES_ENUM.JAVA, LANGUAGES_ENUM.ANDROID],
-            [
-                new Link("Site web", LINKS_LOGO_ENUM.WEBSITE, "https://gorillabox.github.io/projects/myworkouts/"),
-                new Link("Google Play", LINKS_LOGO_ENUM.GOOGLE_PLAY, "https://play.google.com/store/apps/details?id=gorillabox.myworkouts")
-            ], "0bcd62", "2017 - 2018"));
 
     description =
             "Le site web est une vitrine pour un garage automobile contenant diverses informations sur celui-ci.<br /><br />" +

@@ -87,10 +87,11 @@ function pushProjects(){
 
     description =
             "Cette page recense les différents événements de programmation auxquels j'ai participé :<br /><br />"+
-            "Nuit de l'info - 2016 - 2017 - 2018<br />"+
-            "UCAnCODE - 2018<br />"+
+            "BattleDev - 2019<br />"+
+            "Google Hash Code - 2019<br />"+
             "Le Shaker Coding Battle - 2017 - 2018 - 2019<br />"+
-            "Google Hash Code - 2019";
+            "Nuit de l'info - 2016 - 2017 - 2018 - 2019<br />"+
+            "UCAnCODE - 2018"+;
     projects.push(
             new Project("Événements", "event.png", description,
                     [LANGUAGES_ENUM.VUEJS, LANGUAGES_ENUM.JAVASCRIPT, LANGUAGES_ENUM.JAVA, LANGUAGES_ENUM.C],

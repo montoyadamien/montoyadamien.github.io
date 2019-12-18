@@ -91,7 +91,7 @@ function pushProjects(){
             "Google Hash Code - 2019<br />"+
             "Le Shaker Coding Battle - 2017 - 2018 - 2019<br />"+
             "Nuit de l'info - 2016 - 2017 - 2018 - 2019<br />"+
-            "UCAnCODE - 2018"+;
+            "UCAnCODE - 2018";
     projects.push(
             new Project("Événements", "event.png", description,
                     [LANGUAGES_ENUM.VUEJS, LANGUAGES_ENUM.JAVASCRIPT, LANGUAGES_ENUM.JAVA, LANGUAGES_ENUM.C],

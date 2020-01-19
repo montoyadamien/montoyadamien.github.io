@@ -638,6 +638,9 @@ img{
 	font-size: 18pt;
 	opacity: 0;
 }
+.history-item-title-a{
+	text-decoration: underline;
+}
 .history-item-text{
 	font-size: 13pt;
 	transform: translate(0, 20%);

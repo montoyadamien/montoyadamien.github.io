@@ -4,10 +4,11 @@ let historyContainer;
 let historyItems = [];
 
 class History{
-    constructor(name, location, date){
+    constructor(name, location, date, url){
         this.name = name;
         this.location = location;
         this.date = date;
+        this.url = url;
     }
 }
 
@@ -15,13 +16,13 @@ class History{
     historyDisplayOffset = historyAnchor.offsetTop;
     historyContainer = document.getElementById("history-container");
 
-    historyItems.push(new History("Emploi saisonnier, Juillet", "Société Générale Fréjus", 2016));
-    historyItems.push(new History("Certificat", "Google Digital Active", 2016));
-    historyItems.push(new History("DUT Informatique", "IUT Nice Côte d'Azur", "2016 à 2018"));
-    historyItems.push(new History("Emploi saisonnier, Juillet", "Société Générale Carpentras", 2017));
-    historyItems.push(new History("Stage DUT Informatique, Avril - Juillet", "Da Nang University of Technology - Vietnam", 2018));
-    historyItems.push(new History("Diplôme Ingénieur en Informatique", "Polytech Nice-Sophia", "2018 à 2021"));
-    historyItems.push(new History("Stage Polytech, Juillet - Août", "Junior-Entreprise Polytech Nice Conseil", 2019));
+    historyItems.push(new History("Emploi saisonnier, Juillet", "Société Générale Fréjus", 2016, null));
+    historyItems.push(new History("Certificat", "Google Digital Active", 2016, "/public/assets/media/digital_active.pdf"));
+    historyItems.push(new History("DUT Informatique", "IUT Nice Côte d'Azur", "2016 à 2018", "/public/assets/media/dut_info.pdf"));
+    historyItems.push(new History("Emploi saisonnier, Juillet", "Société Générale Carpentras", 2017, null));
+    historyItems.push(new History("Stage DUT Informatique, Avril - Juillet", "Da Nang University of Technology - Vietnam", 2018, null));
+    historyItems.push(new History("Diplôme Ingénieur en Informatique", "Polytech Nice-Sophia", "2018 à 2021", "/public/assets/media/polytech_info.pdf"));
+    historyItems.push(new History("Stage Polytech, Juillet - Août", "Junior-Entreprise Polytech Nice Conseil", 2019, null));
 
     buildHistory();
 })();
@@ -37,7 +38,14 @@ function buildHistoryItem(historyItem){
         subContainer.appendChild(itemRound);
             let textContainer = document.createElement("div");
             textContainer.classList.add("history-item-container-text");
-                let title = document.createElement("h3");
+                let title;
+                if(historyItem.url === null){
+                    title = document.createElement("h3");
+                }else{
+                    title = document.createElement("a");
+                    title.classList.add("history-item-title-a");
+                    title.href = historyItem.url;
+                }
                 title.classList.add("history-item-title");
                 title.appendChild(document.createTextNode(historyItem.name));
             textContainer.appendChild(title);

@@ -1,8 +1,8 @@
 let skill = [];
-let skillsLabel = ["Java - Android",
-    "PHP Symfony", "JS jQuery Angular", "HTML CSS Bootstrap",
-    "MySQL PostgreSQL PL/SQL", "C", "Python", "Bash", "IntelliJ Eclipse",
-    "Unity", "Git", "Photoshop", "Windows - Linux - Mac OS X"];
+let skillsLabel = ["Java - Android", "Flutter React Native",
+    "PHP - Symfony", "JS - jQuery - Angular", "NestJS", "HTML CSS Bootstrap",
+    "MySQL PostgreSQL PL/SQL", "C - C++ - Python", "Bash", "IntelliJ Eclipse",
+    "Unity", "Git", "Photoshop", "Windows - Linux - Mac"];
 let skillDisplayed = 0;
 let skillXBase = skillsAnchor.clientWidth/2;
 let skillYBase = skillsAnchor.clientHeight/2;
@@ -70,7 +70,6 @@ class Skill{
 }
 
 (function(){
-
     skillsScroll();
     window.addEventListener("scroll", function(){
         skillsScroll();
@@ -91,7 +90,7 @@ function skillsScroll(){
 function displaySkill(){
     new Skill(skillsLabel[skillDisplayed], skillXBase, skillYBase, skillsAnchor, Math.cos(2 * Math.PI * skillDisplayed / (skillsLabel.length-2) + 0.2), Math.sin(2 * Math.PI * skillDisplayed / (skillsLabel.length-1)) + 0.2);
     skillDisplayed++;
-    if(skillDisplayed >= skillsLabel.length-1){
+    if(skillDisplayed > skillsLabel.length-1){
         clearInterval(skillDisplayInterval);
         let skills_title = document.getElementById("skills-title");
         skills_title.style.animation = "opacity 1s linear 2s forwards";

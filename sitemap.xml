@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://montoyadamien.github.io/index</loc>
+        <changefreq>monthly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://montoyadamien.github.io/projects/pong/index</loc>
+        <changefreq>never</changefreq>
+        <priority>0.2</priority>
+    </url>
+    <url>
+        <loc>https://montoyadamien.github.io/projects/dames/index</loc>
+        <changefreq>never</changefreq>
+        <priority>0.2</priority>
+    </url>
+    <url>
+        <loc>https://montoyadamien.github.io/projects/2048/index</loc>
+        <changefreq>never</changefreq>
+        <priority>0.2</priority>
+    </url>
+    <url>
+        <loc>https://montoyadamien.github.io/projects/taquin/index</loc>
+        <changefreq>never</changefreq>
+        <priority>0.2</priority>
+    </url>
+    <url>
+        <loc>https://montoyadamien.github.io/projects/sudoku/index</loc>
+        <changefreq>never</changefreq>
+        <priority>0.2</priority>
+    </url>
+</urlset>

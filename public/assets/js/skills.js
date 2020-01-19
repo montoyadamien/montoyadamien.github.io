@@ -1,8 +1,8 @@
 let skill = [];
-let skillsLabel = ["Java - Android", "Flutter React Native",
-    "PHP - Symfony", "JS - jQuery - Angular", "NestJS", "HTML CSS Bootstrap",
-    "MySQL PostgreSQL PL/SQL", "C - C++ - Python", "Bash", "IntelliJ Eclipse",
-    "Unity", "Git", "Photoshop", "Windows - Linux - Mac"];
+let skillsLabel = ["Java Android", "Flutter React Native",
+    "PHP Symfony", "JS jQuery Angular", "NestJS",
+    "MySQL PostgreSQL PL/SQL", "C - C++ Python", "Bash", "IntelliJ Eclipse",
+    "Unity", "Git", "Photoshop", "Windows Linux Mac"];
 let skillDisplayed = 0;
 let skillXBase = skillsAnchor.clientWidth/2;
 let skillYBase = skillsAnchor.clientHeight/2;

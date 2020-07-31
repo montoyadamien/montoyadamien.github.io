@@ -70,7 +70,7 @@ function pushProjects(){
     let description;
 
     description =
-            "MyGameDB est une application de gestion de collection de jeux vidéo et de consoles administré par mes soins. L'application android ainsi que la version web ont réuni plus de 1900 membres. <br /><br />" +
+            "MyGameDB est une application de gestion de collection de jeux vidéo et de consoles administré par mes soins. L'application android ainsi que la version web ont réuni plus de 4700 membres. <br /><br />" +
             "L'application permet d'ajouter jeux vidéos et consoles une fois un profil créé et connecté. Elle permet de gérer toute une collection via différents champs et fonctionnalités.";
 
     projects.push(

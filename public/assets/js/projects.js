@@ -176,15 +176,15 @@ function pushProjects(){
                 new Link("Site Web", LINKS_LOGO_ENUM.WEBSITE, "http://businessmodele.fr")
             ], "d59d53", "2018"));
 
-    description = "Escape JUFAC est un projet universitaire dont le but était de développer un jeu vidéo dit \"Escape Game\". <br /><br />" +
-            "J'ai donc fait parti de l'équipe de développement du jeu vidéo 2D en tant que développeur Java ainsi que graphiste pour certaines parties du jeu.<br /><br />" +
-            "Le jeu vidéo a été développé sous éclipse en Java Swing reposant sur une forge utilisée via Git.";
-    projects.push(
-            new Project("Escape JUFAC", "escapejufac.png", description,
-            [LANGUAGES_ENUM.JAVA],
-            [
-                    new Link("Site Web", LINKS_LOGO_ENUM.WEBSITE, "https://escape-jufac.000webhostapp.com/")
-            ], "dbdbdb", "2017"));
+    // description = "Escape JUFAC est un projet universitaire dont le but était de développer un jeu vidéo dit \"Escape Game\". <br /><br />" +
+    //         "J'ai donc fait parti de l'équipe de développement du jeu vidéo 2D en tant que développeur Java ainsi que graphiste pour certaines parties du jeu.<br /><br />" +
+    //         "Le jeu vidéo a été développé sous éclipse en Java Swing reposant sur une forge utilisée via Git.";
+    // projects.push(
+    //         new Project("Escape JUFAC", "escapejufac.png", description,
+    //         [LANGUAGES_ENUM.JAVA],
+    //         [
+    //                 new Link("Site Web", LINKS_LOGO_ENUM.WEBSITE, "https://escape-jufac.000webhostapp.com/")
+    //         ], "dbdbdb", "2017"));
 
     description = "EnjoyTips est un site web communautaire de partage d'astuces et de tutoriels. <br /><br />" +
             "Le site web est a présent à l'abandon mais il m'a permis de mettre en pratique mes compétences pour créer un forum de partage.";

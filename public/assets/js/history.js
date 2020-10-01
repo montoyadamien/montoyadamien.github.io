@@ -43,6 +43,7 @@ function buildHistoryItem(historyItem){
                     title = document.createElement("h3");
                 }else{
                     title = document.createElement("a");
+                    title.target = '_blank';
                     title.classList.add("history-item-title-a");
                     title.href = historyItem.url;
                 }

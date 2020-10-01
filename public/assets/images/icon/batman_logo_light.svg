@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!-- Generator: Adobe Illustrator 18.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 276 276" style="enable-background:new 0 0 276 276;" xml:space="preserve">
+<svg version="1.1"
+	 id="Capa_1"
+	 xmlns="http://www.w3.org/2000/svg"
+	 x="0px" y="0px"
+	 viewBox="0 0 276 276"
+	 style="enable-background:new 0 0 276 276;"
+	 xml:space="preserve">
 	<defs>
-    <radialGradient id="grad1" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
-      <stop offset="0%" style="stop-color:#35a8f3;" />
-		<stop offset="100%" style="stop-color:#1a80dd;" />
-    </radialGradient>
-  </defs>
-<g>
+		<radialGradient id="grad1" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+			<stop offset="0%" style="stop-color:#35a8f3;" />
+			<stop offset="100%" style="stop-color:#35a8f3;" />
+		</radialGradient>
+	</defs>
 	<g>
 		<path style="fill:url(#grad1);" d="M247.064,75.156c-19.134-13.736-40.911-13.342-40.911-13.342
 			c8.035,2.729,14.787,12.377,14.87,20.493c0.083,8.119-7.709,16.076-23.306,23.633c-15.592,7.554-33.198,5.298-35.691,3.367
@@ -25,35 +29,4 @@
 			/>
 		<polygon style="fill:#030104;" points="138.003,214.186 138.003,214.185 138.002,214.186 		"/>
 	</g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
 </svg>

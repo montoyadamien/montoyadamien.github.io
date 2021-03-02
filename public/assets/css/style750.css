@@ -15,11 +15,6 @@
 .project-item .project-item-picture-container{
     height: 200px;
 }
-.skill-item{
-    width: 60px;
-    height: 60px;
-    font-size: 9pt;
-}
 #profilePicture{
     width: 200px;
     height: 200px;
@@ -76,4 +71,7 @@
 }
 .popup-language-picture-container{
     height: 120px;
+}
+#skills-categories {
+    margin: 0;
 }

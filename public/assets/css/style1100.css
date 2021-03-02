@@ -26,11 +26,9 @@
 #popup-links-container{
     justify-content: center;
 }
-.skill-item{
-    width: 70px;
-    height: 70px;
-    font-size: 11pt;
-}
 #information p{
     font-size: 16pt;
+}
+#skills-categories {
+    margin: 0 5%;
 }

@@ -21,7 +21,7 @@ nav{
 #scrollProgress{
 	background-color: var(--blue-light-default);
 }
-#information h1{
+#information h1, #history-title{
 	color : var(--grey-dark-default);
 }
 #information p{

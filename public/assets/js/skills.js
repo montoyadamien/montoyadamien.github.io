@@ -73,7 +73,7 @@ function pushSkills() {
     skills.push(new Skill( "MacOS", "macos", CATEGORY_OTHER));
     skills.push(new Skill( "Photoshop", "photoshop", CATEGORY_OTHER));
     skills.push(new Skill( "Visual Studio Code", "vscode", CATEGORY_OTHER));
-    skills.push(new Skill( "Windows", "Windows", CATEGORY_OTHER));
+    skills.push(new Skill( "Windows", "windows", CATEGORY_OTHER));
 }
 
 function skillsScroll(){

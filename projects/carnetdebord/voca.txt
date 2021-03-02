@@ -1,9 +1,0 @@
-<div id="inTdPractice"><h2>Vocabulaire</h2></div>
-<div class="inTdBloc">
-	<p><span>Modélio : </span>Logiciel utilisé pour créer les schémas UML.</p>
-	<p><span>Acteur : </span>Un acteur est une personne ou une chose qui va interagir avec le système. Schématisé par un bonhomme fil de fer.</p>
-	<p><span>Cas d'utilisation : </span>action qu'un acteur peut effectuer. Schématisé par une bulle incluant le mot à l'infitif decrivant l'action.</p>
-	<p><span>Généralisation : </span>L'acteur doit choisir une action fille a réaliser pour effectuer l'action mère.</p>
-	<p><span>Include : </span>L'action 1 ne peux être effectué qu'après l'action 2.</p>
-	<p><span>Extend : </span>L'action 1 est facultative par rapport à l'action 2.</p>
-</div>

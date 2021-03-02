@@ -28,6 +28,9 @@ function setSun(){
 	sun.classList.add("hideSunMoon");
 	styleColor.href="public/assets/css/styleLight.css";
 	colorThemeMeta.content = "#2C82C9";
+	let d = new Date();
+	d.setTime(d.getTime() + (365*24*60*60*1000));
+	document.cookie = 'theme=sun; expires=' + d.toUTCString()+'; path=/';
 }
 
 function setMoon(){
@@ -37,6 +40,9 @@ function setMoon(){
 	moon.classList.add("hideSunMoon");
 	styleColor.href="public/assets/css/styleDark.css";
 	colorThemeMeta.content = "#2d4483";
+	let d = new Date();
+	d.setTime(d.getTime() + (365*24*60*60*1000));
+	document.cookie = 'theme=moon; expires=' + d.toUTCString()+'; path=/';
 }
 
 function getCookie(cname) {
@@ -69,23 +75,17 @@ function getCookie(cname) {
 	styleColor = document.getElementById("styleColor");
 	colorThemeMeta = document.getElementById("themeColor");
 
-	let durationCookie = new Date();
-	durationCookie.setTime(durationCookie.getTime() + (3600*24*365*1000));
-	let expires = "expires="+ durationCookie.toUTCString();
-
 	let cookie = getCookie("theme");
-	if(cookie !== "" && cookie === "moon"){
+	if(cookie === "moon"){
 		setMoon();
 	}
 
 	sun.addEventListener("click", function(){
 		setSun();
-		document.cookie = "theme=sun; expires="+expires+"; path=/";
 	});
 
 	moon.addEventListener("click", function(){
 		setMoon();
-		document.cookie = "theme=moon; expires="+expires+"; path=/";
 	});
 
     contactAnchor = document.getElementById("contact");

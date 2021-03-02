@@ -1,99 +1,120 @@
-let skill = [];
-let skillsLabel = [
-    "Java - J2EE Tomcat", 'C++ - C#', "Flutter React Native",
-    "PHP Symfony", "JS jQuery Angular", "Node.js NestJS ExpressJs",
-    "MySQL PostgreSQL PL/SQL", "C - Python", "Bash", "IntelliJ Eclipse",
-    "Git Jenkins", "Photoshop", "Windows Linux Mac"];
-let skillDisplayed = 0;
-let skillXBase = skillsAnchor.clientWidth/2;
-let skillYBase = skillsAnchor.clientHeight/2;
-let skillDisplayInterval;
+let skills = [];
 let skillsLoaded = false;
 let skillsDisplayOffset = 0;
+let CATEGORY_DEV = 0;
+let CATEGORY_TOOL = 1;
+let CATEGORY_DATABASE = 2;
+let CATEGORY_OTHER = 3;
 
-class Skill{
-    constructor(name, x, y, container, directionX, directionY) {
-        skill.push(this);
-        this.container = container;
-        this.speed = skillsAnchor.clientWidth/150;
-        this.direction = [directionX, directionY];
-        this.firstLaunch = true;
-        this.elementHtml = document.createElement("div");
-        this.elementHtml.classList.add("skill-item");
-        let div = document.createElement("div");
-        div.classList.add("skill-item-text");
-        div.appendChild(document.createTextNode(name));
-        this.elementHtml.appendChild(div);
-        container.appendChild(this.elementHtml);
-        this.size = this.elementHtml.clientWidth;
-        this.setPosition(x-this.size/2, y-this.size/2); //to center
-        this.calculateFirstDirection();
-    }
-    setPosition(x, y){
-        this.x = x;
-        this.y = y;
-        this.elementHtml.style.left = x+"px";
-        this.elementHtml.style.top = y+"px";
-    }
-    calculateFirstDirection(){
-        let t = this;
-        setInterval(function(){
-            if(t.firstLaunch){
-                t.moveSkillFirstTime();
-            }else {
-                t.moveSkill();
-            }
-        }, 200);
+let languagesContainer = document.getElementById("skills-language-container");
+let databaseContainer = document.getElementById("skills-database-container");
+let toolsContainer = document.getElementById("skills-tools-container");
+let othersContainer = document.getElementById("skills-other-container");
 
-    }
-    moveSkillFirstTime(){
-        this.firstLaunch = false;
-        this.x = this.x+(this.direction[0]*this.speed*10);
-        this.y = this.y+(this.direction[1]*this.speed*10);
-        this.elementHtml.style.left = this.x+"px";
-        this.elementHtml.style.top = this.y+"px";
-        this.elementHtml.style.transition = "0.5s ease-out";
-        this.moveSkill();
-    }
-    moveSkill(){
-        this.elementHtml.style.transition = "0.2s linear";
-        this.x = this.x+(this.direction[0]*this.speed);
-        this.y = this.y+(this.direction[1]*this.speed);
-        this.elementHtml.style.left = this.x+"px";
-        this.elementHtml.style.top = this.y+"px";
-        if(this.x <= 0 || this.x+this.size >= this.container.clientWidth){
-            this.direction[0] *= -1;
+class Skill {
+    constructor(name, logo, category) {
+        this.name = name;
+        if (category === CATEGORY_DEV) {
+            this.logo = "public/assets/images/icon/languages/" + logo + ".png";
+        } else if (category === CATEGORY_TOOL) {
+            this.logo = "public/assets/images/icon/tools/" + logo + ".png";
+        } else if (category === CATEGORY_DATABASE) {
+            this.logo = "public/assets/images/icon/database/" + logo + ".png";
+        } else if (category === CATEGORY_OTHER) {
+            this.logo = "public/assets/images/icon/other/" + logo + ".png";
         }
-        if(this.y <= 0 || this.y+this.size >= this.container.clientHeight){
-            this.direction[1] *= -1;
-        }
+        this.category = category;
     }
 }
 
 (function(){
+    pushSkills();
+    displaySkills();
     skillsScroll();
     window.addEventListener("scroll", function(){
         skillsScroll();
     });
 })();
 
+function pushSkills() {
+    skills.push(new Skill("Android (Java)","android", CATEGORY_DEV ));
+    skills.push(new Skill( "Angular (Framework JS)", "angular", CATEGORY_DEV));
+    skills.push(new Skill( "C", "c", CATEGORY_DEV));
+    skills.push(new Skill( "C++", "cpp", CATEGORY_DEV));
+    skills.push(new Skill( "C#", "csharp", CATEGORY_DEV));
+    skills.push(new Skill( "Flutter (Dart)", "flutter", CATEGORY_DEV));
+    skills.push(new Skill( "Go", "go", CATEGORY_DEV));
+    skills.push(new Skill( "Java", "java", CATEGORY_DEV));
+    skills.push(new Skill( "JavaScript", "javascript", CATEGORY_DEV));
+    skills.push(new Skill( "jQuery", "jquery", CATEGORY_DEV));
+    skills.push(new Skill( "NestJS (Framework JS)", "nestjs", CATEGORY_DEV));
+    skills.push(new Skill( "PHP", "php", CATEGORY_DEV));
+    skills.push(new Skill( "Python", "python", CATEGORY_DEV));
+    skills.push(new Skill( "React Native (Framework JS)", "react_native", CATEGORY_DEV));
+    skills.push(new Skill( "Spring (Framework Java)", "spring", CATEGORY_DEV));
+    skills.push(new Skill( "Symfony (Framework PHP)", "symfony", CATEGORY_DEV));
+
+    skills.push(new Skill( "MongoDB", "mongodb", CATEGORY_DATABASE));
+    skills.push(new Skill( "MySQL", "mysql", CATEGORY_DATABASE));
+    skills.push(new Skill( "PostgreSQL", "postgresql", CATEGORY_DATABASE));
+    skills.push(new Skill( "Redis", "redis", CATEGORY_DATABASE));
+
+    skills.push(new Skill( "Bitbucket", "bitbucket", CATEGORY_TOOL));
+    skills.push(new Skill( "CircleCI", "circleci", CATEGORY_TOOL));
+    skills.push(new Skill( "Docker", "docker", CATEGORY_TOOL));
+    skills.push(new Skill( "Google App Engine (Cloud tasks, task queues, base de données...)", "google_app_engine", CATEGORY_TOOL));
+    skills.push(new Skill( "GitHub", "github", CATEGORY_TOOL));
+    skills.push(new Skill( "Jenkins", "jenkins", CATEGORY_TOOL));
+    skills.push(new Skill( "SonarQube", "sonarqube", CATEGORY_TOOL));
+
+    skills.push(new Skill( "Eclipse", "eclipse", CATEGORY_OTHER));
+    skills.push(new Skill( "IntelliJ", "intellij", CATEGORY_OTHER));
+    skills.push(new Skill( "Linux (Ubuntu, Debian)", "linux", CATEGORY_OTHER));
+    skills.push(new Skill( "MacOS", "macos", CATEGORY_OTHER));
+    skills.push(new Skill( "Photoshop", "photoshop", CATEGORY_OTHER));
+    skills.push(new Skill( "Visual Studio Code", "vscode", CATEGORY_OTHER));
+    skills.push(new Skill( "Windows", "Windows", CATEGORY_OTHER));
+}
+
 function skillsScroll(){
     skillsDisplayOffset = skillsAnchor.offsetTop;
     if(window.pageYOffset >= (skillsDisplayOffset-(window.innerHeight/2)) && skillsLoaded === false){
         skillsLoaded = true;
-        setTimeout(function(){
-            skillDisplayInterval = setInterval(displaySkill, 500);
-        }, 2000);
-        skillsAnchor.style.animation = "skills-batman 5.5s linear 1s forwards";
+        document.getElementById("skill-background-shape").style.animation = "skills-background 4s linear 0.5s forwards";
     }
 }
 
-function displaySkill(){
-    new Skill(skillsLabel[skillDisplayed], skillXBase, skillYBase, skillsAnchor, Math.cos(2 * Math.PI * skillDisplayed / (skillsLabel.length-2) + 0.2), Math.sin(2 * Math.PI * skillDisplayed / (skillsLabel.length-1)) + 0.2);
-    skillDisplayed++;
-    if(skillDisplayed > skillsLabel.length-1){
-        clearInterval(skillDisplayInterval);
-        let skills_title = document.getElementById("skills-title");
-        skills_title.style.animation = "opacity 1s linear 2s forwards";
-    }
+function displaySkills(){
+    skills.forEach(skill => {
+        let item = document.createElement("div");
+        item.classList.add("skill-item");
+
+        let container = document.createElement("div");
+        container.classList.add("skill-item-container");
+        item.appendChild(container);
+
+        let pic = document.createElement("img");
+        pic.alt = skill.name;
+        pic.classList.add("skill-item-picture");
+        pic.src = skill.logo;
+        item.appendChild(pic);
+
+        let infobulle = document.createElement("div");
+        infobulle.classList.add("skill-item-infobulle");
+        if (skill.name.length > 20) {
+            infobulle.classList.add("big-infobulle");
+        }
+        infobulle.appendChild(document.createTextNode(skill.name));
+        item.appendChild(infobulle);
+
+        if (skill.category === CATEGORY_DEV) {
+            languagesContainer.appendChild(item);
+        } else if (skill.category === CATEGORY_DATABASE) {
+            databaseContainer.appendChild(item);
+        } else if (skill.category === CATEGORY_TOOL) {
+            toolsContainer.appendChild(item);
+        } else if (skill.category === CATEGORY_OTHER) {
+            othersContainer.appendChild(item);
+        }
+    });
 }

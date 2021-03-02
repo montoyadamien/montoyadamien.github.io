@@ -70,8 +70,8 @@ function pushProjects(){
     let description;
 
     description =
-            "MyGameDB est une application de gestion de collection de jeux vidéo et de consoles administré par mes soins. L'application android ainsi que la version web ont réuni plus de 4700 membres. <br /><br />" +
-            "L'application permet d'ajouter jeux vidéos et consoles une fois un profil créé et connecté. Elle permet de gérer toute une collection via différents champs et fonctionnalités.";
+            "MyGameDB est une application de gestion de collection de jeux vidéo, de consoles et d'accessoires administré par mes soins. L'application android ainsi que la version web ont réuni plus de 20 000 membres. <br /><br />" +
+            "L'application permet d'ajouter jeux vidéos, consoles et accessoires une fois un profil créé et connecté. Elle permet de gérer toute une collection via différents champs, filtres, fonctions de tri, export de données en pdf..";
 
     projects.push(
             new Project("MyGameDB", "mygamedb.png", description,
@@ -82,7 +82,18 @@ function pushProjects(){
                         new Link("Google Play", LINKS_LOGO_ENUM.GOOGLE_PLAY, "https://play.google.com/store/apps/details?id=gorillabox.mygamedb"),
                         new Link("Site web", LINKS_LOGO_ENUM.WEBSITE, "https://mygamedb.com")
                         ],
-                    "1d3e5c", "2017- En cours"));
+                    "1d3e5c", "2017 - En cours"));
+
+    description =
+        "MyWorkouts est une application android de gestion d'entrainement de musculation, de crossfit ainsi que de street workout.<br /><br />" +
+        "L'application possède tout un système de gestion d'entrainement et propose l'ajout d'entraînement, le lancement de l'entraînement, un historique des entraînements, un minuteur lié à un système de notifications...";
+    projects.push(
+        new Project("MyWorkouts", "myworkouts.png", description,
+            [LANGUAGES_ENUM.JAVA, LANGUAGES_ENUM.ANDROID],
+            [
+                new Link("Site web", LINKS_LOGO_ENUM.WEBSITE, "https://gorillabox.github.io/projects/myworkouts/"),
+                new Link("Google Play", LINKS_LOGO_ENUM.GOOGLE_PLAY, "https://play.google.com/store/apps/details?id=gorillabox.myworkouts")
+            ], "0bcd62", "2017 - 2020"));
 
     description =
             "Cette page recense les différents événements de programmation auxquels j'ai participé :<br /><br />"+
@@ -96,65 +107,54 @@ function pushProjects(){
                     [LANGUAGES_ENUM.VUEJS, LANGUAGES_ENUM.JAVASCRIPT, LANGUAGES_ENUM.JAVA, LANGUAGES_ENUM.C],
                     [
                             new Link("Certificat GHC 2019 (1523/7500)", LINKS_LOGO_ENUM.FILE, "public/events/ghc_2019.pdf")
-                    ],"16a085","2017- En cours"));
+                    ],"16a085","2017 - 2019"));
 
     description =
-            "Sudoku : le but est de compléter la grille avec des nombres ne se trouvant que sur une ligne, sur une colonne et dans un groupe de 9 cases.<br /><br />"+
-            "Taquin : le but de ce jeu est le déplacement d'élements pour reconstituer une suite.<br /><br />" +
-            "2048 : le but du jeu est de coupler des tuiles de même valeur pour en obtenir de plus grandes. Se joue avec les touches Haut, Bas, Gauche et Droite.<br /><br />" +
-            "Dames : le but est de manger les pions adverses en sautant par dessus en diagonale.<br /><br />"+
-            "Pong : chaque joueur contrôlant une raquette doit faire rebondir la balle sinon il perd. Se joue avec Z et A ainsi que Haut et Bas."
-            ;
+        "Sudoku : le but est de compléter la grille avec des nombres ne se trouvant que sur une ligne, sur une colonne et dans un groupe de 9 cases.<br /><br />"+
+        "Taquin : le but de ce jeu est le déplacement d'élements pour reconstituer une suite.<br /><br />" +
+        "2048 : le but du jeu est de coupler des tuiles de même valeur pour en obtenir de plus grandes. Se joue avec les touches Haut, Bas, Gauche et Droite.<br /><br />" +
+        "Dames : le but est de manger les pions adverses en sautant par dessus en diagonale.<br /><br />"+
+        "Pong : chaque joueur contrôlant une raquette doit faire rebondir la balle sinon il perd. Se joue avec Z et A ainsi que Haut et Bas."
+    ;
     projects.push(
-            new Project("Projets Divers","divers.png", description,
+        new Project("Projets Divers","divers.png", description,
             [LANGUAGES_ENUM.JAVASCRIPT, LANGUAGES_ENUM.JAVA],
             [
-                    new Link("Pong", LINKS_LOGO_ENUM.FILE, "projects/pong/index.html"),
-                    new Link("Dames", LINKS_LOGO_ENUM.FILE, "projects/dames/index.html"),
-                    new Link("2048", LINKS_LOGO_ENUM.FILE, "projects/2048/index.html"),
-                    new Link("Taquin", LINKS_LOGO_ENUM.FILE, "projects/taquin/index.html"),
-                    new Link("Sudoku", LINKS_LOGO_ENUM.FILE, "projects/sudoku/index.html"),
-                    // new Link("Carnet de bord v2", LINKS_LOGO_ENUM.FILE, "projects/carnetdebordCPOO/index.html"),
-                    // new Link("Carnet de bord", LINKS_LOGO_ENUM.FILE, "projects/carnetdebord/index.html")
-            ], "16a085", "2017- En cours"));
+                new Link("Pong", LINKS_LOGO_ENUM.FILE, "projects/pong/index.html"),
+                new Link("Dames", LINKS_LOGO_ENUM.FILE, "projects/dames/index.html"),
+                new Link("2048", LINKS_LOGO_ENUM.FILE, "projects/2048/index.html"),
+                new Link("Taquin", LINKS_LOGO_ENUM.FILE, "projects/taquin/index.html"),
+                new Link("Sudoku", LINKS_LOGO_ENUM.FILE, "projects/sudoku/index.html"),
+                // new Link("Carnet de bord v2", LINKS_LOGO_ENUM.FILE, "projects/carnetdebordCPOO/index.html"),
+                // new Link("Carnet de bord", LINKS_LOGO_ENUM.FILE, "projects/carnetdebord/index.html")
+            ], "16a085", "2017 - 2019"));
 
-	description =
-            "MyWorkouts est une application android de gestion d'entrainement de musculation, de crossfit ainsi que de street workout.<br /><br />" +
-            "L'application m'a permis de développer un minuteur lié à un système de notifications ainsi qu'un historique pour les entraînements.";
+    description =
+        "Durant mon stage de première année à Polytech Nice-Sophia j'ai travaillé pour la Junior-Entreprise Polytech Nice Conseil.<br ><br >"+
+        "J'ai eu pour mission de développer leur site web, la partie front ainsi que la partie back-end. J'ai choisi d'utiliser Symfony pour apprendre à utiliser ce framework.";
     projects.push(
-            new Project("MyWorkouts", "myworkouts.png", description,
-            [LANGUAGES_ENUM.JAVA, LANGUAGES_ENUM.ANDROID],
+        new Project("Polytech Nice Conseil", "pnc.png", description,
+            [LANGUAGES_ENUM.JAVASCRIPT, LANGUAGES_ENUM.SYMFONY, LANGUAGES_ENUM.PHP, LANGUAGES_ENUM.MYSQL],
             [
-                new Link("Site web", LINKS_LOGO_ENUM.WEBSITE, "https://gorillabox.github.io/projects/myworkouts/"),
-                new Link("Google Play", LINKS_LOGO_ENUM.GOOGLE_PLAY, "https://play.google.com/store/apps/details?id=gorillabox.myworkouts")
-            ], "0bcd62", "2017- En cours"));
+                new Link("Twitter", LINKS_LOGO_ENUM.TWITTER, "https://twitter.com/PolytechConseil"),
+                new Link("Facebook", LINKS_LOGO_ENUM.FACEBOOK, "https://www.facebook.com/PolytechNiceConseil/"),
+                new Link("LinkedIn", LINKS_LOGO_ENUM.LINKEDIN, "https://www.linkedin.com/company/polytech-nice-conseil/"),
+                new Link("Site web", LINKS_LOGO_ENUM.WEBSITE, "https://polytechniceconseil.com")
+            ], "007cbc", "2019"));
 
     description =
             "MySmsPlanner est une application permettant de planifier ses sms.<br /><br />" +
             "J'ai développé cette application pour comprendre comment fonctionnait l'envoi de sms ainsi que les tâches d'arrière plan en android.<br /><br />" +
             "Suite à l'impossibilité de mettre en ligne sur le Goole Play Store l'application dû aux restrictions de Google pour l'utilisation des sms vous pouvez télécharger l'apk ci-contre.<br /><br />" +
-            "<div class='display-flex'><img src='public/assets/images/projects/mysmsplanner/1.jpg' />" +
-            "<img src='public/assets/images/projects/mysmsplanner/2.jpg' />" +
-            "<img src='public/assets/images/projects/mysmsplanner/3.jpg' /></div>";
+            "<div class='display-flex'><img src='public/assets/images/projects/mysmsplanner/1.jpg' alt='MySmsPlanner page' />" +
+            "<img src='public/assets/images/projects/mysmsplanner/2.jpg' alt='MySmsPlanner page' />" +
+            "<img src='public/assets/images/projects/mysmsplanner/3.jpg' alt='MySmsPlanner page' /></div>";
     projects.push(
             new Project("MySmsPlanner", "mysmsplanner.png", description,
                     [LANGUAGES_ENUM.JAVA, LANGUAGES_ENUM.ANDROID],
                     [
                         new Link("Télécharger l'APK", LINKS_LOGO_ENUM.WEBSITE, "projects/mysmsplanner/app.apk"),
                     ], "3498db", "2019"));
-
-    description =
-            "Durant mon stage de première année à Polytech Nice-Sophia j'ai travaillé pour la Junior-Entreprise Polytech Nice Conseil.<br ><br >"+
-            "J'ai eu pour mission de développer leur site web, la partie front ainsi que la partie back-end. J'ai choisi d'utiliser Symfony pour apprendre à utiliser ce framework.";
-    projects.push(
-            new Project("Polytech Nice Conseil", "pnc.png", description,
-                    [LANGUAGES_ENUM.JAVASCRIPT, LANGUAGES_ENUM.SYMFONY, LANGUAGES_ENUM.PHP, LANGUAGES_ENUM.MYSQL],
-                    [
-                        new Link("Twitter", LINKS_LOGO_ENUM.TWITTER, "https://twitter.com/PolytechConseil"),
-                        new Link("Facebook", LINKS_LOGO_ENUM.FACEBOOK, "https://www.facebook.com/PolytechNiceConseil/"),
-                        new Link("LinkedIn", LINKS_LOGO_ENUM.LINKEDIN, "https://www.linkedin.com/company/polytech-nice-conseil/"),
-                        new Link("Site web", LINKS_LOGO_ENUM.WEBSITE, "https://polytechniceconseil.com")
-                    ], "007cbc", "2019"));
 
     description =
             "Le site web est une vitrine pour un garage automobile contenant diverses informations sur celui-ci.<br /><br />" +
@@ -234,7 +234,7 @@ function buildThreeFirstProjects(){
                 let logo = document.createElement("img");
                 logo.classList.add("project-item-language-logo");
                 logo.alt = projects[0].languages[i].name;
-;                logo.src = "public/assets/images/icon/languages/"+projects[0].languages[i].logo;
+                logo.src = "public/assets/images/icon/languages/"+projects[0].languages[i].logo;
                 language.appendChild(logo);
                 let div = document.createElement("div");
                 div.classList.add("project-item-language-infobulle");
@@ -279,7 +279,6 @@ function buildProject(project){
     subContainer.style.backgroundColor = "#"+project.backgroundColor;
     item.appendChild(subContainer);
     let pic = document.createElement("img");
-    console.log(pic)
     pic.alt = project.name;
     pic.classList.add("project-item-picture");
     pic.src = "public/assets/images/projects/"+project.logo;

@@ -30,23 +30,8 @@ nav{
 #profilePicture{
 	border : 2px solid var(--blue-light-default);
 }
-#skills{
-	background-image: url(../images/icon/batman_logo_light.svg);
-}
-.skill-item{
-	background-color: rgba(255,255,255,0.75);
-	border: 2px solid rgba(255,255,255,0.75);
-	/*box-shadow: 0 0 0 1px var(--blue-light-default) inset;*/
-	color : var(--blue-light-default);
-}
-.skill-item:hover{
-	background-color: white;
-	border: 2px solid white;
-	/*box-shadow: 0 0 0 0 var(--blue-light-default) inset;*/
-	box-shadow: 0 3px 10px 2px rgba(0,0,0,0.3);
-}
-#skills-title{
-	color: rgba(0,0,0,0.2);
+#skill-background-shape {
+	background-color: var(--blue-light-default);
 }
 #projects{
 	background-color: #616b75;
@@ -63,12 +48,12 @@ nav{
 .project-item-date{
 	color : rgba(255,255,255,0.8);
 }
-.project-item-language-infobulle, .contact-item-infobulle{
+.project-item-language-infobulle, .contact-item-infobulle, .skill-item-infobulle{
 	background-color: rgba(0,0,0,0.7);
 	box-shadow: 0 6px 10px 2px rgba(0,0,0,0.3);
 	color : white;
 }
-.project-item-language-infobulle::before, .contact-item-infobulle::before{
+.project-item-language-infobulle::before, .contact-item-infobulle::before, .skill-item-infobulle::before{
 	border-color: transparent transparent rgba(0,0,0,0.7) transparent;
 }
 #project-popup{
@@ -77,23 +62,14 @@ nav{
 #cross-container::before, #cross-container::after{
 	background-color: white;
 }
-.popup-link,.contact-item{
+.popup-link,.contact-item, .skill-item, #popup-right-container, #popup-links-container, .popup-language-container, .more-button, .less-button{
 	background-color: white;
 }
-.popup-link:hover, .popup-language-container:hover, .contact-item:hover{
+.popup-link:hover, .popup-language-container:hover, .contact-item:hover, .skill-item:hover{
 	box-shadow: 0 6px 10px 2px rgba(0,0,0,0.3);
 }
-#popup-right-container, #popup-links-container, .popup-language-container{
-	background-color: white;
-}
-#popup-title, .popup-language-name{
-	color : var(--grey-dark-default);
-}
-#popup-text{
-	color: var(--grey-light-default);
-}
-.more-button, .less-button{
-	background-color: white;
+#popup-title, .popup-language-name, #popup-text{
+	color : var(--grey-light-default);
 }
 .more-button::before, .more-button::after, .less-button::before{
 	background-color: var(--grey-dark-default);
@@ -121,4 +97,10 @@ nav{
 }
 .display-flex img{
 	border: 1px solid var(--grey-dark-default);
+}
+#skill {
+	background-color: white;
+}
+#skills-title {
+	color: rgba(255,255,255,0.8);
 }

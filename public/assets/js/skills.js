@@ -80,7 +80,15 @@ function skillsScroll(){
     skillsDisplayOffset = skillsAnchor.offsetTop;
     if(window.pageYOffset >= (skillsDisplayOffset-(window.innerHeight/2)) && skillsLoaded === false){
         skillsLoaded = true;
-        document.getElementById("skill-background-shape").style.animation = "skills-background 4s linear 0.5s forwards";
+        if (window.innerWidth < 500) {
+            document.getElementById("skill-background-shape").style.animation = "skills-background 5s linear 0.5s forwards";
+        } else if (window.innerWidth < 1000) {
+            document.getElementById("skill-background-shape").style.animation = "skills-background 10s linear 0.5s forwards";
+        } else if (window.innerWidth < 2000) {
+            document.getElementById("skill-background-shape").style.animation = "skills-background 15s linear 0.5s forwards";
+        } else {
+            document.getElementById("skill-background-shape").style.animation = "skills-background 20s linear 0.5s forwards";
+        }
     }
 }
 

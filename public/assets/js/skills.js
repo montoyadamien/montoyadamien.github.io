@@ -66,7 +66,7 @@ function pushSkills() {
     skills.push(new Skill( "GitHub", "github", CATEGORY_TOOL));
     skills.push(new Skill( "Jenkins", "jenkins", CATEGORY_TOOL));
     skills.push(new Skill( "SonarQube", "sonarqube", CATEGORY_TOOL));
-    skills.push(new Skill( "Travis", "travis", CATEGORY_TOOL));
+    skills.push(new Skill( "Travis CI", "travis", CATEGORY_TOOL));
 
     skills.push(new Skill( "Eclipse", "eclipse", CATEGORY_OTHER));
     skills.push(new Skill( "IntelliJ", "intellij", CATEGORY_OTHER));

@@ -59,11 +59,16 @@ function pushSkills() {
     skills.push(new Skill( "PostgreSQL", "postgresql", CATEGORY_DATABASE));
     skills.push(new Skill( "Redis", "redis", CATEGORY_DATABASE));
 
+    skills.push(new Skill( "Bamboo", "bamboo", CATEGORY_TOOL));
     skills.push(new Skill( "Bitbucket", "bitbucket", CATEGORY_TOOL));
     skills.push(new Skill( "CircleCI", "circleci", CATEGORY_TOOL));
     skills.push(new Skill( "Docker", "docker", CATEGORY_TOOL));
+    skills.push(new Skill( "Firebase", "firebase", CATEGORY_TOOL));
+    skills.push(new Skill( "Google AdMob", "admob", CATEGORY_TOOL));
+    skills.push(new Skill( "Google AdSense", "adsense", CATEGORY_TOOL));
     skills.push(new Skill( "Google App Engine (Cloud tasks, task queues, base de données...)", "google_app_engine", CATEGORY_TOOL));
     skills.push(new Skill( "GitHub", "github", CATEGORY_TOOL));
+    skills.push(new Skill( "GitLab", "gitlab", CATEGORY_TOOL));
     skills.push(new Skill( "Jenkins", "jenkins", CATEGORY_TOOL));
     skills.push(new Skill( "SonarQube", "sonarqube", CATEGORY_TOOL));
     skills.push(new Skill( "Travis CI", "travis", CATEGORY_TOOL));

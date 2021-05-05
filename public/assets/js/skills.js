@@ -63,7 +63,7 @@ function pushSkills() {
     skills.push(new Skill( "Bitbucket", "bitbucket", CATEGORY_TOOL));
     skills.push(new Skill( "CircleCI", "circleci", CATEGORY_TOOL));
     skills.push(new Skill( "Docker", "docker", CATEGORY_TOOL));
-    skills.push(new Skill( "Firebase", "firebase", CATEGORY_TOOL));
+    skills.push(new Skill( "Firebase (analytics, notifications...)", "firebase", CATEGORY_TOOL));
     skills.push(new Skill( "Google AdMob", "admob", CATEGORY_TOOL));
     skills.push(new Skill( "Google AdSense", "adsense", CATEGORY_TOOL));
     skills.push(new Skill( "Google App Engine (Cloud tasks, task queues, base de données...)", "google_app_engine", CATEGORY_TOOL));

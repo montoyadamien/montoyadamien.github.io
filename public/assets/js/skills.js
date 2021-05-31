@@ -54,6 +54,7 @@ function pushSkills() {
     skills.push(new Skill('Spring (Framework Java)', 'spring', CATEGORY_DEV));
     skills.push(new Skill('Symfony (Framework PHP)', 'symfony', CATEGORY_DEV));
 
+    skills.push(new Skill('Elasticsearch', 'elasticsearch', CATEGORY_DATABASE));
     skills.push(new Skill('MongoDB', 'mongodb', CATEGORY_DATABASE));
     skills.push(new Skill('MySQL', 'mysql', CATEGORY_DATABASE));
     skills.push(new Skill('PostgreSQL', 'postgresql', CATEGORY_DATABASE));
@@ -63,7 +64,6 @@ function pushSkills() {
     skills.push(new Skill('Bitbucket', 'bitbucket', CATEGORY_TOOL));
     skills.push(new Skill('CircleCI', 'circleci', CATEGORY_TOOL));
     skills.push(new Skill('Docker', 'docker', CATEGORY_TOOL));
-    skills.push(new Skill('Elasticsearch', 'elasticsearch', CATEGORY_TOOL));
     skills.push(new Skill('Firebase (analytics, notifications...)', 'firebase', CATEGORY_TOOL));
     skills.push(new Skill('Google AdMob', 'admob', CATEGORY_TOOL));
     skills.push(new Skill('Google AdSense', 'adsense', CATEGORY_TOOL));

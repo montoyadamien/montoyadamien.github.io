@@ -18,12 +18,14 @@ class History{
 
     historyItems.push(new History("Emploi saisonnier, Juillet", "Société Générale Fréjus", 2016, null));
     historyItems.push(new History("Certificat", "Google Digital Active", 2016, "/public/assets/media/digital_active.pdf"));
-    historyItems.push(new History("DUT Informatique", "IUT Nice Côte d'Azur", "2016 à 2018", "/public/assets/media/dut_info.pdf"));
     historyItems.push(new History("Emploi saisonnier, Juillet", "Société Générale Carpentras", 2017, null));
-    historyItems.push(new History("Stage DUT Informatique, Avril - Juillet", "Da Nang University of Technology - Vietnam", 2018, null));
-    historyItems.push(new History("Diplôme Ingénieur en Informatique", "Polytech Nice-Sophia", "2018 à 2021", "/public/assets/media/polytech_info.pdf"));
-    historyItems.push(new History("Stage Polytech, Juillet - Août", "Junior-Entreprise Polytech Nice Conseil", 2019, null));
-    historyItems.push(new History("Développeur Angular Spring, 2020 - 2021", "Alternant chez Air France, Sophia Antipolis", 2020, null));
+    historyItems.push(new History("Stage développeur fullstack", "Da Nang University of Technology - Vietnam", 2018, null));
+    historyItems.push(new History("Diplômé DUT Informatique", "IUT Nice Côte d'Azur", "2016 à 2018", "/public/assets/media/dut_info.pdf"));
+    historyItems.push(new History("Stage développeur fullstack", "Junior-Entreprise Polytech Nice Conseil", 2019, "https://polytechniceconseil.com/"));
+    historyItems.push(new History("Alternant développeur fullstack", "Air France - Sophia Antipolis", "2020 à 2021", null));
+    historyItems.push(new History("Diplômé Master Informatique", "Polytech Nice-Sophia", "2020 à 2021", "/public/assets/media/polytech_info.pdf"));
+    historyItems.push(new History("Diplômé Ingénieur Informatique", "Polytech Nice-Sophia", "2018 à 2021", "/public/assets/media/polytech_info.pdf"));
+
 
     buildHistory();
 })();

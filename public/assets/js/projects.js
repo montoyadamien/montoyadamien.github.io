@@ -36,6 +36,7 @@ class Link{
 
 const LANGUAGES_ENUM = {
     JAVA: new Language("Java", "java.png"),
+    FLUTTER: new Language("Flutter", "flutter.png"),
     PHP: new Language("PHP", "php.png"),
     MYSQL: new Language("MySQL", "mysql.png"),
     JAVASCRIPT : new Language("JavaScript", "javascript.png"),
@@ -82,7 +83,17 @@ function pushProjects(){
                         new Link("Google Play", LINKS_LOGO_ENUM.GOOGLE_PLAY, "https://play.google.com/store/apps/details?id=gorillabox.mygamedb"),
                         new Link("Site web", LINKS_LOGO_ENUM.WEBSITE, "https://mygamedb.com")
                         ],
-                    "1d3e5c", "2017 - En cours"));
+                    "0a868b", "2017 - En cours"));
+
+    description =
+        "Animals Quest est une application de quiz sur les animaux.<br /><br />" +
+        "L'application possède un système de stockage interne permettant de répondre aux 334 questions présentes.";
+    projects.push(
+        new Project("Animals Quest", "animalsquest.png", description,
+            [LANGUAGES_ENUM.FLUTTER, LANGUAGES_ENUM.ANDROID],
+            [
+                new Link("Google Play", LINKS_LOGO_ENUM.GOOGLE_PLAY, "https://play.google.com/store/apps/details?id=com.questsbox.animals_quest")
+            ], "eb992d", "2020 - 2021"));
 
     description =
         "MyWorkouts est une application android de gestion d'entrainement de musculation, de crossfit ainsi que de street workout.<br /><br />" +
@@ -125,8 +136,6 @@ function pushProjects(){
                 new Link("2048", LINKS_LOGO_ENUM.FILE, "projects/2048/index.html"),
                 new Link("Taquin", LINKS_LOGO_ENUM.FILE, "projects/taquin/index.html"),
                 new Link("Sudoku", LINKS_LOGO_ENUM.FILE, "projects/sudoku/index.html"),
-                // new Link("Carnet de bord v2", LINKS_LOGO_ENUM.FILE, "projects/carnetdebordCPOO/index.html"),
-                // new Link("Carnet de bord", LINKS_LOGO_ENUM.FILE, "projects/carnetdebord/index.html")
             ], "16a085", "2017 - 2019"));
 
     description =
@@ -141,58 +150,6 @@ function pushProjects(){
                 new Link("LinkedIn", LINKS_LOGO_ENUM.LINKEDIN, "https://www.linkedin.com/company/polytech-nice-conseil/"),
                 new Link("Site web", LINKS_LOGO_ENUM.WEBSITE, "https://polytechniceconseil.com")
             ], "007cbc", "2019"));
-
-    description =
-            "MySmsPlanner est une application permettant de planifier ses sms.<br /><br />" +
-            "J'ai développé cette application pour comprendre comment fonctionnait l'envoi de sms ainsi que les tâches d'arrière plan en android.<br /><br />" +
-            "Suite à l'impossibilité de mettre en ligne sur le Goole Play Store l'application dû aux restrictions de Google pour l'utilisation des sms vous pouvez télécharger l'apk ci-contre.<br /><br />" +
-            "<div class='display-flex'><img src='public/assets/images/projects/mysmsplanner/1.jpg' alt='MySmsPlanner page' />" +
-            "<img src='public/assets/images/projects/mysmsplanner/2.jpg' alt='MySmsPlanner page' />" +
-            "<img src='public/assets/images/projects/mysmsplanner/3.jpg' alt='MySmsPlanner page' /></div>";
-    projects.push(
-            new Project("MySmsPlanner", "mysmsplanner.png", description,
-                    [LANGUAGES_ENUM.JAVA, LANGUAGES_ENUM.ANDROID],
-                    [
-                        new Link("Télécharger l'APK", LINKS_LOGO_ENUM.WEBSITE, "projects/mysmsplanner/app.apk"),
-                    ], "3498db", "2019"));
-
-    description =
-            "Le site web est une vitrine pour un garage automobile contenant diverses informations sur celui-ci.<br /><br />" +
-            "Il permet de faire la demande de devis en ligne ainsi que récupérer les avis des utilisateurs. La protection Google reCAPTCHA a été mise en place pour éviter tout abus lors de l'envoi de commentaire.";
-    projects.push(
-            new Project("Garage JMS & Co", "jms.JPG", description,
-            [LANGUAGES_ENUM.PHP, LANGUAGES_ENUM.MYSQL],
-            [
-                    new Link("Site web", LINKS_LOGO_ENUM.WEBSITE, "http://www.garagejms.com/")
-            ], "ff0000", "2018"));
-
-    description =
-            "Business Modèle est un site web contenant des articles d'études de développement des grandes entreprises.<br /><br />" +
-            "La structure du projet repose sur un modèle MVC performant assurant une maintenance du code plus rapide.<br /><br />Logo produit par Marie-Anne Amélie sous Illustrator.";
-    projects.push(new Project("Business Modèle", "business_model.png", description,
-            [LANGUAGES_ENUM.JAVASCRIPT, LANGUAGES_ENUM.PHP, LANGUAGES_ENUM.MYSQL],
-            [
-                new Link("Facebook", LINKS_LOGO_ENUM.FACEBOOK, "https://www.facebook.com/BusinessModeleBM/"),
-                new Link("Site Web", LINKS_LOGO_ENUM.WEBSITE, "http://businessmodele.fr")
-            ], "d59d53", "2018"));
-
-    // description = "Escape JUFAC est un projet universitaire dont le but était de développer un jeu vidéo dit \"Escape Game\". <br /><br />" +
-    //         "J'ai donc fait parti de l'équipe de développement du jeu vidéo 2D en tant que développeur Java ainsi que graphiste pour certaines parties du jeu.<br /><br />" +
-    //         "Le jeu vidéo a été développé sous éclipse en Java Swing reposant sur une forge utilisée via Git.";
-    // projects.push(
-    //         new Project("Escape JUFAC", "escapejufac.png", description,
-    //         [LANGUAGES_ENUM.JAVA],
-    //         [
-    //                 new Link("Site Web", LINKS_LOGO_ENUM.WEBSITE, "https://escape-jufac.000webhostapp.com/")
-    //         ], "dbdbdb", "2017"));
-
-    description = "EnjoyTips est un site web communautaire de partage d'astuces et de tutoriels. <br /><br />" +
-            "Le site web est a présent à l'abandon mais il m'a permis de mettre en pratique mes compétences pour créer un forum de partage.";
-    projects.push(new Project("EnjoyTips", "enjoytips.png", description,
-            [LANGUAGES_ENUM.JAVASCRIPT, LANGUAGES_ENUM.PHP, LANGUAGES_ENUM.MYSQL],
-            [
-                new Link("Site Web", LINKS_LOGO_ENUM.WEBSITE, "http://www.enjoytips.altervista.org/")
-            ], "5fbc87", "2015"));
 }
 
 function buildThreeFirstProjects(){

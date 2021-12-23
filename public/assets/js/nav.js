@@ -15,6 +15,7 @@ let skillsAnchor;
 let projectsAnchor;
 let historyAnchor;
 let contactAnchor;
+let certificatesAnchor;
 
 let sun;
 let moon;
@@ -88,6 +89,7 @@ function getCookie(cname) {
 		setMoon();
 	});
 
+	certificatesAnchor = document.getElementById("certificates");
     contactAnchor = document.getElementById("contact");
     skillsAnchor = document.getElementById("skills");
     informationAnchor = document.getElementById("information");

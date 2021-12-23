@@ -340,7 +340,7 @@ img{
 .project-item-language-logo:hover{
 	filter: grayscale(0);
 }
-.project-item-language-infobulle, .contact-item-infobulle, .skill-item-infobulle{
+.project-item-language-infobulle, .contact-item-infobulle, .skill-item-infobulle, .certificate-item-infobulle{
 	position: absolute;
 	z-index : 15;
 	padding: 10px 20px;
@@ -352,10 +352,14 @@ img{
 	transform: translate(-50%, 20%) scale(0);
 	transition: 0.2s;
 }
-.project-item-language-container:hover .project-item-language-infobulle, .contact-item:hover .contact-item-infobulle, .skill-item:hover .skill-item-infobulle{
+.certificate-item-infobulle {
+	min-width: 250px;
+}
+.project-item-language-container:hover .project-item-language-infobulle, .contact-item:hover .contact-item-infobulle,
+.skill-item:hover .skill-item-infobulle, .certificate-item:hover .certificate-item-infobulle{
 	transform: translate(-50%, 30%) scale(1);
 }
-.project-item-language-infobulle::before, .contact-item-infobulle::before, .skill-item-infobulle::before{
+.project-item-language-infobulle::before, .contact-item-infobulle::before, .skill-item-infobulle::before, .certificate-item-infobulle::before{
 	content : "";
 	top : 0;
 	position: absolute;
@@ -598,7 +602,7 @@ img{
 	flex-wrap: wrap;
 	justify-content: center;
 }
-#contact{
+#contact, #certificates{
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -606,7 +610,7 @@ img{
 	flex-wrap: wrap;
 	position: relative;
 }
-#contact-container{
+#contact-container, #certificates-container{
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -614,7 +618,7 @@ img{
 	width: 456px;
 	max-width: 100%;
 }
-.contact-item{
+.contact-item, .certificate-item{
 	width: 150px;
 	height: 150px;
 	display: flex;
@@ -626,13 +630,13 @@ img{
 	opacity: 0;
 	z-index: 1;
 }
-.contact-item:hover{
+.contact-item:hover, .certificate-item:hover {
 	transform: scale(1.08);
 	z-index: 2;
 }
-.contact-item img{
-	width: 80%;
-	height: 80%;
+.contact-item img, .certificate-item img {
+	max-width: 80%;
+	max-height: 80%;
 }
 .display-flex{
 	display: flex;
@@ -703,14 +707,14 @@ img{
 .big-infobulle {
 	min-width: 200px;
 }
-#skills-title, #history-title, #projects-title, #contact-title {
+#skills-title, #history-title, #projects-title, #contact-title, #certificates-title {
 	width: 100%;
 	text-align: center;
 	font-size: 28pt;
 	position: relative;
 	z-index: 2;
 }
-#contact-title {
+#contact-title, #certificates-title {
 	position: absolute;
 	top: 50px;
 	color: rgba(255,255,255,0.5);

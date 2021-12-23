@@ -17,7 +17,6 @@ class History{
     historyContainer = document.getElementById("history-container");
 
     historyItems.push(new History("Emploi saisonnier, Juillet", "Société Générale Fréjus", 2016, null));
-    historyItems.push(new History("Certificat", "Google Digital Active", 2016, "/public/assets/media/digital_active.pdf"));
     historyItems.push(new History("Emploi saisonnier, Juillet", "Société Générale Carpentras", 2017, null));
     historyItems.push(new History("Stage développeur fullstack", "Da Nang University of Technology - Vietnam", 2018, null));
     historyItems.push(new History("Diplômé DUT Informatique", "IUT Nice Côte d'Azur", "2016 à 2018", "/public/assets/media/dut_info.pdf"));

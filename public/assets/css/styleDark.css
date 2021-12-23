@@ -48,12 +48,12 @@ nav{
 .project-item-date{
 	color : rgba(255,255,255,0.8);
 }
-.project-item-language-infobulle, .contact-item-infobulle, .skill-item-infobulle{
+.project-item-language-infobulle, .contact-item-infobulle, .skill-item-infobulle, .certificate-item-infobulle{
 	background-color: rgba(0,0,0,0.7);
 	box-shadow: 0 6px 10px 2px rgba(0,0,0,0.3);
 	color : white;
 }
-.project-item-language-infobulle::before, .contact-item-infobulle::before, .skill-item-infobulle::before{
+.project-item-language-infobulle::before, .contact-item-infobulle::before, .skill-item-infobulle::before, .certificate-item-infobulle::before{
 	border-color: transparent transparent rgba(0,0,0,0.7) transparent;
 }
 #project-popup{
@@ -62,10 +62,11 @@ nav{
 #cross-container::before, #cross-container::after{
 	background-color: var(--grey-light-default);
 }
-.popup-link, .contact-item, .skill-item, #popup-right-container, #popup-links-container, .popup-language-container, .more-button, .less-button{
+.popup-link, .contact-item, .skill-item, #popup-right-container, #popup-links-container, .popup-language-container,
+.more-button, .less-button, .certificate-item{
 	background-color: #242424;
 }
-.popup-link:hover, .popup-language-container:hover, .contact-item:hover, .skill-item:hover{
+.popup-link:hover, .popup-language-container:hover, .contact-item:hover, .skill-item:hover, .certificate-item:hover{
 	box-shadow: 0 6px 10px 2px rgba(0,0,0,0.3);
 }
 #popup-title, .popup-language-name, #popup-text{
@@ -92,7 +93,7 @@ nav{
 .history-item-text{
 	color: var(--grey-light-default);
 }
-#contact{
+#contact, #certificates{
 	background-color: #2c3e50;
 }
 .display-flex img{

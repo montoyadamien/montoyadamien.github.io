@@ -8,7 +8,7 @@ function displayOneAfterOther(array, animationName, delayBetween, firstDelay, fi
     }
 
     for(let i = 0;i <array.length;i++){
-        array[i].style.animation = animationName + " " + totalDelay + "s";
+        array[i].style.animation = animationName + ' ' + totalDelay + 's';
         totalDelay += delayBetween;
     }
 }

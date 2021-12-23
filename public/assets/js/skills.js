@@ -42,6 +42,7 @@ function pushSkills() {
     skills.push(new Skill('C', 'c', CATEGORY_DEV));
     skills.push(new Skill('C++', 'cpp', CATEGORY_DEV));
     skills.push(new Skill('C#', 'csharp', CATEGORY_DEV));
+    skills.push(new Skill('ExpressJS', 'expressjs', CATEGORY_DEV));
     skills.push(new Skill('Flutter (Dart)', 'flutter', CATEGORY_DEV));
     skills.push(new Skill('Go', 'go', CATEGORY_DEV));
     skills.push(new Skill('Java', 'java', CATEGORY_DEV));

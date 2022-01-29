@@ -610,12 +610,20 @@ img{
 	flex-wrap: wrap;
 	position: relative;
 }
-#contact-container, #certificates-container{
+#contact-container {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-wrap: wrap;
 	width: 456px;
+	max-width: 100%;
+}
+#certificates-container{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	width: 1200px;
 	max-width: 100%;
 }
 .contact-item, .certificate-item{

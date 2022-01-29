@@ -1,3 +1,3 @@
 # Portfolio of Damien MONTOYA
 
-The porfolio is avaialble [here](https://montoyadamien.github.io/)
+The porfolio is available [here](https://montoyadamien.github.io/)

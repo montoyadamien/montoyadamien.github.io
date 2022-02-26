@@ -421,7 +421,7 @@ function displayLess(){
 
 function projectsScroll(){
     projectsDisplayOffset = projectsAnchor.offsetTop;
-    if(window.pageYOffset >= (projectsDisplayOffset-(window.innerHeight/2)) && projectsLoaded === false) {
+    if(window.scrollY >= (projectsDisplayOffset-(window.innerHeight/2)) && projectsLoaded === false) {
         projectsLoaded = true;
         displayOneAfterOther(document.querySelectorAll('.project-item'), 'opacity 0.4s linear forwards', 0.5, true, false);
 

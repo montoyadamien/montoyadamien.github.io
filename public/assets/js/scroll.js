@@ -9,7 +9,7 @@ function progressBar(){
     	getMaxHeight();
     });
 	window.addEventListener('scroll', function(){
-		clientScrollHeight = window.pageYOffset;
+		clientScrollHeight = window.scrollY;
 		progressPercent = ((clientScrollHeight+window.innerHeight)/height)*100;
 		scrollProgress.style.width = progressPercent+'%';
 	});

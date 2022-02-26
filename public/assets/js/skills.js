@@ -87,7 +87,7 @@ function pushSkills() {
 
 function skillsScroll(){
     skillsDisplayOffset = skillsAnchor.offsetTop;
-    if(window.pageYOffset >= (skillsDisplayOffset-(window.innerHeight/2)) && skillsLoaded === false){
+    if(window.scrollY >= (skillsDisplayOffset-(window.innerHeight/2)) && skillsLoaded === false){
         skillsLoaded = true;
         if (window.innerWidth < 500) {
             document.getElementById('skill-background-shape').style.animation = 'skills-background 5s linear 0.5s forwards';

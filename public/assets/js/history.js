@@ -77,7 +77,7 @@ function buildHistory(){
 
 function historyScroll(){
     historyDisplayOffset = historyAnchor.offsetTop;
-    if(window.pageYOffset >= (historyDisplayOffset-(window.innerHeight/2)) && historyLoaded === false) {
+    if(window.scrollY >= (historyDisplayOffset-(window.innerHeight/2)) && historyLoaded === false) {
         historyLoaded = true;
         displayOneAfterOther(document.querySelectorAll('.history-item-round'), 'scale 0.4s linear forwards', 0.6, false, false);
         displayOneAfterOther(document.querySelectorAll('.history-bar'), 'opacity 0.2s linear forwards', 0.6, true, 0.4);

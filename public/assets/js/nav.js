@@ -22,35 +22,35 @@ let moon;
 let styleColor;
 let colorThemeMeta;
 
-function setSun(){
+const setSun = () => {
 	moon.classList.remove('hideSunMoon');
 	moon.classList.add('showSunMoon');
 	sun.classList.remove('showSunMoon');
 	sun.classList.add('hideSunMoon');
-	styleColor.href='public/assets/css/styleLight.css';
+	styleColor.href = 'public/assets/css/styleLight.css';
 	colorThemeMeta.content = '#2C82C9';
 	let d = new Date();
-	d.setTime(d.getTime() + (365*24*60*60*1000));
-	document.cookie = 'theme=sun; expires=' + d.toUTCString()+'; path=/';
+	d.setTime(d.getTime() + (365 * 24 * 60 * 60 * 1000));
+	document.cookie = 'theme=sun; expires=' + d.toUTCString() + '; path=/';
 }
 
-function setMoon(){
+const setMoon = () => {
 	sun.classList.remove('hideSunMoon');
 	sun.classList.add('showSunMoon');
 	moon.classList.remove('showSunMoon');
 	moon.classList.add('hideSunMoon');
-	styleColor.href='public/assets/css/styleDark.css';
+	styleColor.href = 'public/assets/css/styleDark.css';
 	colorThemeMeta.content = '#2d4483';
 	let d = new Date();
-	d.setTime(d.getTime() + (365*24*60*60*1000));
-	document.cookie = 'theme=moon; expires=' + d.toUTCString()+'; path=/';
+	d.setTime(d.getTime() + (365 * 24 * 60 * 60 * 1000));
+	document.cookie = 'theme=moon; expires=' + d.toUTCString() + '; path=/';
 }
 
-function getCookie(cname) {
+const getCookie = (cname) => {
 	let name = cname + '=';
 	let decodedCookie = decodeURIComponent(document.cookie);
 	let ca = decodedCookie.split(';');
-	for(let i = 0; i <ca.length; i++) {
+	for (let i = 0; i < ca.length; i++) {
 		let c = ca[i];
 		while (c.charAt(0) === ' ') {
 			c = c.substring(1);
@@ -62,7 +62,28 @@ function getCookie(cname) {
 	return "";
 }
 
-(function(){
+const openMenu = () => {
+	nav.classList.remove('translateHide');
+	subContainer.classList.add('translateShow');
+	bars[0].id = 'bar1Open';
+	bars[1].id = 'bar2Open';
+	bars[2].id = 'bar3Open';
+	scrollProgressContainer.classList.add('translateProgressBar');
+	body.classList.add('overflowHidden');
+}
+
+const closeMenu = (removeFlow) => {
+	nav.classList.add('translateHide');
+	subContainer.classList.remove('translateShow');
+	bars[0].id = 'bar1';
+	bars[1].id = 'bar2';
+	bars[2].id = 'bar3';
+	scrollProgressContainer.classList.remove('translateProgressBar');
+	if (removeFlow)
+		body.classList.remove('overflowHidden');
+}
+
+(() => {
 	nav = document.getElementsByTagName('nav')[0];
 	navButton = document.getElementById('navButton');
 	subContainer = document.getElementById('subContainer');
@@ -77,60 +98,39 @@ function getCookie(cname) {
 	colorThemeMeta = document.getElementById('themeColor');
 
 	let cookie = getCookie('theme');
-	if(cookie === 'moon'){
+	if (cookie === 'moon') {
 		setMoon();
 	}
 
-	sun.addEventListener('click', function(){
+	sun.addEventListener('click', function () {
 		setSun();
 	});
 
-	moon.addEventListener('click', function(){
+	moon.addEventListener('click', function () {
 		setMoon();
 	});
 
 	certificatesAnchor = document.getElementById('certificates');
-    contactAnchor = document.getElementById('contact');
-    skillsAnchor = document.getElementById('skills');
-    informationAnchor = document.getElementById('information');
+	contactAnchor = document.getElementById('contact');
+	skillsAnchor = document.getElementById('skills');
+	informationAnchor = document.getElementById('information');
 	projectsAnchor = document.getElementById('projects');
 	historyAnchor = document.getElementById('history');
 
 	body = document.body;
-    html = document.documentElement;
+	html = document.documentElement;
 
-	navButton.addEventListener('click', function(){
-		if(nav.classList.contains('translateHide'))
+	navButton.addEventListener('click', function () {
+		if (nav.classList.contains('translateHide'))
 			openMenu();
 		else
 			closeMenu(true);
 	});
 
-	body.addEventListener('click', function(e){
-        if(!nav.classList.contains('translateHide')){
-            if(e.target !== nav && e.target.parentNode != null && e.target.parentNode !== nav && e.target.parentNode.parentNode !== nav)
-                closeMenu(true);
-        }
+	body.addEventListener('click', function (e) {
+		if (!nav.classList.contains('translateHide')) {
+			if (e.target !== nav && e.target.parentNode != null && e.target.parentNode !== nav && e.target.parentNode.parentNode !== nav)
+				closeMenu(true);
+		}
 	});
 })();
-
-function openMenu(){
-	nav.classList.remove('translateHide');
-	subContainer.classList.add('translateShow');
-	bars[0].id='bar1Open';
-	bars[1].id='bar2Open';
-	bars[2].id='bar3Open';
-	scrollProgressContainer.classList.add('translateProgressBar');
-	body.classList.add('overflowHidden');
-}
-
-function closeMenu(removeFlow){
-	nav.classList.add('translateHide');
-	subContainer.classList.remove('translateShow');
-	bars[0].id='bar1';
-	bars[1].id='bar2';
-	bars[2].id='bar3';
-	scrollProgressContainer.classList.remove('translateProgressBar');
-	if(removeFlow)
-        body.classList.remove('overflowHidden');
-}

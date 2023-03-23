@@ -1,15 +1,14 @@
-let skills = [];
+const skills = [];
 let skillsLoaded = false;
 let skillsDisplayOffset = 0;
-let CATEGORY_DEV = 0;
-let CATEGORY_TOOL = 1;
-let CATEGORY_DATABASE = 2;
-let CATEGORY_OTHER = 3;
-
-let languagesContainer = document.getElementById('skills-language-container');
-let databaseContainer = document.getElementById('skills-database-container');
-let toolsContainer = document.getElementById('skills-tools-container');
-let othersContainer = document.getElementById('skills-other-container');
+const CATEGORY_DEV = 0;
+const CATEGORY_TOOL = 1;
+const CATEGORY_DATABASE = 2;
+const CATEGORY_OTHER = 3;
+const languagesContainer = document.getElementById('skills-language-container');
+const databaseContainer = document.getElementById('skills-database-container');
+const toolsContainer = document.getElementById('skills-tools-container');
+const othersContainer = document.getElementById('skills-other-container');
 
 class Skill {
     constructor(name, logo, category) {
@@ -27,17 +26,8 @@ class Skill {
     }
 }
 
-(function(){
-    pushSkills();
-    displaySkills();
-    skillsScroll();
-    window.addEventListener('scroll', function(){
-        skillsScroll();
-    });
-})();
-
-function pushSkills() {
-    skills.push(new Skill('Android (Java)','android', CATEGORY_DEV ));
+const pushSkills = () => {
+    skills.push(new Skill('Android (Java)', 'android', CATEGORY_DEV));
     skills.push(new Skill('Angular (Framework JS)', 'angular', CATEGORY_DEV));
     skills.push(new Skill('C', 'c', CATEGORY_DEV));
     skills.push(new Skill('C++', 'cpp', CATEGORY_DEV));
@@ -51,7 +41,7 @@ function pushSkills() {
     skills.push(new Skill('NestJS (Framework JS)', 'nestjs', CATEGORY_DEV));
     skills.push(new Skill('PHP', 'php', CATEGORY_DEV));
     skills.push(new Skill('Python', 'python', CATEGORY_DEV));
-    skills.push(new Skill('React Native (Framework JS)', 'react_native', CATEGORY_DEV));
+    skills.push(new Skill('ReactJS / Native (Framework JS)', 'react_native', CATEGORY_DEV));
     skills.push(new Skill('Spring (Framework Java)', 'spring', CATEGORY_DEV));
     skills.push(new Skill('Symfony (Framework PHP)', 'symfony', CATEGORY_DEV));
 
@@ -85,9 +75,9 @@ function pushSkills() {
     skills.push(new Skill('Windows', 'windows', CATEGORY_OTHER));
 }
 
-function skillsScroll(){
+const skillsScroll = () => {
     skillsDisplayOffset = skillsAnchor.offsetTop;
-    if(window.scrollY >= (skillsDisplayOffset-(window.innerHeight/2)) && skillsLoaded === false){
+    if (window.scrollY >= (skillsDisplayOffset - (window.innerHeight / 2)) && skillsLoaded === false) {
         skillsLoaded = true;
         if (window.innerWidth < 500) {
             document.getElementById('skill-background-shape').style.animation = 'skills-background 5s linear 0.5s forwards';
@@ -101,7 +91,7 @@ function skillsScroll(){
     }
 }
 
-function displaySkills(){
+const displaySkills = () => {
     skills.forEach(skill => {
         let item = document.createElement('div');
         item.classList.add('skill-item');
@@ -135,3 +125,12 @@ function displaySkills(){
         }
     });
 }
+
+(() => {
+    pushSkills();
+    displaySkills();
+    skillsScroll();
+    window.addEventListener('scroll', () => {
+        skillsScroll();
+    });
+})();

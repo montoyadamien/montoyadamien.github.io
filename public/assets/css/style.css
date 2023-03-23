@@ -485,13 +485,12 @@ img{
 	display: flex;
 	justify-content: center;
 	flex-wrap: wrap;
-	margin: 60px 0 0 0;
+	margin: 60px 0 20px 0;
 }
 .popup-language-container{
 	box-sizing: border-box;
 	padding: 2px;
 	width: 120px;
-	height: 120px;
 	filter: grayscale(100);
 	transition: 0.2s;
 }
@@ -509,11 +508,11 @@ img{
 	height: 90px;
 }
 .popup-language-name{
-	height: 30px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	font-size: 16pt;
+	text-align: center;
 }
 #history{
 	min-height: 100vh;

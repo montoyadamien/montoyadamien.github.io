@@ -1,7 +1,7 @@
-(function(){
-    let profilePicture = document.getElementById('profilePicture');
-    let profileTitle = document.getElementById('profileTitle');
-    let profileText = document.getElementById('profileText');
+(() => {
+    const profilePicture = document.getElementById('profilePicture');
+    const profileTitle = document.getElementById('profileTitle');
+    const profileText = document.getElementById('profileText');
 
     profilePicture.style.animation = 'opacity 1s linear 0.2s forwards';
     profileTitle.style.animation = 'opacity 1s linear 0.7s forwards';

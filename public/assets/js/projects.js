@@ -445,7 +445,7 @@ function projectsScroll() {
     projectsDisplayOffset = projectsAnchor.offsetTop;
     if (window.scrollY >= (projectsDisplayOffset - (window.innerHeight / 2)) && projectsLoaded === false) {
         projectsLoaded = true;
-        displayOneAfterOther(document.querySelectorAll('.project-item'), 'opacity 0.4s linear forwards', 0.5, true, false);
+        displayOneAfterOther(document.querySelectorAll('.project-item'), 'opacity 0.4s linear forwards', 0.3, true, false);
 
         if (projects.length > numberProjectsToDisplay) {
             let buttonMore = document.createElement('div');

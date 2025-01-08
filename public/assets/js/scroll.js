@@ -30,6 +30,8 @@ const clickToScroll = () => {
 			else if (i === 3)
 				scrollTo(historyAnchor);
 			else if (i === 4)
+				scrollTo(certificatesAnchor);
+			else if (i === 5)
 				scrollTo(contactAnchor);
 			closeMenu(true);
 		});

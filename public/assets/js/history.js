@@ -62,10 +62,10 @@ const historyScroll = () => {
     historyDisplayOffset = historyAnchor.offsetTop;
     if (window.scrollY >= (historyDisplayOffset - (window.innerHeight / 2)) && historyLoaded === false) {
         historyLoaded = true;
-        displayOneAfterOther(document.querySelectorAll('.history-item-round'), 'scale 0.4s linear forwards', 0.6, false, false);
-        displayOneAfterOther(document.querySelectorAll('.history-bar'), 'opacity 0.2s linear forwards', 0.6, true, 0.4);
-        displayOneAfterOther(document.querySelectorAll('.history-item-title'), 'opacity 0.4s linear forwards', 0.6, true, 0.4);
-        displayOneAfterOther(document.querySelectorAll('.history-item-text'), 'opacity 0.4s linear forwards', 0.6, true, 0.8);
+        displayOneAfterOther(document.querySelectorAll('.history-item-round'), 'scale 0.4s linear forwards', 0.4, false, false);
+        displayOneAfterOther(document.querySelectorAll('.history-bar'), 'opacity 0.2s linear forwards', 0.4, true, 0.3);
+        displayOneAfterOther(document.querySelectorAll('.history-item-title'), 'opacity 0.4s linear forwards', 0.4, true, 0.3);
+        displayOneAfterOther(document.querySelectorAll('.history-item-text'), 'opacity 0.4s linear forwards', 0.4, true, 0.6);
     }
 }
 

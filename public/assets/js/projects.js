@@ -74,23 +74,6 @@ function pushProjects() {
     let description;
 
     description =
-        'Surico est une application qui sert à signaler les dangers et obstacles sur les trottoirs, routes et pistes cyclables pour les utilisateurs des mobilités douces afin que les municipalités puissent mettre en place des mesures correctives et rendre l\'espace public plus accessible et moins dangereux.' +
-        'L\'application est destinée aux piétons, cyclistes, utilisateurs de trottinettes, et tout autre mode de transport mais aussi aux personnes à mobilité réduites.';
-
-    projects.push(
-        new Project('Surico', 'surico.png', description,
-            [LANGUAGES_ENUM.REACT, LANGUAGES_ENUM.REACT_NATIVE, LANGUAGES_ENUM.EXPRESS, LANGUAGES_ENUM.ANDROID],
-            [
-                new Link('Facebook', LINKS_LOGO_ENUM.FACEBOOK, 'https://www.facebook.com/suricoapp'),
-                new Link('LinkedIn', LINKS_LOGO_ENUM.LINKEDIN, 'https://www.linkedin.com/company/surico/'),
-                new Link('Twitter', LINKS_LOGO_ENUM.TWITTER, 'https://twitter.com/suricoapp'),
-                new Link('Google Play', LINKS_LOGO_ENUM.GOOGLE_PLAY, 'https://play.google.com/store/apps/details?id=gorillabox.surico'),
-                new Link('Site web', LINKS_LOGO_ENUM.WEBSITE, 'https://surico.fr/')
-            ],
-            'ff7602', '2021 - En cours'));
-
-
-    description =
         'MyGameDB est une application de gestion de collection de jeux vidéo, de consoles et d\'accessoires administré par mes soins. L\'application android ainsi que la version web ont réuni plus de 20 000 membres. <br /><br />' +
         'L\'application permet d\'ajouter jeux vidéos, consoles et accessoires une fois un profil créé et connecté. Elle permet de gérer toute une collection via différents champs, filtres, fonctions de tri, export de données en pdf..';
 
@@ -105,6 +88,32 @@ function pushProjects() {
                 new Link('Site web', LINKS_LOGO_ENUM.WEBSITE, 'https://mygamedb.com')
             ],
             '0a868b', '2017 - En cours'));
+
+    description =
+        'Geo Quest est une application de quiz sur la géographie.<br /><br />' +
+        'L\'application possède un système de stockage interne permettant de répondre aux 449 questions présentes.';
+    projects.push(
+        new Project('Geo Quest', 'geoquest.png', description,
+            [LANGUAGES_ENUM.FLUTTER, LANGUAGES_ENUM.ANDROID],
+            [
+                new Link('Google Play', LINKS_LOGO_ENUM.GOOGLE_PLAY, 'https://play.google.com/store/apps/details?id=com.questsbox.geo_quest')
+            ], 'ffd23a', '2025'));
+
+    description =
+        'Surico est une application qui sert à signaler les dangers et obstacles sur les trottoirs, routes et pistes cyclables pour les utilisateurs des mobilités douces afin que les municipalités puissent mettre en place des mesures correctives et rendre l\'espace public plus accessible et moins dangereux.' +
+        'L\'application est destinée aux piétons, cyclistes, utilisateurs de trottinettes, et tout autre mode de transport mais aussi aux personnes à mobilité réduites.';
+
+    projects.push(
+        new Project('Surico', 'surico.png', description,
+            [LANGUAGES_ENUM.REACT, LANGUAGES_ENUM.REACT_NATIVE, LANGUAGES_ENUM.EXPRESS, LANGUAGES_ENUM.ANDROID],
+            [
+                new Link('Facebook', LINKS_LOGO_ENUM.FACEBOOK, 'https://www.facebook.com/suricoapp'),
+                new Link('LinkedIn', LINKS_LOGO_ENUM.LINKEDIN, 'https://www.linkedin.com/company/surico/'),
+                new Link('Twitter', LINKS_LOGO_ENUM.TWITTER, 'https://twitter.com/suricoapp'),
+                new Link('Google Play', LINKS_LOGO_ENUM.GOOGLE_PLAY, 'https://play.google.com/store/apps/details?id=gorillabox.surico'),
+                new Link('Site web', LINKS_LOGO_ENUM.WEBSITE, 'https://surico.fr/')
+            ],
+            'ff7602', '2021 - 2025'));
 
     description =
         'Animals Quest est une application de quiz sur les animaux.<br /><br />' +

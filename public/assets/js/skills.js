@@ -58,12 +58,13 @@ const pushSkills = () => {
     skills.push(new Skill('Firebase (analytics, notifications...)', 'firebase', CATEGORY_TOOL));
     skills.push(new Skill('Google AdMob', 'admob', CATEGORY_TOOL));
     skills.push(new Skill('Google AdSense', 'adsense', CATEGORY_TOOL));
-    skills.push(new Skill('Google App Engine (Cloud tasks, task queues, base de données...)', 'google_app_engine', CATEGORY_TOOL));
+    skills.push(new Skill('Google App Engine', 'google_app_engine', CATEGORY_TOOL));
     skills.push(new Skill('GitHub', 'github', CATEGORY_TOOL));
     skills.push(new Skill('GitLab', 'gitlab', CATEGORY_TOOL));
     skills.push(new Skill('Jenkins', 'jenkins', CATEGORY_TOOL));
     skills.push(new Skill('Kafka', 'kafka', CATEGORY_TOOL));
     skills.push(new Skill('SonarQube', 'sonarqube', CATEGORY_TOOL));
+    skills.push(new Skill('RabbitMQ', 'rabbit', CATEGORY_TOOL));
     skills.push(new Skill('Travis CI', 'travis', CATEGORY_TOOL));
 
     skills.push(new Skill('Eclipse', 'eclipse', CATEGORY_OTHER));

@@ -47,7 +47,8 @@ const LANGUAGES_ENUM = {
     SYMFONY: new Language('Symfony', 'symfony.png'),
     REACT: new Language('ReactJS', 'react_native.png'),
     REACT_NATIVE: new Language('React Native', 'react_native.png'),
-    EXPRESS: new Language('expressJS', 'expressjs.png')
+    EXPRESS: new Language('expressJS', 'expressjs.png'),
+    UNITY: new Language('Unity', 'unity.png'),
 };
 
 const LINKS_LOGO_ENUM = {
@@ -114,6 +115,16 @@ function pushProjects() {
                 new Link('Site web', LINKS_LOGO_ENUM.WEBSITE, 'https://surico.fr/')
             ],
             'ff7602', '2021 - 2025'));
+
+    description =
+        'Doomy Bird est un jeu de réflexes, où le but est de faire le score maximal en passant entre 2 tuyaux sans les toucher.<br /><br />' +
+        'Attention, au moindre obstacle touché, c\'est Game Over !';
+    projects.push(
+        new Project('Doomy Bird', 'doomybird.png', description,
+            [LANGUAGES_ENUM.UNITY, LANGUAGES_ENUM.ANDROID],
+            [
+                new Link('Google Play', LINKS_LOGO_ENUM.GOOGLE_PLAY, 'https://play.google.com/store/apps/details?id=com.gorillabox.doomybird')
+            ], '74548c', '2023'));
 
     description =
         'Animals Quest est une application de quiz sur les animaux.<br /><br />' +

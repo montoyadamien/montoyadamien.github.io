@@ -161,23 +161,23 @@ function pushProjects() {
                 new Link('Site web', LINKS_LOGO_ENUM.WEBSITE, 'https://polytechniceconseil.com')
             ], '007cbc', '2019'));
 
-    description =
-        'Cette page recense les différents événements de programmation auxquels j\'ai participé :<br /><br />' +
-        'BattleDev - 2019<br />' +
-        'Google Hash Code - 2019<br />' +
-        'Le Shaker Coding Battle - 2017 - 2018 - 2019<br />' +
-        'Nuit de l\'info - 2016 - 2017 - 2018 - 2019<br />' +
-        'UCAnCODE - 2018';
-    projects.push(
-        new Project('Événements', 'event.png', description,
-            [LANGUAGES_ENUM.VUEJS, LANGUAGES_ENUM.JAVASCRIPT, LANGUAGES_ENUM.JAVA, LANGUAGES_ENUM.C],
-            [
-                new Link('Certificat GHC 2019 (1523/7500)', LINKS_LOGO_ENUM.FILE, 'public/events/ghc_2019.pdf')
-            ], '16a085', '2017 - 2019'));
+    // description =
+    //     'Cette page recense les différents événements de programmation auxquels j\'ai participé :<br /><br />' +
+    //     'BattleDev - 2019<br />' +
+    //     'Google Hash Code - 2019<br />' +
+    //     'Le Shaker Coding Battle - 2017 - 2018 - 2019<br />' +
+    //     'Nuit de l\'info - 2016 - 2017 - 2018 - 2019<br />' +
+    //     'UCAnCODE - 2018';
+    // projects.push(
+    //     new Project('Événements', 'event.png', description,
+    //         [LANGUAGES_ENUM.VUEJS, LANGUAGES_ENUM.JAVASCRIPT, LANGUAGES_ENUM.JAVA, LANGUAGES_ENUM.C],
+    //         [
+    //             new Link('Certificat GHC 2019 (1523/7500)', LINKS_LOGO_ENUM.FILE, 'public/events/ghc_2019.pdf')
+    //         ], '16a085', '2017 - 2019'));
 
     description =
         'Sudoku : le but est de compléter la grille avec des nombres ne se trouvant que sur une ligne, sur une colonne et dans un groupe de 9 cases.<br /><br />' +
-        'Taquin : le but de ce jeu est le déplacement d\'élements pour reconstituer une suite.<br /><br />' +
+        // 'Taquin : le but de ce jeu est le déplacement d\'élements pour reconstituer une suite.<br /><br />' +
         '2048 : le but du jeu est de coupler des tuiles de même valeur pour en obtenir de plus grandes. Se joue avec les touches Haut, Bas, Gauche et Droite.<br /><br />' +
         'Dames : le but est de manger les pions adverses en sautant par dessus en diagonale.<br /><br />' +
         'Pong : chaque joueur contrôlant une raquette doit faire rebondir la balle sinon il perd. Se joue avec Z et A ainsi que Haut et Bas.'
@@ -189,7 +189,7 @@ function pushProjects() {
                 new Link('Pong', LINKS_LOGO_ENUM.FILE, 'projects/pong/index.html'),
                 new Link('Dames', LINKS_LOGO_ENUM.FILE, 'projects/dames/index.html'),
                 new Link('2048', LINKS_LOGO_ENUM.FILE, 'projects/2048/index.html'),
-                new Link('Taquin', LINKS_LOGO_ENUM.FILE, 'projects/taquin/index.html'),
+                // new Link('Taquin', LINKS_LOGO_ENUM.FILE, 'projects/taquin/index.html'),
                 new Link('Sudoku', LINKS_LOGO_ENUM.FILE, 'projects/sudoku/index.html'),
             ], '16a085', '2017 - 2019'));
 }
